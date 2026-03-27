@@ -1,0 +1,36 @@
+packages:
+  - apps/*
+  - packages/*
+
+allowBuilds:
+  '@parcel/watcher': true
+  '@prisma/engines': true
+  bcryptjs: true
+  esbuild: true
+  lmdb: true
+  msgpackr-extract: true
+  prisma: true
+
+catalog:
+  '@types/node': latest
+  '@typescript/native-preview': npm:@typescript/native-preview@7.0.0-dev.20260316.1
+  dotenv: ^17.3.1
+  typescript: npm:@typescript/native-preview@7.0.0-dev.20260316.1
+  vite: npm:@voidzero-dev/vite-plus-core@0.1.12
+  vite-plus: ^0.1.12
+  vitest: npm:@voidzero-dev/vite-plus-test@0.1.12
+
+catalogMode: prefer
+overrides:
+  typescript: 'catalog:'
+  vite: 'catalog:'
+  vitest: 'catalog:'
+peerDependencyRules:
+  allowAny:
+    - typescript
+    - vite
+    - vitest
+  allowedVersions:
+    typescript: '*'
+    vite: '*'
+    vitest: '*'

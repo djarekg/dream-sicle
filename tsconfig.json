@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "composite": false,
+    "forceConsistentCasingInFileNames": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/api"
+    },
+    {
+      "path": "./apps/demo"
+    },
+    {
+      "path": "./packages/core"
+    },
+    {
+      "path": "./packages/db"
+    },
+    {
+      "path": "./packages/html"
+    },
+    {
+      "path": "./packages/http"
+    },
+    {
+      "path": "./packages/router"
+    },
+    {
+      "path": "./packages/utils"
+    }
+  ]
+}
