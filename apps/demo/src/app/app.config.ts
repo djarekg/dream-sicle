@@ -1,5 +1,6 @@
 import {
   ApplicationConfig,
+  isDevMode,
   provideBrowserGlobalErrorListeners,
 } from '@angular/core';
 import {
@@ -10,10 +11,14 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 
+const hydrationProviders = isDevMode()
+  ? []
+  : [provideClientHydration(withEventReplay())];
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
-    provideClientHydration(withEventReplay()),
+    ...hydrationProviders,
   ],
 };

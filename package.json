@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "clean": "pnpx rimraf -g pnpm-lock.yaml out-tsc dist node_modules apps/*/node_modules packages/*/node_modules",
     "setup": "vp install",
     "standards:check": "node scripts/standards-check.mjs",
     "lint": "pnpm run standards:check",
