@@ -1,4 +1,8 @@
 :root {
+  /* Colors */
   --app-color-primary: #ff24cf;
   --app-color-secondary: #00f7ff;
+
+  /* Sizes */
+  --app-header-height: 100px;
 }

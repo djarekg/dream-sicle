@@ -18,7 +18,7 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "apps/demo/src/main.ts",
-            "tsConfig": "apps/demo/tsconfig.app.json",
+            "tsConfig": "apps/demo/tsconfig.json",
             "assets": [
               {
                 "glob": "**/*",
@@ -93,10 +93,10 @@
           "builder": "@angular/build:ng-packagr",
           "configurations": {
             "production": {
-              "tsConfig": "packages/core/tsconfig.lib.prod.json"
+              "tsConfig": "packages/core/tsconfig.prod.json"
             },
             "development": {
-              "tsConfig": "packages/core/tsconfig.lib.json"
+              "tsConfig": "packages/core/tsconfig.json"
             }
           },
           "defaultConfiguration": "production"
@@ -119,10 +119,10 @@
           "builder": "@angular/build:ng-packagr",
           "configurations": {
             "production": {
-              "tsConfig": "packages/components/tsconfig.lib.prod.json"
+              "tsConfig": "packages/components/tsconfig.prod.json"
             },
             "development": {
-              "tsConfig": "packages/components/tsconfig.lib.json"
+              "tsConfig": "packages/components/tsconfig.json"
             }
           },
           "defaultConfiguration": "production"

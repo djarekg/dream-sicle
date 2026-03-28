@@ -1,0 +1,20 @@
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "a b c";
+  align-items: center;
+  grid-template-rows: 100%;
+  padding-inline: 1rem;
+  height: var(--app-unprotected-header-height);
+}
+
+.img-ng {
+  grid-area: a;
+}
+
+.title {
+  grid-area: b;
+  place-self: center;
+  color: var(--app-color-primary);
+  font: var(--mat-sys-headline-medium);
+}
