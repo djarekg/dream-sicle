@@ -12,10 +12,12 @@
     "serve:ssr:demo": "node dist/demo/server/server.mjs"
   },
   "dependencies": {
+    "@angular/cdk": "catalog:",
     "@angular/common": "catalog:",
     "@angular/compiler": "catalog:",
     "@angular/core": "catalog:",
     "@angular/forms": "catalog:",
+    "@angular/material": "catalog:",
     "@angular/platform-browser": "catalog:",
     "@angular/platform-server": "catalog:",
     "@angular/router": "catalog:",
