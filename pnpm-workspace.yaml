@@ -29,6 +29,7 @@ catalog:
   '@typescript/native-preview': npm:@typescript/native-preview@7.0.0-dev.20260327.2
   dotenv: ^17.3.1
   ng-packagr: ^21.2.0
+  ngx-cookie-service-ssr: ^21.3.1
   tslib: ^2.8.1
   typescript: npm:@typescript/native-preview@7.0.0-dev.20260327.2
   vite: npm:@voidzero-dev/vite-plus-core@0.1.12

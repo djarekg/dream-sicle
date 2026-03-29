@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { TitleService } from '@/core/services/title.service.js';
+// import { TitleService } from '@/core/services/title.service.js';
 
 @Component({
   selector: 'app-unprotected-layout',
@@ -11,6 +11,6 @@ import { TitleService } from '@/core/services/title.service.js';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class UnprotectedLayout {
-  readonly #titleService = inject(TitleService);
-  protected readonly title = this.#titleService.title;
+  // readonly #titleService = inject(TitleService);
+  // protected readonly title = this.#titleService.title;
 }

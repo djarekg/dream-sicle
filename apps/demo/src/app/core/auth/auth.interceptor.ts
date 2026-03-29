@@ -1,7 +1,8 @@
-import { AUTH_TOKEN_CACHE_KEY } from '@/core/identity/auth-token-cache-key.js';
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
+
+import { AUTH_TOKEN_CACHE_KEY } from './auth-token-cache-key';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   // const isServer = false;
