@@ -129,6 +129,18 @@ export default defineConfig({
     },
     overrides: [
       {
+        files: ['*.html'],
+        options: {
+          parser: 'angular',
+        },
+      },
+      {
+        files: ['index.html'],
+        options: {
+          parser: 'html',
+        },
+      },
+      {
         files: ['*.ts'],
         options: {
           objectWrap: 'preserve',

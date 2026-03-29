@@ -25,13 +25,13 @@ export const provideRouting = () =>
         path: '',
         canActivate: [authGuard],
         loadComponent: () =>
-          import('@/features/layout/protected-layout/protected-layout'),
+          import('@/features/layout/protected-layout/protected-layout.component'),
         loadChildren: () => import('@/routes'),
       },
       {
         path: 'unprotected',
         loadComponent: () =>
-          import('@/features/layout/unprotected-layout/unprotected-layout'),
+          import('@/features/layout/unprotected-layout/unprotected-layout.component'),
         loadChildren: () => import('@/routes-unprotected'),
       },
     ],

@@ -10,4 +10,16 @@ export class AuthService {
 
   readonly isAuthenticating = computed(() => this.#status() === 'idle');
   readonly isAuthenticated = computed(() => this.#status() === 'authenticated');
+
+  async signin(): Promise<void> {
+    this.#status.set('idle');
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    this.#status.set('authenticated');
+  }
+
+  async signout(): Promise<void> {
+    this.#status.set('idle');
+  }
 }

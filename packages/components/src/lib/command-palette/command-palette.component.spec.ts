@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Components } from './components';
+import CommandPalette from './command-palette.component';
 
-describe('Components', () => {
-  let component: Components;
-  let fixture: ComponentFixture<Components>;
+describe('CommandPalette', () => {
+  let component: CommandPalette;
+  let fixture: ComponentFixture<CommandPalette>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Components],
+      imports: [CommandPalette],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Components);
+    fixture = TestBed.createComponent(CommandPalette);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

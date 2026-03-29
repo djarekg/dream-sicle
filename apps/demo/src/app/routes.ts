@@ -4,7 +4,7 @@ export default [
   {
     path: '',
     title: 'Home',
-    loadComponent: () => import('@/features/home/home'),
+    loadComponent: () => import('@/features/home/home.component'),
   },
   {
     path: 'users',

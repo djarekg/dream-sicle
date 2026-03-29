@@ -1,4 +1,4 @@
-import { isEmpty, isNullOrUndefined } from '../index.ts';
+import { isEmpty, isNullOrUndefined } from '../index';
 
 /**
  * Throws an error if the provided value is empty.
