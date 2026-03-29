@@ -3,7 +3,7 @@ header {
   grid-template-columns: 200px 1fr 200px;
   grid-area: "a b c";
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding-inline: 1rem;
 }
 
 .home-content {
