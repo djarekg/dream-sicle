@@ -8,5 +8,8 @@
   "dependencies": {
     "tslib": "catalog:"
   },
+  "devDependencies": {
+    "typescript": "catalog:"
+  },
   "sideEffects": false
 }

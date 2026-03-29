@@ -6,7 +6,7 @@ import type { AuthStatus } from './auth-status';
   providedIn: 'root',
 })
 export class AuthService {
-  #status = signal<AuthStatus>('idle');
+  #status = signal<AuthStatus>('unauthenticated');
 
   readonly isAuthenticating = computed(() => this.#status() === 'idle');
   readonly isAuthenticated = computed(() => this.#status() === 'authenticated');
@@ -20,6 +20,6 @@ export class AuthService {
   }
 
   async signout(): Promise<void> {
-    this.#status.set('idle');
+    this.#status.set('unauthenticated');
   }
 }

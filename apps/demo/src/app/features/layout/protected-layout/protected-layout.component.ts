@@ -32,7 +32,7 @@ const SEARCH_TRIGGER_KEY = 'k';
 export default class ProtectedLayout {
   readonly #router = inject(Router);
 
-  protected readonly isBrowser = isBrowser;
+  protected readonly isBrowser = isBrowser();
   protected readonly displaySearchDialog = signal(false);
 
   constructor() {

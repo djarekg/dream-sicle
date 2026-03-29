@@ -3,14 +3,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "clean": "pnpx rimraf -g pnpm-lock.yaml out-tsc dist node_modules apps/*/node_modules packages/*/node_modules",
+    "clean": "pnpx rimraf -g pnpm-lock.yaml out-tsc dist node_modules apps/*/node_modules packages/*/node_modules out-tsc .angular",
     "setup": "vp install",
     "standards:check": "node scripts/standards-check.mjs",
     "lint": "pnpm run standards:check",
     "ready": "pnpm run standards:check && vp fmt && vp lint && vp run test -r && vp run build -r",
-    "dev": "vp run demo#dev"
+    "dev": "pnpm run --filter demo start"
   },
   "devDependencies": {
+    "typescript": "catalog:",
     "vite-plus": "catalog:"
   },
   "engines": {

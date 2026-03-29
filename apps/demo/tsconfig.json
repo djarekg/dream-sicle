@@ -3,6 +3,7 @@
 {
   "extends": "../../tsconfig.app.json",
   "compilerOptions": {
+    // "rootDir": "../../",
     "paths": {
       "@/*": ["./src/app/*"],
       "@ds/components": ["../../packages/components/src/index.ts"],

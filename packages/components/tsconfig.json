@@ -3,6 +3,7 @@
 {
   "extends": "../../tsconfig.lib.json",
   "compilerOptions": {
+    "rootDir": "./src",
   },
   "include": ["src/**/*.ts"],
   "exclude": ["**/*.spec.ts"]

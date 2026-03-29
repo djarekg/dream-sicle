@@ -3,8 +3,8 @@
 {
   "extends": "./tsconfig.ng.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "${configDir}/out-tsc/app/.tsbuildinfo",
-    "outDir": "${configDir}/out-tsc/app",
+    "tsBuildInfoFile": "./out-tsc/app/.tsbuildinfo",
+    "outDir": "./out-tsc/app",
     "types": ["node"]
-  },
+  }
 }
