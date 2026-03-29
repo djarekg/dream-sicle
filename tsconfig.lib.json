@@ -3,10 +3,10 @@
 {
   "extends": "./tsconfig.ng.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "${configDir}/out-tsc/lib/.tsbuildinfo",
-    "outDir": "${configDir}/out-tsc/lib",
+    "tsBuildInfoFile": "./out-tsc/lib/.tsbuildinfo",
+    "outDir": "./out-tsc/lib",
     "declaration": true,
     "declarationMap": true,
     "types": []
-  },
+  }
 }
