@@ -72,8 +72,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
+      '@ds/contracts': resolve(__dirname, '../../packages/contracts/src'),
       '@ds/db': resolve(__dirname, '../../packages/db/src'),
-      '@ds/html': resolve(__dirname, '../../packages/html/src'),
       '@ds/utils': resolve(__dirname, '../../packages/utils/src'),
     },
     preserveSymlinks: true,

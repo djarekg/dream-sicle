@@ -1,4 +1,8 @@
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptors,
+} from '@angular/common/http';
 import {
   ApplicationConfig,
   isDevMode,
@@ -10,6 +14,8 @@ import {
   withIncrementalHydration,
 } from '@angular/platform-browser';
 
+import { apiInterceptor } from '@/core/api/api.interceptor';
+import { authInterceptor } from '@/core/auth/auth.interceptor';
 import { provideOptionDefaults } from '@/core/options/defaults';
 
 import { provideRouting } from './core/providers/router';
@@ -22,7 +28,10 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     ...hydrationProviders,
-    provideHttpClient(withFetch()),
+    provideHttpClient(
+      withFetch(),
+      withInterceptors([apiInterceptor, authInterceptor]),
+    ),
     provideOptionDefaults(),
     provideRouting(),
   ],

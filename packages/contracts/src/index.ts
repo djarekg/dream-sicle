@@ -1,9 +1,10 @@
-export { Genders } from './gender.ts';
-export type { Gender } from './gender.ts';
-export { SearchResultTypes } from './search.ts';
+export { Genders } from './gender';
+export type { Gender } from './gender';
+export * from './role';
+export { SearchResultTypes } from './search';
 export type {
   SearchResult,
   SearchResultParams,
   SearchResultType,
-} from './search.ts';
-export type { UserDto } from './user.ts';
+} from './search';
+export type { UserDto } from './user';

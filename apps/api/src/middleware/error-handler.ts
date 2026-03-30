@@ -1,6 +1,5 @@
-import { ApiError } from '@ds/http';
-
 import { IS_PROD } from '@/config.ts';
+import { ApiError } from '@/types/index.ts';
 import { getCorsHeaders } from '@/utils/cors.ts';
 
 const isApiError = (err: unknown): err is ApiError => err instanceof ApiError;

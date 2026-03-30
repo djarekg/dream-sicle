@@ -5,6 +5,7 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/app/*"],
+      "@/environment": ["./src/environments/environment.ts"],
       "@ds/components": ["../../packages/components/src/index.ts"],
       "@ds/contracts": ["../../packages/contracts/src/index.ts"],
       "@ds/core": ["../../packages/core/src/index.ts"],
