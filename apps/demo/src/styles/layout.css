@@ -1,0 +1,8 @@
+a {
+  text-decoration: none;
+  color: var(--app-color-primary-low);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

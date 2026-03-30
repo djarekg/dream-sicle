@@ -3,10 +3,17 @@
 // components according to the Material 3 design spec.
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
+@use 'sass:map';
 @use '@angular/material' as mat;
 @use './color-palettes' as app-theme;
 
 html {
+  $app-color-primary-dark: map.get(app-theme.$primary-palette, primary, 35);
+  --app-color-primary-dark: #{$app-color-primary-dark};
+
+  $app-color-primary-light: map.get(app-theme.$primary-palette, primary, 70);
+  --app-color-primary-light: #{$app-color-primary-light};
+
   height: 100%;
   // Default the application to a light color theme. This can be changed to
   // `dark` to enable the dark color theme, or to `light dark` to defer to the

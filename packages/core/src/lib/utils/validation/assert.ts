@@ -8,7 +8,7 @@ import { isEmpty, isNullOrUndefined } from '../index';
  * @throws {Error} Throws an error if the value is empty.
  * @asserts value is T - Asserts that the value is of type T if it is not empty.
  */
-export function assertIsNotEmpty<T>(
+export function isNotEmpty<T>(
   value: T | null | undefined,
   message: string,
 ): asserts value is T {
@@ -26,7 +26,7 @@ export function assertIsNotEmpty<T>(
  * @throws {Error} Throws an error if the value is null or undefined.
  * @asserts value is T - Asserts that the value is of type T if it is not null or undefined.
  */
-export function assertIsNotNull<T>(
+export function isNotNull<T>(
   value: T | null | undefined,
   message: string,
 ): asserts value is T {

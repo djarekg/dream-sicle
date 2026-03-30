@@ -1,7 +1,13 @@
 :root {
   /* Colors */
   --app-color-primary: #ff24cf;
+  --app-color-primary-high: #9b007d;
+  --app-color-primary-low: #ff7dd6;
+  --app-color-primary-lower: #ffaddf;
   --app-color-secondary: #00f7ff;
+  --app-color-secondary-high: #005c5f;
+  --app-color-secondary-low: #00bec4;
+  --app-color-secondary-lowest: #54f8ff;
 
   /* Sizes */
   --app-header-height: 100px;

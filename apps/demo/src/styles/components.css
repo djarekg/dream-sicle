@@ -1,0 +1,3 @@
+.mdc-button {
+  --mat-button-filled-container-color: var(--app-color-primary-low);
+}

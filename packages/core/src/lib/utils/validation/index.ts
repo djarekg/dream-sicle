@@ -1,1 +1,1 @@
-export * from './assert';
+export * as assert from './assert';

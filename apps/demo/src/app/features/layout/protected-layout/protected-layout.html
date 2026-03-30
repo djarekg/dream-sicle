@@ -1,8 +1,0 @@
-<app-header />
-@defer (when isBrowser) { @defer (when displaySearchDialog(); prefetch on idle)
-{ @if (displaySearchDialog()) {
-<ds-command-palette (close)="displaySearchDialog.set(false)" />
-} } }
-<main>
-  <router-outlet />
-</main>

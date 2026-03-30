@@ -20,7 +20,6 @@ const ESCAPE = 'Escape';
 const SEARCH_TRIGGER_KEY = 'k';
 
 @Component({
-  selector: 'app-protected-layout',
   imports: [CommandPalette, Header, RouterOutlet],
   templateUrl: './protected-layout.component.html',
   styleUrl: './protected-layout.component.css',

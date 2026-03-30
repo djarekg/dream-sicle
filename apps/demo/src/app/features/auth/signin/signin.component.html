@@ -1,4 +1,4 @@
-<form>
+<form (submit)="onSubmit()">
   <header>
     <h2>Welcome to dream sicle!</h2>
     <h4>Sign in to access your account</h4>
@@ -18,7 +18,17 @@
       matInput
       type="password"
       [formField]="form.password" />
+    <mat-hint align="end">
+      <a href="/unprotected/signup">Don't have an account? Sign up</a>
+    </mat-hint>
   </mat-form-field>
 
-  <footer></footer>
+  <footer>
+    <button
+      mat-flat-button
+      color="primary"
+      type="submit">
+      Sign in
+    </button>
+  </footer>
 </form>
