@@ -6,7 +6,9 @@
     "paths": {
       "@/*": ["./src/app/*"],
       "@ds/components": ["../../packages/components/src/index.ts"],
-      "@ds/core": ["../../packages/core/src/index.ts"]
+      "@ds/contracts": ["../../packages/contracts/src/index.ts"],
+      "@ds/core": ["../../packages/core/src/index.ts"],
+      "@ds/utils": ["../../packages/utils/src/index.ts"]
     }
   },
   "include": ["src/**/*.ts"],

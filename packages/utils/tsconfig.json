@@ -3,6 +3,7 @@
   "compilerOptions": {
     "tsBuildInfoFile": "./dist/.tsbuildinfo",
     "rewriteRelativeImportExtensions": true,
+    "types": [],
     "paths": {
       "@/*": ["./src/*"]
     }

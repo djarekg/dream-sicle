@@ -22,6 +22,8 @@
     "@angular/platform-server": "catalog:",
     "@angular/router": "catalog:",
     "@angular/ssr": "catalog:",
+    "@ds/contracts": "workspace:*",
+    "@ds/utils": "workspace:*",
     "express": "^5.1.0",
     "ngx-cookie-service-ssr": "catalog:",
     "rxjs": "~7.8.0",

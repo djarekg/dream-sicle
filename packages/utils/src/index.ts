@@ -12,4 +12,5 @@ export {
 } from './object';
 export { format, isNullOrEmpty } from './string';
 export type { PlainObject, TypedEvent } from './types/index';
-export { assertIsNotEmpty, assertIsNotNull } from './validation/index';
+export { removeTrailingSlash } from './url';
+export { assert } from './validation/index';

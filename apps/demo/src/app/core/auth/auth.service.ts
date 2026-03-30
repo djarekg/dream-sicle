@@ -1,5 +1,5 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { assert } from '@ds/core';
+import { assert } from '@ds/utils';
 
 import type { AuthStatus } from './auth-status';
 

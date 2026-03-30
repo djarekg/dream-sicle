@@ -1,4 +1,4 @@
-import { isEmpty } from './object.ts';
+import { isEmpty } from './object';
 
 type CookieDocument = {
   cookie: string;
