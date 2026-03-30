@@ -1,64 +1,54 @@
-# Core
+# @ds/core
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+Shared Angular runtime helpers for the dream-sicle workspace.
 
-## Code scaffolding
+`@ds/core` is a small Angular library that holds cross-cutting framework helpers which do not belong in a specific feature package. It currently focuses on platform detection utilities used by SSR-aware components and layouts.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## What This Package Contains
 
-```bash
-ng generate component component-name
+- Public library entry points in `src/index.ts` and `src/public-api.ts`
+- Shared utilities under `src/lib/utils`
+- Platform detection helpers in `src/lib/utils/platform.ts`
+
+## Public API
+
+- `isBrowser()`
+- `isServer()`
+
+## Features
+
+- Central place for Angular-specific runtime helpers
+- Works with browser and server rendering contexts
+- Keeps app and component packages from reimplementing platform checks
+
+## Example
+
+Use the helpers inside an Angular injection context:
+
+```ts
+import { Component, signal } from '@angular/core';
+import { isBrowser } from '@ds/core';
+
+@Component({
+  selector: 'app-example',
+  template: `@if (runningInBrowser()) {
+    <p>Browser only</p>
+  }`,
+})
+export class ExampleComponent {
+  protected readonly runningInBrowser = signal(isBrowser());
+}
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Development
 
-```bash
-ng generate --help
-```
+Run from the workspace root:
 
-## Building
+- `pnpm exec ng build @ds/core`
+- `pnpm exec ng test @ds/core`
 
-To build the library, run:
+## Related Projects
 
-```bash
-ng build core
-```
-
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
-
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-
-   ```bash
-   cd dist/core
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [workspace](../../README.md)
+- [demo](../../apps/demo/README.md)
+- [components](../components/README.md)

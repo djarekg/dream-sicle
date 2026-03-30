@@ -1,64 +1,48 @@
-# Components
+# @ds/components
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+Shared Angular UI components for the dream-sicle workspace.
 
-## Code scaffolding
+`@ds/components` contains reusable presentation components that can be consumed by workspace applications. The package currently exposes the command palette component used by the demo app's protected layout.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## What This Package Contains
 
-```bash
-ng generate component component-name
+- Public library entry points in `src/index.ts` and `src/public-api.ts`
+- Reusable component implementations under `src/lib`
+- Command palette component files under `src/lib/command-palette`
+
+## Public API
+
+- `CommandPalette`
+
+## Features
+
+- Shared Angular UI surface for workspace applications
+- OnPush change detection by default for exported components
+- Simple package boundary for growing shared UI outside the app codebase
+
+## Example
+
+```ts
+import { Component } from '@angular/core';
+import { CommandPalette } from '@ds/components';
+
+@Component({
+  selector: 'app-example',
+  imports: [CommandPalette],
+  template: `<ds-command-palette />`,
+})
+export class ExampleComponent {}
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Development
 
-```bash
-ng generate --help
-```
+Run from the workspace root:
 
-## Building
+- `pnpm exec ng build @ds/components`
+- `pnpm exec ng test @ds/components`
 
-To build the library, run:
+## Related Projects
 
-```bash
-ng build components
-```
-
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
-
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-
-   ```bash
-   cd dist/components
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [workspace](../../README.md)
+- [demo](../../apps/demo/README.md)
+- [core](../core/README.md)

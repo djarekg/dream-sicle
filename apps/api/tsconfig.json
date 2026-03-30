@@ -1,7 +1,6 @@
 {
   "extends": "../../tsconfig.node.json",
   "compilerOptions": {
-    "types": ["vite/client"],
     "paths": {
       "@/*": ["./src/*"],
       "@ds/contracts": ["../../packages/contracts/src/index.ts"],

@@ -1,74 +1,90 @@
 # @ds/utils
 
-Shared utility functions and types for dream-sicle packages and applications.
+Shared utility functions and lightweight types for dream-sicle packages and applications.
 
-This package centralizes common helpers for date/string/number formatting,
-environment checks, object guards, and runtime assertions.
+`@ds/utils` centralizes framework-agnostic helpers for cookies, formatting, environment checks, null and emptiness guards, URLs, validation, and common types.
 
-## Installation
+## What This Package Contains
 
-```bash
-pnpm add @ds/utils
-```
+- Cookie helpers in `src/cookie.ts`
+- Date, number, string, and formatting helpers in `src/date.ts`, `src/number.ts`, `src/string.ts`, and `src/format.ts`
+- Environment guards in `src/environment.ts`
+- Object and nullability guards in `src/object.ts`
+- URL cleanup helpers in `src/url.ts`
+- Debounce and validation helpers in `src/debounce.ts` and `src/validation`
+- Shared types in `src/types`
 
-## Exports
+## Public API
 
-### Date
+### Browser and Runtime Helpers
 
-- `formatDate(date: Date): string`
-
-### Environment
-
+- `deleteCookie`
+- `getCookie`
+- `setCookie`
 - `isBrowser`
-- `isWebWorker`
 - `isServer`
+- `isWebWorker`
 
-### Number
+### Formatting and Value Helpers
 
-- `randomInRange(min: number, max: number): number`
+- `formatDate`
+- `formatPhoneNumber`
+- `format`
+- `randomInRange`
+- `removeTrailingSlash`
 
-### Object and Value Checks
+### Guards and Validation
 
-- `isNullOrUndefined`
-- `isNotNullOrUndefined`
 - `isEmpty`
 - `isNotEmpty`
-
-### String
-
+- `isNullOrUndefined`
+- `isNotNullOrUndefined`
 - `isNullOrEmpty`
-- `format(template, ...args)`
+- `assert`
+- `debounce`
 
 ### Types
 
 - `PlainObject`
 - `TypedEvent`
 
-### Assertions
+## Features
 
-- `assertIsNotEmpty`
-- `assertIsNotNull`
+- Keeps common logic out of app and API feature code
+- Works across browser and server runtimes
+- Small API surface with straightforward utility modules
 
-## Usage
+## Example
 
 ```ts
 import {
   formatDate,
+  formatPhoneNumber,
   isEmpty,
-  randomInRange,
+  removeTrailingSlash,
   type PlainObject,
 } from '@ds/utils';
 
-const payload: PlainObject = { page: 1, q: 'users' };
+const payload: PlainObject = { q: 'users', baseUrl: 'https://example.com/' };
 
 if (!isEmpty(payload.q)) {
-  console.log(formatDate(new Date()), randomInRange(1, 10));
+  console.log(formatDate(new Date()));
+  console.log(formatPhoneNumber('5551234567'));
+  console.log(removeTrailingSlash(String(payload.baseUrl)));
 }
 ```
 
-## Scripts
+## Development
+
+Run from the workspace root:
 
 - `pnpm --filter @ds/utils build`
 - `pnpm --filter @ds/utils dev`
 - `pnpm --filter @ds/utils test`
 - `pnpm --filter @ds/utils check`
+
+## Related Projects
+
+- [workspace](../../README.md)
+- [api](../../apps/api/README.md)
+- [demo](../../apps/demo/README.md)

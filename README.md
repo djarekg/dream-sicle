@@ -1,59 +1,66 @@
-# DreamSicle
+# dream-sicle
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.4.
+dream-sicle is a pnpm workspace that groups the demo Angular application, the internal API, and a small set of shared libraries used across the stack.
 
-## Development server
+The workspace is organized so UI, API, database, and shared contracts can evolve together without duplicating types or utility code.
 
-To start a local development server, run:
+## Workspace Projects
 
-```bash
-ng serve
-```
+### Applications
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- [demo](apps/demo/README.md) - Angular demo application with SSR support, authentication flows, users pages, and shared layout infrastructure.
+- [api](apps/api/README.md) - Internal Node-based API serving auth, users, and search endpoints.
 
-## Code scaffolding
+### Shared Packages
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- [contracts](packages/contracts/README.md) - Shared DTO and request/response contract types.
+- [core](packages/core/README.md) - Angular runtime helpers used by application and component code.
+- [components](packages/components/README.md) - Shared Angular UI components.
+- [db](packages/db/README.md) - Prisma schema, generated client, seed workflow, and database-facing types.
+- [utils](packages/utils/README.md) - Shared framework-agnostic utility functions and lightweight runtime helpers.
 
-```bash
-ng generate component component-name
-```
+## Workspace Layout
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- `apps/` - runnable applications.
+- `packages/` - reusable libraries shared by multiple applications.
+- `docs/` - supporting documentation.
+- `.vscode/` - local editor tasks, launch configs, and MCP settings.
 
-```bash
-ng generate --help
-```
+## Getting Started
 
-## Building
+### Requirements
 
-To build the project run:
+- Node.js `>=22.12.0`
+- `pnpm@10.32.1`
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Install Dependencies
 
 ```bash
-ng test
+pnpm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Start the Demo App
 
 ```bash
-ng e2e
+pnpm run dev
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+This runs the `@ds/demo` application in development mode.
 
-## Additional Resources
+## Common Workspace Commands
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- `pnpm run dev` - start the demo application.
+- `pnpm run lint` - run workspace standards checks.
+- `pnpm run ready` - run formatting, linting, tests, and builds across the workspace.
+- `pnpm run standards:check` - run repository standards validation only.
+
+## How the Projects Fit Together
+
+- `@ds/demo` consumes `@ds/components`, `@ds/core`, `@ds/contracts`, and `@ds/utils`.
+- `@ds/api` consumes `@ds/contracts`, `@ds/db`, and `@ds/utils`.
+- `@ds/db` is the source of truth for schema, generated Prisma types, and seed data.
+- `@ds/contracts` keeps the browser and API aligned on payload shapes without exposing database internals.
+
+## Project Documentation
+
+Each application and package keeps its own README with purpose, contents, public API or feature list, development commands, and examples where that adds value. Use the project links above for implementation-specific details.
