@@ -10,6 +10,11 @@
       matInput
       type="email"
       [formField]="form.email" />
+    @if (form.email().errors().length) {
+      <mat-error>
+        {{ form.email().errors()[0].message }}
+      </mat-error>
+    }
   </mat-form-field>
 
   <mat-form-field>
@@ -21,7 +26,18 @@
     <mat-hint align="end">
       <a href="/unprotected/signup">Don't have an account? Sign up</a>
     </mat-hint>
+    @if (form.password().errors().length) {
+      <mat-error>
+        {{ form.password().errors()[0].message }}
+      </mat-error>
+    }
   </mat-form-field>
+
+  @if (errorMessage()) {
+    <mat-error>
+      {{ errorMessage() }}
+    </mat-error>
+  }
 
   <footer>
     <button

@@ -74,6 +74,9 @@ export class AuthService {
             this.#cookieService.set(
               AUTH_TOKEN_CACHE_KEY,
               JSON.stringify({ token, userId, email, role }),
+              {
+                path: '/',
+              },
             );
             this.#status.set('authenticated');
             this.authenticate();
@@ -102,7 +105,7 @@ export class AuthService {
     >('/auth/signout');
 
     if (success) {
-      this.#cookieService.deleteAll();
+      this.#cookieService.delete(AUTH_TOKEN_CACHE_KEY, '/');
       this.#status.set('unauthenticated');
       this.#router.navigate(['/unprotected/signin']);
     }

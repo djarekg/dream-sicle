@@ -17,7 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AuthService } from '@/core/auth/auth.service';
 import { signinSchema } from '@/features/auth/signin/signin.schema';
 
-const ERROR_MSG_SIGNIN_FAILED = 'Failed to login with email and password';
+const ERROR_MSG_SIGNIN_FAILED = 'Failed to sign in with email and password';
 
 @Component({
   selector: 'app-signin',
@@ -49,6 +49,8 @@ export default class Signin {
           if (!(await this.#service.signin(email, password))) {
             throw new Error('Invalid credentials');
           }
+
+          this.errorMessage.set(null);
         } catch (err) {
           console.error(ERROR_MSG_SIGNIN_FAILED, err);
 
@@ -59,8 +61,6 @@ export default class Signin {
             message: ERROR_MSG_SIGNIN_FAILED,
           });
         }
-
-        this.errorMessage.set(null);
 
         return errors;
       },

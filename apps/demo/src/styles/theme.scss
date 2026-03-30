@@ -8,12 +8,6 @@
 @use './color-palettes' as app-theme;
 
 html {
-  $app-color-primary-dark: map.get(app-theme.$primary-palette, primary, 35);
-  --app-color-primary-dark: #{$app-color-primary-dark};
-
-  $app-color-primary-light: map.get(app-theme.$primary-palette, primary, 70);
-  --app-color-primary-light: #{$app-color-primary-light};
-
   height: 100%;
   // Default the application to a light color theme. This can be changed to
   // `dark` to enable the dark color theme, or to `light dark` to defer to the
@@ -30,6 +24,19 @@ html {
       density: -5,
     )
   );
+
+  $mat-sys-error: map.get(app-theme.$error-palette, error, 50);
+  --mat-sys-error: #{$mat-sys-error};
+
+  $app-color-primary-dark: map.get(app-theme.$primary-palette, primary, 35);
+  --app-color-primary-dark: #{$app-color-primary-dark};
+
+  $app-color-primary-light: map.get(app-theme.$primary-palette, primary, 70);
+  --app-color-primary-light: #{$app-color-primary-light};
+
+  // Override material variables
+  $mat-sys-error: map.get(app-theme.$error-palette, error, 50);
+  --mat-sys-error: #{$mat-sys-error};
 }
 
 body {

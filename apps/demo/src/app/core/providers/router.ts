@@ -23,7 +23,7 @@ export const provideRouting = () =>
       // The default route is protected and uses the protected-layout.
       {
         path: '',
-        canActivate: [authGuard],
+        canActivateChild: [authGuard],
         loadComponent: () =>
           import('@/features/layout/protected-layout/protected-layout.component'),
         loadChildren: () => import('@/routes'),
@@ -44,9 +44,7 @@ export const provideRouting = () =>
       }
       return void 0;
     }),
-    withViewTransitions(),
-    withViewTransitions(
-      /*{
+    withViewTransitions(/*{
     onViewTransitionCreated: ({ transition, to }) => {
       transitionCreated.next();
       const router = inject(Router);

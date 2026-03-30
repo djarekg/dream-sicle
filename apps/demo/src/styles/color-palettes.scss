@@ -102,6 +102,24 @@ $_palettes: (
     99: #fffbff,
     100: #ffffff,
   ),
+  error: (
+    0: #000000,
+    10: #5a0008,
+    20: #8b0013,
+    25: #a20019,
+    30: #b8001f,
+    35: #cc0d26,
+    40: #ff1744,
+    50: #ff5252,
+    60: #ff6e6e,
+    70: #ff8a8a,
+    80: #ffb3b3,
+    90: #ffd6d6,
+    95: #ffe8e8,
+    98: #fff5f5,
+    99: #fffbfb,
+    100: #ffffff,
+  ),
 );
 
 $_rest: (
@@ -113,3 +131,4 @@ $_rest: (
 
 $primary-palette: map.merge(map.get($_palettes, primary), $_rest);
 $tertiary-palette: map.merge(map.get($_palettes, tertiary), $_rest);
+$error-palette: map.merge(map.get($_palettes, error), $_rest);

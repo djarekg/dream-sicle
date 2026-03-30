@@ -5,10 +5,9 @@ import { AuthService } from '@/core/auth/auth.service';
 
 export const authGuard = () => {
   const router = inject(Router);
-  const authService = inject(AuthService);
+  const service = inject(AuthService);
 
-  if (authService.isAuthenticating()) return false;
-  if (authService.isAuthenticated()) return true;
+  if (service.isAuthenticated()) return true;
 
   return router.createUrlTree(['/unprotected/signin']);
 };
