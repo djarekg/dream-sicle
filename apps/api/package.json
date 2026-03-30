@@ -1,0 +1,24 @@
+{
+  "name": "@ds/api",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vp dev",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc",
+    "preview": "vp preview"
+  },
+  "dependencies": {
+    "@ds/contracts": "workspace:*",
+    "@ds/db": "workspace:*",
+    "@ds/utils": "workspace:*",
+    "bcryptjs": "^3.0.3",
+    "jsonwebtoken": "^9.0.3",
+    "typescript": "catalog:"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "catalog:"
+  }
+}

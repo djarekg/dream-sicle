@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.node.json",
+  "compilerOptions": {
+    "types": ["vite/client"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@ds/contracts": ["../../packages/contracts/src/index.ts"],
+      "@ds/db": ["../../packages/db/src/index.ts"],
+      "@ds/http": ["../../packages/http/src/index.ts"],
+      "@ds/utils": ["../../packages/utils/src/index.ts"]
+    }
+  },
+  "include": ["src"]
+}

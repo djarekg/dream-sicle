@@ -1,0 +1,47 @@
+{
+  "name": "@ds/db",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Internal Prisma-powered data package for dream-sicle API development and data-feature testing.",
+  "homepage": "https://github.com/djarekg/dream-sicle#readme",
+  "bugs": {
+    "url": "https://github.com/djarekg/dream-sicle/issues"
+  },
+  "author": "Dustin Griffith <djarekg@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "db:clean": "pnpx rimraf dev.db prisma/migrations",
+    "db:migrate": "pnpx prisma migrate dev --name init",
+    "db:generate": "pnpx prisma generate",
+    "db:seed": "node --env-file=.env.local prisma/seed/seed.ts",
+    "db": "pnpm run db:clean && pnpm run db:generate && pnpm run db:migrate && pnpm run db:seed"
+  },
+  "dependencies": {
+    "@prisma/adapter-libsql": "7.4.2",
+    "@prisma/client": "7.4.2",
+    "@prisma/driver-adapter-utils": "7.4.2",
+    "async-mutex": "^0.5.0",
+    "bcryptjs": "~3.0.3",
+    "js-base64": "^3.7.8",
+    "promise-limit": "^2.7.0",
+    "typescript": "catalog:"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.1.0",
+    "@types/node": "catalog:",
+    "dotenv": "catalog:",
+    "prisma": "7.4.2"
+  },
+  "trustedDependencies": [
+    "@prisma/client",
+    "@prisma/engines",
+    "prisma"
+  ]
+}

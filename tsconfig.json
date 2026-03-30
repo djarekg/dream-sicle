@@ -9,6 +9,9 @@
   "files": [],
   "references": [
     {
+      "path": "./apps/api/tsconfig.json"
+    },
+    {
       "path": "./apps/demo/tsconfig.json"
     },
     {
@@ -25,6 +28,18 @@
     },
     {
       "path": "./packages/components/tsconfig.spec.json"
+    },
+    {
+      "path": "./packages/components/tsconfig.spec.json"
+    },
+    {
+      "path": "./packages/contracts/tsconfig.json"
+    },
+    {
+      "path": "./packages/db/tsconfig.json"
+    },
+    {
+      "path": "./packages/utils/tsconfig.json"
     }
   ]
 }

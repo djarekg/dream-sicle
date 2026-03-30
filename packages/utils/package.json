@@ -1,0 +1,49 @@
+{
+  "name": "@ds/utils",
+  "version": "0.0.1",
+  "description": "Utility functions for dream sicle web component library",
+  "homepage": "https://github.com/griffidi/dream-sicle#readme",
+  "bugs": {
+    "url": "https://github.com/griffidi/dream-sicle/issues"
+  },
+  "author": "Dustin Griffith <djarekg@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "web-components",
+    "custom-elements",
+    "utils"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "default": "./src/index.ts",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp pack",
+    "dev": "vp pack --watch",
+    "test": "vp test",
+    "check": "vp check",
+    "prepublishOnly": "vp run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "happy-dom": "catalog:",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "typescript": "catalog:"
+  }
+}
