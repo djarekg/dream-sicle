@@ -1,4 +1,5 @@
 <app-header (settingsButtonClick)="isOpened.set(true)" />
+
 @defer (when isBrowser) {
   @defer (when displaySearchDialog(); prefetch on idle) {
     @if (displaySearchDialog()) {
@@ -6,10 +7,12 @@
     }
   }
 }
+
 <main>
   <router-outlet />
 </main>
 
 <ds-nav-drawer
+  headline="Settings"
   [opened]="isOpened()"
   (close)="isOpened.set(false)"></ds-nav-drawer>

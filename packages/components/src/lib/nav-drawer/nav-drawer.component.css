@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 aside {
   --_inline-size: var(--ds-nav-drawer-inline-size, 260px);
   --_padding: var(--ds-nav-drawer-padding, 2rem 1rem);
@@ -14,12 +18,8 @@ aside {
   inset-block: 0;
   inset-inline-end: 0;
   padding: var(--_padding);
-  background: var(
-    --ds-nav-drawer-background-color,
-    var(--mat-sys-surface-container)
-  );
+  background: var(--mat-sys-surface);
   box-shadow: var(--mat-sys-level4);
-  /* border-inline-end: 1px solid var(--ds-border-color); */
   border-start-start-radius: var(--mat-sys-corner-extra-large);
   border-end-start-radius: var(--mat-sys-corner-extra-large);
   z-index: 1000;
@@ -47,14 +47,13 @@ aside {
   visibility: hidden;
   display: none;
   overscroll-behavior: contain;
-  background: var(--mat-sys-scrim);
-  background-color: var(--mat-sys-scrim);
+  background: #ffffff;
   opacity: var(--_scrim-opacity);
   transition: opacity 200ms linear 100ms;
   z-index: 999;
 
   &:is([visible]) {
-    --_scrim-opacity: 0.2;
+    --_scrim-opacity: 0.015;
 
     visibility: visible;
     display: block;
