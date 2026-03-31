@@ -10,17 +10,18 @@ import {
   Router,
   RouterOutlet,
 } from '@angular/router';
-import { CommandPalette, NavDrawer } from '@ds/components';
+import { CommandPalette } from '@ds/components';
 import { isBrowser } from '@ds/core';
 import { filter } from 'rxjs';
 
 import { Header } from '@/components/layout/header/header.component';
+import { SettingsNav } from '@/components/settings-nav/settings-nav.component';
 
 const ESCAPE = 'Escape';
 const SEARCH_TRIGGER_KEY = 'k';
 
 @Component({
-  imports: [CommandPalette, Header, NavDrawer, RouterOutlet],
+  imports: [CommandPalette, Header, RouterOutlet, SettingsNav],
   templateUrl: './protected-layout.component.html',
   styleUrl: './protected-layout.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

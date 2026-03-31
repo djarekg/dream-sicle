@@ -12,7 +12,6 @@
   <router-outlet />
 </main>
 
-<ds-nav-drawer
-  headline="Settings"
+<app-settings-nav
   [opened]="isOpened()"
-  (close)="isOpened.set(false)"></ds-nav-drawer>
+  (close)="isOpened.set(false)" />

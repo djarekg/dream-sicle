@@ -1,0 +1,29 @@
+<ds-nav-drawer
+  headline="Settings"
+  [opened]="opened()"
+  (close)="close.emit()">
+  <mat-nav-list>
+    <a
+      mat-list-item
+      routerLinkActive="active"
+      [routerLink]="['/users', userId()]"
+      (click)="close.emit()">
+      <mat-icon matListItemIcon>person</mat-icon>
+      <span
+        matListItemTitle
+        class="list-item-title"
+        >Account</span
+      >
+    </a>
+    <a
+      mat-list-item
+      (click)="onSignOut()">
+      <mat-icon matListItemIcon>logout</mat-icon>
+      <span
+        matListItemTitle
+        class="list-item-title"
+        >Sign out</span
+      >
+    </a>
+  </mat-nav-list>
+</ds-nav-drawer>

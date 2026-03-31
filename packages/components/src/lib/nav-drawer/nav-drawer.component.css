@@ -53,7 +53,7 @@ aside {
   z-index: 999;
 
   &:is([visible]) {
-    --_scrim-opacity: 0.015;
+    --_scrim-opacity: 0.01;
 
     visibility: visible;
     display: block;
