@@ -1,0 +1,16 @@
+<div
+  class="scrim"
+  [attr.visible]="opened() ? '' : null"
+  (click)="onScrimClick()"></div>
+<aside
+  role="dialog"
+  [attr.aria-expanded]="opened() ? 'true' : 'false'"
+  [attr.aria-hidden]="opened() ? 'false' : 'true'"
+  [attr.visible]="opened() ? '' : null">
+  @if (headline()) {
+    <span class="headline">
+      {{ headline() }}
+    </span>
+  }
+  <ng-content></ng-content>
+</aside>

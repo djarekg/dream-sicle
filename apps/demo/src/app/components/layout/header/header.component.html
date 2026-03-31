@@ -26,7 +26,7 @@
   <div class="settings-content">
     <button
       mat-icon-button
-      [routerLink]="['/settings']">
+      (click)="settingsButtonClick.emit()">
       <mat-icon>settings</mat-icon>
     </button>
   </div>

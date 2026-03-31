@@ -1,3 +1,19 @@
+@import url(./styles/theme.css);
 @import url(./styles/variables.css);
 @import url(./styles/layout.css);
 @import url(./styles/components.css);
+
+html {
+  block-size: 100%;
+}
+
+body {
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  /* Reset the user agent margin. */
+  margin: 0;
+  block-size: 100%;
+  line-height: 1.5;
+}

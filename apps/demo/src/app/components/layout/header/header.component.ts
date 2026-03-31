@@ -4,6 +4,7 @@ import {
   Component,
   DestroyRef,
   inject,
+  output,
   signal,
 } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -26,10 +27,14 @@ import { AuthService } from '@/core/auth/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header {
+  #logoHoverResetTimeout: ReturnType<typeof setTimeout> | null = null;
+
   readonly #authService = inject(AuthService);
   readonly #destroyRef = inject(DestroyRef);
-  #logoHoverResetTimeout: ReturnType<typeof setTimeout> | null = null;
+
   protected readonly isLogoHovered = signal(false);
+
+  readonly settingsButtonClick = output<void>();
 
   constructor() {
     this.#destroyRef.onDestroy(() => {

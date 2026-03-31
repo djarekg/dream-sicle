@@ -10,7 +10,7 @@ import {
   Router,
   RouterOutlet,
 } from '@angular/router';
-import { CommandPalette } from '@ds/components';
+import { CommandPalette, NavDrawer } from '@ds/components';
 import { isBrowser } from '@ds/core';
 import { filter } from 'rxjs';
 
@@ -20,7 +20,7 @@ const ESCAPE = 'Escape';
 const SEARCH_TRIGGER_KEY = 'k';
 
 @Component({
-  imports: [CommandPalette, Header, RouterOutlet],
+  imports: [CommandPalette, Header, NavDrawer, RouterOutlet],
   templateUrl: './protected-layout.component.html',
   styleUrl: './protected-layout.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -32,6 +32,7 @@ export default class ProtectedLayout {
   readonly #router = inject(Router);
 
   protected readonly isBrowser = isBrowser();
+  protected readonly isOpened = signal(false);
   protected readonly displaySearchDialog = signal(false);
 
   constructor() {
