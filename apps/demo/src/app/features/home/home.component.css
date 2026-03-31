@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+:host {
+  display: grid;
+  place-content: center;
+  block-size: 100%;
+}
+
+.title {
+  font-size: 3rem;
+  background: var(--app-color-brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

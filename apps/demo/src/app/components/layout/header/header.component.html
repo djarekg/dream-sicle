@@ -1,20 +1,33 @@
 <header>
-  <section class="home-content">
+  <div class="home-content">
+    <a
+      routerLink="/"
+      (mouseenter)="onLogoMouseEnter()"
+      (mouseleave)="onLogoMouseLeave()">
+      <img
+        [ngSrc]="
+          isLogoHovered() ? 'dream-sicle.svg' : 'dream-sicle-outline.svg'
+        "
+        height="48"
+        width="48"
+        alt="Dream Sicle Logo" />
+      dream-sicle
+    </a>
+  </div>
+  <div class="site-menu-content">
     <nav>
-      <a routerLink="/">
-        <img
-          src="dream-sicle.svg"
-          height="36px"
-          width="36px"
-          alt="Dream Sicle Logo" />
-      </a>
       <a
-        routerLink="/users"
+        [routerLink]="['/users']"
         routerLinkActive="active-link"
         >Users</a
       >
     </nav>
-  </section>
-  <section class="site-menu-content"></section>
-  <section class="settings-content"></section>
+  </div>
+  <div class="settings-content">
+    <button
+      mat-icon-button
+      [routerLink]="['/settings']">
+      <mat-icon>settings</mat-icon>
+    </button>
+  </div>
 </header>

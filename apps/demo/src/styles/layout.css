@@ -3,6 +3,7 @@ a {
   color: var(--app-color-primary-low);
 
   &:hover {
+    text-underline-offset: 3px;
     text-decoration: underline;
   }
 }

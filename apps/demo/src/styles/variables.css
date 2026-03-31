@@ -8,6 +8,11 @@
   --app-color-secondary-high: #005c5f;
   --app-color-secondary-low: #00bec4;
   --app-color-secondary-lowest: #54f8ff;
+  --app-color-brand-gradient: linear-gradient(
+    to right bottom,
+    var(--app-color-secondary-low) 35%,
+    var(--app-color-primary-low) 70%
+  );
 
   /* Sizes */
   --app-header-height: 100px;
