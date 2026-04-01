@@ -8,8 +8,8 @@ import { UserDto } from '@ds/contracts';
 @Component({
   selector: 'app-user-list',
   imports: [MatButtonModule, MatCardModule, MatIconModule, RouterLink],
-  templateUrl: './user-list.html',
-  styleUrl: './user-list.css',
+  templateUrl: './user-list.component.html',
+  styleUrl: './user-list.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserList {

@@ -5,7 +5,7 @@ import {
   resource,
 } from '@angular/core';
 
-import { UserList } from '@/features/users/components/user-list/user-list';
+import { UserList } from '@/features/users/components/user-list/user-list.component';
 import { UserService } from '@/features/users/services/user.service';
 
 @Component({

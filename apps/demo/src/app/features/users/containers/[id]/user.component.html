@@ -1,1 +1,7 @@
-<p>user works!</p>
+@defer (when resource.hasValue()) {
+  @if (resource.value(); as user) {
+    <app-user-detail [user]="user" />
+  }
+} @loading (minimum 3s) {
+  <app-spinner />
+}
