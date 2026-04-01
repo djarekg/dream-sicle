@@ -26,6 +26,7 @@ const SEARCH_TRIGGER_KEY = 'k';
   styleUrl: './protected-layout.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
+    class: 'app-scroll-track-transparent',
     '(window:keydown)': 'setSearchDialogVisibilityOnKeyPress($event)',
   },
 })

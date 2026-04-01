@@ -4,6 +4,7 @@
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
+  overflow: hidden auto;
 }
 
 main {
@@ -11,5 +12,4 @@ main {
   block-size: calc(100vh - var(--app-header-height));
   inline-size: 100%;
   padding-inline: 2rem;
-  overflow: hidden auto;
 }
