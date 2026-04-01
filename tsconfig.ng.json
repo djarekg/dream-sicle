@@ -15,7 +15,8 @@
     "importHelpers": true,
     "target": "esnext",
     "module": "preserve",
-    "incremental": true
+    "incremental": true,
+    "rootDir": "./"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
