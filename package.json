@@ -3,13 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "clean": "pnpx rimraf -g pnpm-lock.yaml out-tsc dist node_modules apps/*/node_modules packages/*/node_modules out-tsc .angular",
+    "clean": "pnpx rimraf -g pnpm-lock.yaml .angular out-tsc dist node_modules apps/*/node_modules packages/*/node_modules",
     "setup": "vp install",
     "standards:check": "node scripts/standards-check.mjs",
     "lint": "pnpm run standards:check",
     "ready": "pnpm run standards:check && vp fmt && vp lint && vp run test -r && vp run build -r",
     "dev": "pnpm run --filter demo start"
   },
+  "dependencies": {},
   "devDependencies": {
     "typescript": "catalog:",
     "vite-plus": "catalog:"
@@ -17,8 +18,5 @@
   "engines": {
     "node": ">=22.12.0"
   },
-  "packageManager": "pnpm@10.32.1",
-  "dependencies": {
-    "cli": "link:C:/Users/dusti/AppData/Local/pnpm/global/5/node_modules/@angular/cli"
-  }
+  "packageManager": "pnpm@10.32.1"
 }
