@@ -5,6 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { UserDto } from '@ds/contracts';
 
+import { FormMode } from '@/core/constants/form-mode';
+
 @Component({
   selector: 'app-user-list',
   imports: [MatButtonModule, MatCardModule, MatIconModule, RouterLink],
@@ -14,4 +16,5 @@ import { UserDto } from '@ds/contracts';
 })
 export class UserList {
   readonly users = input.required<UserDto[]>();
+  protected readonly FormMode = FormMode;
 }

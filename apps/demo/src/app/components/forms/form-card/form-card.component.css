@@ -1,0 +1,21 @@
+.mdc-card {
+  --mat-card-filled-container-color: var(--mat-sys-surface-container-low);
+
+  position: relative;
+  padding: 1.5rem;
+}
+
+.mat-mdc-card-subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mat-mdc-card-content {
+  padding: 0;
+  padding-block-start: 1.5rem;
+
+  &:last-child {
+    padding-block-end: 0;
+  }
+}

@@ -1,0 +1,26 @@
+:host {
+  --_padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--_padding);
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  inline-size: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.new {
+  margin-inline-end: auto;
+}

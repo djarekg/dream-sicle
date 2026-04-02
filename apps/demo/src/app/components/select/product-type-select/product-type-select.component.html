@@ -1,0 +1,11 @@
+<mat-form-field>
+  <mat-label>Product types</mat-label>
+  <mat-select
+    [multiple]="multiple()"
+    [value]="value()"
+    (valueChange)="onChange($event)">
+    @for (type of productTypes; track type.value) {
+      <mat-option [value]="type.value">{{ type.key | titlecase }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>

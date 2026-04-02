@@ -13,6 +13,10 @@
     var(--app-color-secondary-low) 35%,
     var(--app-color-primary-low) 70%
   );
+  --app-color-success: #26a69a;
+  --app-color-on-success: var(--mat-sys-on-surface);
+  --app-color-info: #2979ff;
+  --app-color-warning: #ffa726;
 
   /* Sizes */
   --app-header-height: 60px;

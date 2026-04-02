@@ -1,4 +1,4 @@
-import type { Gender } from './gender.ts';
+import type { Gender } from "./gender.ts";
 
 /**
  * Client-safe user shape returned by the API.
@@ -12,7 +12,7 @@ export type UserDto = {
   gender: Gender;
   email: string;
   streetAddress: string;
-  streetAddress2: string | null;
+  streetAddress2: string;
   city: string;
   stateId: string;
   zip: string;
@@ -21,5 +21,5 @@ export type UserDto = {
   imageId: number;
   isActive: boolean;
   dateCreated: string;
-  dateUpdated: string | null;
+  dateUpdated: string;
 };

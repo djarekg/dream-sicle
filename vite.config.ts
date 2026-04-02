@@ -106,7 +106,7 @@ export default defineConfig({
   },
   fmt: {
     ignorePatterns: ['**/dist/**', '**/node_modules/**', '**/generated/**'],
-    printWidth: 80,
+    printinline-size: 80,
     arrowParens: 'avoid',
     bracketSameLine: true,
     bracketSpacing: true,
@@ -116,7 +116,7 @@ export default defineConfig({
     singleAttributePerLine: true,
     trailingComma: 'all',
     useTabs: false,
-    tabWidth: 2,
+    tabinline-size: 2,
     embeddedLanguageFormatting: 'auto',
     experimentalSortImports: {
       groups: [

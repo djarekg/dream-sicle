@@ -1,9 +1,43 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 html {
   @include mat.theme(
     (
       density: -5,
+    )
+  );
+
+  @include mat.slide-toggle-overrides(
+    (
+      track-height: 22px,
+      with-icon-handle-size: 16px,
+      unselected-icon-size: 12px,
+      selected-icon-size: 12px,
+      pressed-handle-size: 18px,
+      track-width: 43px,
+      track-outline-width: 2px,
+      state-layer-size: 30px,
+      // handle-height: 3px,
+      // touch-target-size: 10px,
+      selected-handle-size: 2px,
+      disabled-label-text-color: white,
+      disabled-selected-handle-color: color-mix(in srgb, var(--app-color-success) 20%, transparent),
+      disabled-unselected-handle-color: color-mix(in srgb, var(--mat-sys-error) 20%, transparent),
+      selected-icon-color: white,
+      selected-handle-color: var(--app-color-primary),
+      selected-hover-handle-color: var(--app-color-primary),
+      selected-pressed-handle-color: var(--app-color-primary),
+      selected-focus-handle-color: var(--app-color-primary),
+      selected-track-color: var(--mat-sys-surface-bright),
+      selected-focus-track-color: var(--mat-sys-surface-bright),
+      selected-hover-track-color: var(--mat-sys-surface-bright),
+      selected-pressed-track-color: var(--mat-sys-surface-bright),
+      unselected-icon-color: white,
+      // unselected-handle-color: $app-color-error-light,
+      // unselected-hover-handle-color: $app-color-error-light,
+      // unselected-pressed-handle-color: $app-color-error-light,
+      // unselected-focus-handle-color: $app-color-error-light,
+      unselected-track-color: var(--mat-sys-surface-bright),
     )
   );
 }

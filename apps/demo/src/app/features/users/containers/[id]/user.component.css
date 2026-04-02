@@ -1,4 +1,11 @@
 :host {
   display: block;
   block-size: 100%;
+  padding: 1rem;
+}
+
+app-user-detail {
+  display: block;
+  inline-size: 70%;
+  margin-inline: auto;
 }

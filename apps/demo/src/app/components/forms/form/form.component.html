@@ -1,0 +1,33 @@
+<form>
+  <ng-content />
+</form>
+
+<footer>
+  @if (isEditing()) {
+  <button matButton="outlined"
+          color="primary"
+          (click)="onCancel()">
+    Cancel
+  </button>
+  <button matButton="outlined"
+          color="primary"
+          (click)="onSave($event)">
+    Save
+  </button>
+  }
+  @else if (isNew()) {
+  <button class="new"
+          matButton="filled"
+          color="primary"
+          (click)="onNew()">
+    New
+  </button>
+  }
+  @else {
+  <button matButton="outlined"
+          color="primary"
+          (click)="onEdit()">
+    Edit
+  </button>
+  }
+</footer>

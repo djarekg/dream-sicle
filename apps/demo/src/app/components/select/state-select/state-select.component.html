@@ -1,0 +1,14 @@
+<div class="app-state-select-container"
+     [formGroup]="parts!"
+     [attr.aria-labelledby]="_formField?.getLabelId()"
+     (focusin)="onFocusIn()"
+     (focusout)="onFocusOut($event)">
+  <mat-select #stateId
+              formControlName="stateId"
+              aria-label="State"
+              (selectionChange)="handleSelectionChange($event)">
+    @for (state of statesResource.value(); track state.id) {
+    <mat-option [value]="state.id">{{ state.name }}</mat-option>
+    }
+  </mat-select>
+</div>
