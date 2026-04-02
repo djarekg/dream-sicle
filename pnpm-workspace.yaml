@@ -3,8 +3,8 @@ packages:
   - packages/*
 
 allowBuilds:
-  '@parcel/watcher': true
-  '@prisma/engines': true
+  "@parcel/watcher": true
+  "@prisma/engines": true
   bcryptjs: true
   esbuild: true
   lmdb: true
@@ -12,20 +12,20 @@ allowBuilds:
   prisma: true
 
 catalog:
-  '@angular/build': ^21.2.5
-  '@angular/cdk': ^21.2.4
-  '@angular/cli': ^21.2.4
-  '@angular/common': ^21.2.0
-  '@angular/compiler': ^21.2.0
-  '@angular/compiler-cli': ^21.2.0
-  '@angular/core': ^21.2.0
-  '@angular/forms': ^21.2.0
-  '@angular/material': ^21.2.4
-  '@angular/platform-browser': ^21.2.0
-  '@angular/platform-server': ^21.2.0
-  '@angular/router': ^21.2.0
-  '@angular/ssr': ^21.2.5
-  '@types/node': latest
+  "@angular/build": ^21.2.5
+  "@angular/cdk": ^21.2.4
+  "@angular/cli": ^21.2.4
+  "@angular/common": ^21.2.0
+  "@angular/compiler": ^21.2.0
+  "@angular/compiler-cli": ^21.2.0
+  "@angular/core": ^21.2.0
+  "@angular/forms": ^21.2.0
+  "@angular/material": ^21.2.4
+  "@angular/platform-browser": ^21.2.0
+  "@angular/platform-server": ^21.2.0
+  "@angular/router": ^21.2.0
+  "@angular/ssr": ^21.2.5
+  "@types/node": latest
   dotenv: ^17.3.1
   happy-dom: ~20.8.4
   ng-packagr: ^21.2.0
@@ -38,15 +38,15 @@ catalog:
 
 catalogMode: prefer
 overrides:
-  typescript: 'catalog:'
-  vite: 'catalog:'
-  vitest: 'catalog:'
+  typescript: "catalog:"
+  vite: "catalog:"
+  vitest: "catalog:"
 peerDependencyRules:
   allowAny:
     - typescript
     - vite
     - vitest
   allowedVersions:
-    typescript: '*'
-    vite: '*'
-    vitest: '*'
+    typescript: "*"
+    vite: "*"
+    vitest: "*"
