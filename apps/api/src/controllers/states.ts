@@ -1,6 +1,6 @@
-import type { StateDto } from "@ds/contracts";
+import type { StateDto } from '@ds/contracts';
 
-import prisma from "@/db.ts";
+import prisma from '@/db.ts';
 
 /**
  * Get all states.

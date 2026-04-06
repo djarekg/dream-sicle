@@ -22,9 +22,9 @@
   ],
   "exports": {
     ".": {
+      "default": "./src/index.ts",
       "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts",
-      "default": "./src/index.ts"
+      "types": "./dist/index.d.ts"
     },
     "./package.json": "./package.json"
   },

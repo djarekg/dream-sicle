@@ -91,13 +91,13 @@
           <mat-error>{{ form.city().errors()[0].message }}</mat-error>
         }
       </mat-form-field>
-      <!-- <mat-form-field class="state">
+      <mat-form-field class="state">
         <mat-label>State</mat-label>
         <app-state-select [formField]="form.stateId" />
         @if (form.stateId().errors().length) {
           <mat-error>{{ form.stateId().errors()[0].message }}</mat-error>
         }
-      </mat-form-field> -->
+      </mat-form-field>
       <mat-form-field class="zip">
         <mat-label>Zip</mat-label>
         <input
