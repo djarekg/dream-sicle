@@ -1,7 +1,7 @@
 /**
  * Shared product type values exposed by API contracts.
  */
-export const ProductTypes = [
+export const ProductType = [
   "DRESS",
   "HAT",
   "HOODIE",
@@ -18,4 +18,4 @@ export const ProductTypes = [
 /**
  * Union type for supported product type values.
  */
-export type ProductType = (typeof ProductTypes)[number];
+export type ProductType = (typeof ProductType)[number];

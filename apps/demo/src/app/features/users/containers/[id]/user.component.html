@@ -1,7 +1,14 @@
 @defer (when resource.hasValue()) {
-  @if (resource.value(); as user) {
-    <app-user-detail [user]="user" />
+  @if (resource.value()) {
+    <app-user-detail
+      [mode]="mode()"
+      [user]="resource.value()!"
+      (new)="onNew()"
+      (edit)="onEdit()"
+      (cancel)="onCancel()"
+      (save)="onSave($event)"
+    />
   }
-} @loading (minimum 3s) {
+} @loading (minimum 2s) {
   <app-spinner />
 }

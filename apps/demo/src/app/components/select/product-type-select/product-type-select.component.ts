@@ -1,7 +1,7 @@
 import { coerceBooleanProperty } from "@angular/cdk/coercion";
 import { TitleCasePipe } from "@angular/common";
 import { ChangeDetectionStrategy, Component, input, model } from "@angular/core";
-import { FormValueControl, ValidationError, WithOptionalField } from "@angular/forms/signals";
+import { FormValueControl, ValidationError, WithOptionalFieldTree } from "@angular/forms/signals";
 import { MatSelectModule } from "@angular/material/select";
 import { ProductType } from "@ds/contracts";
 
@@ -16,7 +16,7 @@ export type ProductTypeSelectType = ProductType | ProductType[] | null;
 })
 export class ProductTypeSelect implements FormValueControl<ProductTypeSelectType> {
   readonly value = model<ProductTypeSelectType>(null);
-  readonly errors = input<readonly WithOptionalField<ValidationError>[]>([]);
+  readonly errors = input<readonly WithOptionalFieldTree<ValidationError>[]>([]);
   readonly multiple = input(false, { transform: (value) => coerceBooleanProperty(value) });
 
   protected readonly productTypes = Object.keys(ProductType).map((key) => {

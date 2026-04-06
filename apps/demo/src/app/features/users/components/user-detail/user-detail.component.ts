@@ -15,7 +15,7 @@ import { UserDto } from "@ds/contracts";
 
 import { FormCard } from "@/components/forms/form-card/form-card.component";
 import { Form } from "@/components/forms/form/form.component";
-import { StateSelect } from "@/components/select";
+import { GenderSelect, StateSelect } from "@/components/select";
 import { FormMode } from "@/core/constants/form-mode";
 import { userSchema } from "@/features/users/forms";
 import type { UserFormModel } from "@/features/users/forms/user-form.model";
@@ -26,6 +26,7 @@ import type { UserFormModel } from "@/features/users/forms/user-form.model";
     Form,
     FormCard,
     FormField,
+    GenderSelect,
     MatFormFieldModule,
     MatInputModule,
     MatSlideToggleModule,

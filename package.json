@@ -10,7 +10,6 @@
     "ready": "pnpm run standards:check && vp fmt && vp lint && vp run test -r && vp run build -r",
     "dev": "pnpm run --filter demo start"
   },
-  "dependencies": {},
   "devDependencies": {
     "typescript": "catalog:",
     "vite-plus": "catalog:"

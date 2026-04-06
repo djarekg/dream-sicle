@@ -142,6 +142,7 @@
 
     "cSpell.words": [
       "bcryptjs",
+      "describedby",
       "dotenv",
       "esbuild",
       "evenodd",
@@ -155,6 +156,7 @@
       "packagr",
       "PERFERNOTTOSAY",
       "sicle",
+      "titlecase",
       "typescale",
       "vite",
       "vitest",

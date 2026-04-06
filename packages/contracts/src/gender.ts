@@ -1,9 +1,9 @@
 /**
  * Shared gender values exposed by API contracts.
  */
-export const Genders = ['MALE', 'FEMALE', 'PERFERNOTTOSAY'] as const;
+export const Gender = ["MALE", "FEMALE", "PERFERNOTTOSAY"] as const;
 
 /**
  * Union type for supported gender values.
  */
-export type Gender = (typeof Genders)[number];
+export type Gender = (typeof Gender)[number];

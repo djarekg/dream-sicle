@@ -37,7 +37,6 @@
     "check": "vp check",
     "prepublishOnly": "vp run build"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/node": "catalog:",
     "happy-dom": "catalog:",

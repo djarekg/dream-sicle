@@ -24,9 +24,9 @@
     "db": "pnpm run db:clean && pnpm run db:generate && pnpm run db:migrate && pnpm run db:seed"
   },
   "dependencies": {
-    "@prisma/adapter-libsql": "7.4.2",
-    "@prisma/client": "7.4.2",
-    "@prisma/driver-adapter-utils": "7.4.2",
+    "@prisma/adapter-libsql": "catalog:",
+    "@prisma/client": "catalog:",
+    "@prisma/driver-adapter-utils": "catalog:",
     "async-mutex": "^0.5.0",
     "bcryptjs": "~3.0.3",
     "js-base64": "^3.7.8",
@@ -37,7 +37,7 @@
     "@faker-js/faker": "^10.1.0",
     "@types/node": "catalog:",
     "dotenv": "catalog:",
-    "prisma": "7.4.2"
+    "prisma": "catalog:"
   },
   "trustedDependencies": [
     "@prisma/client",

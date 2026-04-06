@@ -1,17 +1,15 @@
-import { createServer } from 'node:http';
-import { basename } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { createServer } from "node:http";
+import { basename } from "node:path";
+import { fileURLToPath } from "node:url";
 
-import { PORT } from './config.ts';
-import { authRoutes } from './routes/auth.ts';
-import { searchRoutes } from './routes/search.ts';
-import { userRoutes } from './routes/user.ts';
-import { createCorsPreflightResponse, getCorsHeaders } from './utils/cors.ts';
-import {
-  sendFetchResponse,
-  toFetchRequest,
-} from './utils/node-http-adapter.ts';
-import { setRequestParams } from './utils/params.ts';
+import { PORT } from "./config.ts";
+import { authRoutes } from "./routes/auth.ts";
+import { searchRoutes } from "./routes/search.ts";
+import { stateRoutes } from "./routes/state.ts";
+import { userRoutes } from "./routes/user.ts";
+import { createCorsPreflightResponse, getCorsHeaders } from "./utils/cors.ts";
+import { sendFetchResponse, toFetchRequest } from "./utils/node-http-adapter.ts";
+import { setRequestParams } from "./utils/params.ts";
 
 type RouteHandler = (request: Request, context: unknown) => Promise<Response>;
 
@@ -25,35 +23,33 @@ const routeHandlers: Record<string, RouteHandler> = {
   ...authRoutes,
   ...userRoutes,
   ...searchRoutes,
+  ...stateRoutes,
 };
 
-const apiPathPrefixes = ['/auth', '/users', '/search'];
+const apiPathPrefixes = ["/auth", "/users", "/search", "/states"];
 
 const escapeRegex = (value: string): string => {
-  return value.replace(/[.*+?^${}()|[\\]\\]/g, '\\$&');
+  return value.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&");
 };
 
-const compileRoute = (
-  routePath: string,
-  handler: RouteHandler,
-): CompiledRoute => {
+const compileRoute = (routePath: string, handler: RouteHandler): CompiledRoute => {
   const paramNames: string[] = [];
 
   const pattern = routePath
-    .split('/')
-    .map(segment => {
+    .split("/")
+    .map((segment) => {
       if (!segment) {
-        return '';
+        return "";
       }
 
-      if (segment.startsWith(':')) {
+      if (segment.startsWith(":")) {
         paramNames.push(segment.slice(1));
-        return '([^/]+)';
+        return "([^/]+)";
       }
 
       return escapeRegex(segment);
     })
-    .join('/');
+    .join("/");
 
   return {
     regex: new RegExp(`^${pattern}$`),
@@ -62,8 +58,8 @@ const compileRoute = (
   };
 };
 
-const compiledRoutes: CompiledRoute[] = Object.entries(routeHandlers).map(
-  ([routePath, handler]) => compileRoute(routePath, handler),
+const compiledRoutes: CompiledRoute[] = Object.entries(routeHandlers).map(([routePath, handler]) =>
+  compileRoute(routePath, handler),
 );
 
 const findRoute = (pathname: string) => {
@@ -74,14 +70,11 @@ const findRoute = (pathname: string) => {
       continue;
     }
 
-    const params = route.paramNames.reduce<Record<string, string>>(
-      (acc, paramName, index) => {
-        const value = match[index + 1] ?? '';
-        acc[paramName] = decodeURIComponent(value);
-        return acc;
-      },
-      {},
-    );
+    const params = route.paramNames.reduce<Record<string, string>>((acc, paramName, index) => {
+      const value = match[index + 1] ?? "";
+      acc[paramName] = decodeURIComponent(value);
+      return acc;
+    }, {});
 
     return { handler: route.handler, params };
   }
@@ -90,10 +83,10 @@ const findRoute = (pathname: string) => {
 };
 
 const createNotFoundResponse = (): Response => {
-  return new Response(JSON.stringify({ error: 'Not found' }), {
+  return new Response(JSON.stringify({ error: "Not found" }), {
     status: 404,
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       ...getCorsHeaders(),
     },
   });
@@ -108,7 +101,7 @@ const createNotFoundResponse = (): Response => {
 export const handleApiRequest = async (request: Request): Promise<Response> => {
   const { pathname } = new URL(request.url);
 
-  if (request.method === 'OPTIONS') {
+  if (request.method === "OPTIONS") {
     return createCorsPreflightResponse();
   }
 
@@ -130,9 +123,7 @@ export const handleApiRequest = async (request: Request): Promise<Response> => {
  * @returns {boolean} Whether this request should be handled by API middleware.
  */
 export const isApiPath = (pathname: string): boolean => {
-  return apiPathPrefixes.some(
-    prefix => pathname === prefix || pathname.startsWith(`${prefix}/`),
-  );
+  return apiPathPrefixes.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
 };
 
 /**
