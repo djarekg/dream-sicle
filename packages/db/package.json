@@ -17,11 +17,12 @@
     }
   },
   "scripts": {
-    "db:clean": "pnpx rimraf dev.db prisma/migrations",
-    "db:migrate": "pnpx prisma migrate dev --name init",
-    "db:generate": "pnpx prisma generate",
-    "db:seed": "node --env-file=.env.local prisma/seed/seed.ts",
-    "db": "pnpm run db:clean && pnpm run db:generate && pnpm run db:migrate && pnpm run db:seed"
+    "clean": "bunx rimraf node_modules dist",
+    "db:clean": "bunx rimraf dev.db prisma/migrations",
+    "db:migrate": "bunx prisma migrate dev --name init",
+    "db:generate": "bunx prisma generate",
+    "db:seed": "bun prisma/seed/seed.ts",
+    "db": "bun run db:clean && bun run db:generate && bun run db:migrate && bun run db:seed"
   },
   "dependencies": {
     "@prisma/adapter-libsql": "catalog:",
@@ -35,7 +36,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^10.1.0",
-    "@types/node": "catalog:",
+    "@types/bun": "catalog:",
     "dotenv": "catalog:",
     "prisma": "catalog:"
   },

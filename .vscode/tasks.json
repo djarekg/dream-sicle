@@ -3,11 +3,12 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "npm",
+      "label": "bun: start",
+      "type": "shell",
       "options": {
         "cwd": "${workspaceFolder}/apps/demo"
       },
-      "script": "start",
+      "command": "bun run start",
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",
@@ -24,11 +25,12 @@
       }
     },
     {
-      "type": "npm",
+      "label": "bun: test",
+      "type": "shell",
       "options": {
         "cwd": "${workspaceFolder}/apps/demo"
       },
-      "script": "test",
+      "command": "bun run test",
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",

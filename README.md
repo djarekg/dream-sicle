@@ -1,6 +1,6 @@
 # dream-sicle
 
-dream-sicle is a pnpm workspace that groups the demo Angular application, the internal API, and a small set of shared libraries used across the stack.
+dream-sicle is a bun workspace that groups the demo Angular application, the internal API, and a small set of shared libraries used across the stack.
 
 The workspace is organized so UI, API, database, and shared contracts can evolve together without duplicating types or utility code.
 
@@ -31,28 +31,28 @@ The workspace is organized so UI, API, database, and shared contracts can evolve
 ### Requirements
 
 - Node.js `>=22.12.0`
-- `pnpm@10.32.1`
+- `bun@10.32.1`
 
 ### Install Dependencies
 
 ```bash
-pnpm install
+bun install
 ```
 
 ### Start the Demo App
 
 ```bash
-pnpm run dev
+bun run dev
 ```
 
 This runs the `@ds/demo` application in development mode.
 
 ## Common Workspace Commands
 
-- `pnpm run dev` - start the demo application.
-- `pnpm run lint` - run workspace standards checks.
-- `pnpm run ready` - run formatting, linting, tests, and builds across the workspace.
-- `pnpm run standards:check` - run repository standards validation only.
+- `bun run dev` - start the demo application.
+- `bun run lint` - run workspace standards checks.
+- `bun run ready` - run formatting, linting, tests, and builds across the workspace.
+- `bun run standards:check` - run repository standards validation only.
 
 ## How the Projects Fit Together
 

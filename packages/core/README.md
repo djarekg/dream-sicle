@@ -44,8 +44,8 @@ export class ExampleComponent {
 
 Run from the workspace root:
 
-- `pnpm exec ng build @ds/core`
-- `pnpm exec ng test @ds/core`
+- `bun exec ng build @ds/core`
+- `bun exec ng test @ds/core`
 
 ## Related Projects
 

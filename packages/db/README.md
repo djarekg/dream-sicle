@@ -44,7 +44,7 @@ DATABASE_URL="file:./dev.db"
 Then run the full database workflow from `packages/db`:
 
 ```bash
-pnpm run db
+bun run db
 ```
 
 That workflow will:
@@ -56,11 +56,11 @@ That workflow will:
 
 ## Scripts
 
-- `pnpm run db:clean` - remove `dev.db` and local migrations
-- `pnpm run db:generate` - generate Prisma client code
-- `pnpm run db:migrate` - run `prisma migrate dev --name init`
-- `pnpm run db:seed` - run the seed entry point with `.env.local`
-- `pnpm run db` - run the full local reset, generate, migrate, and seed flow
+- `bun run db:clean` - remove `dev.db` and local migrations
+- `bun run db:generate` - generate Prisma client code
+- `bun run db:migrate` - run `prisma migrate dev --name init`
+- `bun run db:seed` - run the seed entry point with `.env.local`
+- `bun run db` - run the full local reset, generate, migrate, and seed flow
 
 ## Example
 

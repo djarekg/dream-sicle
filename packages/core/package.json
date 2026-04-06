@@ -1,6 +1,9 @@
 {
   "name": "@ds/core",
   "version": "0.0.1",
+  "scripts": {
+    "clean": "bunx rimraf node_modules dist"
+  },
   "peerDependencies": {
     "@angular/common": "catalog:",
     "@angular/core": "catalog:"

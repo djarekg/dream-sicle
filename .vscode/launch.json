@@ -2,39 +2,22 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-    // API server debug flow: launch the Vite SSR process with a fixed inspector port,
-    // then attach a standard Node debugger for reliable server-side breakpoints.
     {
       "name": "api: launch",
       "type": "node-terminal",
       "request": "launch",
       "cwd": "${workspaceFolder}/apps/api",
-      "command": "node --inspect=9230 --enable-source-maps ../../node_modules/vite-plus/dist/bin.js dev",
-      "env": {
-        "DATABASE_URL": "file:${workspaceFolder}/packages/db/dev.db"
-      }
-    },
-    {
-      "name": "api: attach",
-      "type": "node",
-      "request": "attach",
-      "port": 9230,
-      "restart": true,
-      "cwd": "${workspaceFolder}/apps/api",
+      "command": "bun run dev",
       "skipFiles": ["**/<node_internals>/**"],
       "sourceMaps": true,
       "smartStep": true,
-      "sourceMapPathOverrides": {
-        "/@fs/*/apps/api/src/*": "${workspaceFolder}/apps/api/src/*",
-        "/@fs/*/packages/*/src/*": "${workspaceFolder}/packages/*/src/*",
-        "/src/*": "${workspaceFolder}/apps/api/src/*"
-      }
+      "internalConsoleOptions": "openOnSessionStart"
     },
     {
       "name": "ng: serve",
       "type": "msedge",
       "request": "launch",
-      "preLaunchTask": "npm: start",
+      "preLaunchTask": "bun: start",
       "url": "http://localhost:4200/"
     },
     {
@@ -48,7 +31,7 @@
   "compounds": [
     {
       "name": "debug: api + ng",
-      "configurations": ["api: launch", "api: attach", "ng: serve"],
+      "configurations": ["api: launch", "ng: serve"],
       "stopAll": true,
       "presentation": {
         "hidden": false,

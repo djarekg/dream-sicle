@@ -2,7 +2,7 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "pnpm",
+    "packageManager": "bun",
     "analytics": false
   },
   "newProjectRoot": "packages",
@@ -25,10 +25,7 @@
                 "input": "apps/demo/public"
               }
             ],
-            "styles": [
-              "apps/demo/src/styles/theme.scss",
-              "apps/demo/src/styles.css"
-            ],
+            "styles": ["apps/demo/src/styles/theme.scss", "apps/demo/src/styles.css"],
             "server": "apps/demo/src/main.server.ts",
             "outputMode": "server",
             "security": {

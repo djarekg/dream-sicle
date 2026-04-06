@@ -59,14 +59,14 @@ If no route matches, the server returns a `404` JSON response and still applies 
 Run from the workspace root:
 
 ```bash
-pnpm --filter @ds/api dev
+bun --filter @ds/api dev
 ```
 
 Useful scripts:
 
-- `pnpm --filter @ds/api typecheck`
-- `pnpm --filter @ds/api build`
-- `pnpm --filter @ds/api preview`
+- `bun --filter @ds/api typecheck`
+- `bun --filter @ds/api build`
+- `bun --filter @ds/api preview`
 
 ## Example Requests
 

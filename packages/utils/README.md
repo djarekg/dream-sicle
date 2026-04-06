@@ -78,10 +78,10 @@ if (!isEmpty(payload.q)) {
 
 Run from the workspace root:
 
-- `pnpm --filter @ds/utils build`
-- `pnpm --filter @ds/utils dev`
-- `pnpm --filter @ds/utils test`
-- `pnpm --filter @ds/utils check`
+- `bun --filter @ds/utils build`
+- `bun --filter @ds/utils dev`
+- `bun --filter @ds/utils test`
+- `bun --filter @ds/utils check`
 
 ## Related Projects
 

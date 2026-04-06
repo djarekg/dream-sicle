@@ -4,21 +4,21 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vp dev",
+    "clean": "bunx rimraf node_modules dist",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc",
-    "preview": "vp preview"
+    "dev": "bun run --watch --no-check --env-file ../../packages/db/.env.local --env-file .env.local src/server.ts"
   },
   "dependencies": {
     "@ds/contracts": "workspace:*",
     "@ds/db": "workspace:*",
     "@ds/utils": "workspace:*",
     "bcryptjs": "^3.0.3",
-    "jsonwebtoken": "^9.0.3",
-    "typescript": "catalog:"
+    "jsonwebtoken": "^9.0.3"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "catalog:"
+    "@types/bun": "catalog:",
+    "typescript": "catalog:"
   }
 }

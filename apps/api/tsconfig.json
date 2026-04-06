@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.node.json",
   "compilerOptions": {
+    "types": ["bun"],
     "paths": {
       "@/*": ["./src/*"],
       "@ds/contracts": ["../../packages/contracts/src/index.ts"],

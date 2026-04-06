@@ -38,8 +38,8 @@ export class ExampleComponent {}
 
 Run from the workspace root:
 
-- `pnpm exec ng build @ds/components`
-- `pnpm exec ng test @ds/components`
+- `bun exec ng build @ds/components`
+- `bun exec ng test @ds/components`
 
 ## Related Projects
 

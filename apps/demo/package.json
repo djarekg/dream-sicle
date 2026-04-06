@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "clean": "bunx rimraf node_modules dist",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

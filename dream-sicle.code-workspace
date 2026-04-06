@@ -18,14 +18,22 @@
     },
   ],
   "settings": {
+    "bun.runtime": "${userHome}\\.bun\\bin\\bun",
+    "bun.debugTerminal.enabled": true,
+    "bun.debugTerminal.stopOnEntry": false,
+    // Glob pattern to find test files. Defaults to the value shown below.
+    "bun.test.filePattern": "**/*{.test.,.spec.,_test_,_spec_}{js,ts,tsx,jsx,mts,cts,cjs,mjs}",
+    // "bun.test.filePattern": "*.test.{js,jsx,ts,tsx}",
+    // The custom script to call for testing instead of `bun test`
+    "bun.test.customScript": "bunx --bun vitest",
+    "npm.packageManager": "bun",
+
     // Angular settings
     "angular.forceStrictTemplates": true,
     "angular.suggest.includeCompletionsWithSnippetText": true,
 
     "oxc.typeAware": true,
     "oxc.configPath": "${workspaceFolder:root}/vite.config.ts",
-
-    "npm.packageManager": "pnpm",
 
     // Maximum number of requests for the chat agent - Prevents AI agents from stopping mid-session
     "chat.agent.maxRequests": 999,
@@ -121,7 +129,7 @@
       "**/node_modules": true,
       "**/dist": true,
       "**/prisma/generated": true,
-      "pnpm-lock.yaml": true,
+      "bun.lock": true,
       ".history": true,
     },
 
@@ -137,7 +145,7 @@
       "*.ts": "${capture}.js",
       "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
       "tsconfig.json": "tsconfig.*.json",
-      "package.json": "pnpm-lock.yaml",
+      "package.json": "bun.lock",
     },
 
     "cSpell.words": [

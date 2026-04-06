@@ -12,7 +12,6 @@ export const apiInterceptor: HttpInterceptorFn = (req, next) => {
     req = req.clone({
       url: `${apiUrl}${req.url}`,
       mode: 'cors',
-      setHeaders: { 'Access-Control-Allow-Origin': 'true' },
     });
   }
 

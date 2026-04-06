@@ -31,12 +31,7 @@ Shared API request and response contracts for dream-sicle applications.
 ## Example
 
 ```ts
-import {
-  Genders,
-  SearchResultTypes,
-  type SearchResultParams,
-  type UserDto,
-} from '@ds/contracts';
+import { Genders, SearchResultTypes, type SearchResultParams, type UserDto } from '@ds/contracts';
 
 const query: SearchResultParams = {
   query: 'john',
@@ -55,10 +50,10 @@ console.log(SearchResultTypes.user, query, renderUser);
 
 Run from the workspace root:
 
-- `pnpm --filter @ds/contracts build`
-- `pnpm --filter @ds/contracts dev`
-- `pnpm --filter @ds/contracts test`
-- `pnpm --filter @ds/contracts check`
+- `bun --filter @ds/contracts build`
+- `bun --filter @ds/contracts dev`
+- `bun --filter @ds/contracts test`
+- `bun --filter @ds/contracts check`
 
 ## Related Projects
 

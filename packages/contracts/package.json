@@ -32,6 +32,7 @@
     "access": "public"
   },
   "scripts": {
+    "clean": "bunx rimraf node_modules dist",
     "build": "vp pack",
     "dev": "vp pack --watch",
     "test": "vp test",
@@ -39,7 +40,7 @@
     "prepublishOnly": "vp run build"
   },
   "devDependencies": {
-    "@types/node": "catalog:",
+    "@types/bun": "catalog:",
     "happy-dom": "catalog:",
     "vitest": "catalog:"
   },

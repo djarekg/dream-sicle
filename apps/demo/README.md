@@ -39,22 +39,22 @@ Angular demo application for the dream-sicle workspace.
 Run from the workspace root:
 
 ```bash
-pnpm --filter @ds/demo start
+bun --filter @ds/demo start
 ```
 
 Useful scripts:
 
-- `pnpm --filter @ds/demo build`
-- `pnpm --filter @ds/demo watch`
-- `pnpm --filter @ds/demo test`
-- `pnpm --filter @ds/demo serve:ssr:demo`
+- `bun --filter @ds/demo build`
+- `bun --filter @ds/demo watch`
+- `bun --filter @ds/demo test`
+- `bun --filter @ds/demo serve:ssr:demo`
 
 ## Example Workflow
 
 Start the app locally and open the users area:
 
 ```bash
-pnpm --filter @ds/demo start
+bun --filter @ds/demo start
 ```
 
 Then navigate to `http://localhost:4200/users` to exercise the routed users feature.

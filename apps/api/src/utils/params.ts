@@ -6,10 +6,7 @@ const requestParams = new WeakMap<Request, Record<string, string>>();
  * @param request (Request) - Request object to associate params with.
  * @param params (Record<string, string>) - Route params extracted from path matching.
  */
-export const setRequestParams = (
-  request: Request,
-  params: Record<string, string>,
-) => {
+export const setRequestParams = (request: Request, params: Record<string, string>) => {
   requestParams.set(request, params);
 };
 
@@ -20,5 +17,6 @@ export const setRequestParams = (
  * @returns {T} Parsed params object.
  */
 export const parseParams = <T>(request: Request): T => {
-  return (requestParams.get(request) as T | undefined) ?? ({} as T);
+  const { params } = request as unknown as { params: T };
+  return params;
 };
