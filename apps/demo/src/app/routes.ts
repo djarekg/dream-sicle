@@ -11,8 +11,12 @@ export default [
     title: 'Users',
     loadChildren: () => import('@/features/users/routes'),
   },
+  {
+    path: 'products',
+    title: 'Products',
+    loadChildren: () => import('@/features/products/routes'),
+  },
   // {
-  //   path: 'customers',
   //   title: 'Customers',
   //   loadChildren: () => import('@/features/customers/routes'),
   // },

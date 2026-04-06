@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+
+.description {
+  margin-block: 1rem;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.details dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1.5rem;
+  margin-block-start: 1rem;
+}
+
+dt {
+  font-weight: 500;
+  color: var(--mat-sys-outline);
+  font-size: 0.875rem;
+}
+
+dd {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+mat-divider {
+  margin-block: 1rem;
+}

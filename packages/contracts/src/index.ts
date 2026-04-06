@@ -1,4 +1,5 @@
 export { Gender } from './gender';
+export type { ProductDto } from './product';
 export { ProductType } from './product-type';
 export { Role } from './role';
 export {

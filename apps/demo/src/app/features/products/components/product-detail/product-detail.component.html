@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ product().name }}</mat-card-title>
+    <mat-card-subtitle>{{ product().productType }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p class="description">{{ product().description }}</p>
+
+    <mat-divider />
+
+    <div class="details">
+      <dl>
+        <dt>Price</dt>
+        <dd>${{ product().price }}</dd>
+
+        <dt>Gender</dt>
+        <dd>{{ product().gender }}</dd>
+
+        <dt>Status</dt>
+        <dd>
+          <mat-chip [highlighted]="product().isActive">
+            {{ product().isActive ? 'Active' : 'Inactive' }}
+          </mat-chip>
+        </dd>
+
+        <dt>Created</dt>
+        <dd>{{ product().dateCreated | date }}</dd>
+
+        <dt>Updated</dt>
+        <dd>{{ product().dateUpdated | date }}</dd>
+      </dl>
+    </div>
+  </mat-card-content>
+</mat-card>

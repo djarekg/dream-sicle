@@ -5,24 +5,25 @@
       (mouseenter)="onLogoMouseEnter()"
       (mouseleave)="onLogoMouseLeave()">
       <img
-        [ngSrc]="
-          isLogoHovered() ? 'dream-sicle.svg' : 'dream-sicle-outline.svg'
-        "
+        [ngSrc]="isLogoHovered() ? 'dream-sicle.svg' : 'dream-sicle-outline.svg'"
         height="48"
         width="48"
         alt="Dream Sicle Logo" />
       dream-sicle
     </a>
   </div>
-  <div class="site-menu-content">
-    <nav>
-      <a
-        [routerLink]="['/users']"
-        routerLinkActive="active-link"
-        >Users</a
-      >
-    </nav>
-  </div>
+  <nav class="site-menu-content">
+    <a
+      [routerLink]="['/users']"
+      routerLinkActive="active-link"
+      >Users</a
+    >
+    <a
+      [routerLink]="['/products']"
+      routerLinkActive="active-link"
+      >Products</a
+    >
+  </nav>
   <div class="settings-content">
     <button
       mat-icon-button

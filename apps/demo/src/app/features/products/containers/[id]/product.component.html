@@ -1,0 +1,7 @@
+@defer (when resource.hasValue()) {
+  @if (resource.value()) {
+    <app-product-detail [product]="resource.value()!" />
+  }
+} @loading (minimum 2s) {
+  <app-spinner />
+}

@@ -1,0 +1,50 @@
+<mat-toolbar>
+  <mat-button-toggle-group
+    [aria-label]="selectedActive()"
+    [value]="selectedActive()"
+    (change)="selectedActive.set($event.value)">
+    <mat-button-toggle
+      value="ALL"
+      [checked]="selectedActive() === 'ALL'"
+      >All</mat-button-toggle
+    >
+    <mat-button-toggle
+      value="ACTIVE"
+      [checked]="selectedActive() === 'ACTIVE'"
+      >Active</mat-button-toggle
+    >
+    <mat-button-toggle
+      value="INACTIVE"
+      [checked]="selectedActive() === 'INACTIVE'"
+      >Inactive</mat-button-toggle
+    >
+  </mat-button-toggle-group>
+
+  <mat-button-toggle-group
+    [aria-label]="selectedGender()"
+    [value]="selectedGender()"
+    (change)="selectedGender.set($event.value)">
+    <mat-button-toggle
+      value="ALL"
+      [checked]="selectedGender() === 'ALL'"
+      >All</mat-button-toggle
+    >
+    <mat-button-toggle
+      value="MALE"
+      [checked]="selectedGender() === 'MALE'"
+      >Male</mat-button-toggle
+    >
+    <mat-button-toggle
+      value="FEMALE"
+      [checked]="selectedGender() === 'FEMALE'"
+      >Female</mat-button-toggle
+    >
+  </mat-button-toggle-group>
+
+  <app-product-type-select
+    class="type-filter"
+    [value]="selectedType()"
+    (valueChange)="onTypeChange($event)" />
+</mat-toolbar>
+
+<app-product-list [products]="products()" />

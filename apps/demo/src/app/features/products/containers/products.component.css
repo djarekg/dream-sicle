@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.mat-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  app-product-type-select {
+    margin-block-start: 15px;
+  }
+}
+
+.type-filter {
+  inline-size: min(240px, 100%);
+  margin: 0;
+}
