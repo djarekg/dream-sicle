@@ -12,7 +12,8 @@
 
     <mat-card-actions>
       <a
-        [routerLink]="['/users', user.id, { mode: FormMode.view }]"
+        [routerLink]="['/users', user.id]"
+        [queryParams]="{ mode: FormMode.view }"
         mat-button
         >View Profile</a
       >

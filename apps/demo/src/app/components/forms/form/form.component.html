@@ -1,33 +1,35 @@
+<mat-toolbar>
+  @if (isEditing()) {
+    <button
+      matIconButton
+      [matTooltip]="'Cancel editing'"
+      (click)="onCancel()">
+      <mat-icon>close</mat-icon>
+    </button>
+    <button
+      matIconButton
+      [matTooltip]="'Save changes'"
+      (click)="onSave($event)">
+      <mat-icon>save</mat-icon>
+    </button>
+  } @else if (isNew()) {
+    <button
+      matIconButton
+      color="primary"
+      [matTooltip]="'Create new user'"
+      (click)="onNew()">
+      <mat-icon>add</mat-icon>
+    </button>
+  } @else {
+    <button
+      matIconButton
+      [matTooltip]="'Edit user'"
+      (click)="onEdit()">
+      <mat-icon>edit</mat-icon>
+    </button>
+  }
+</mat-toolbar>
+
 <form>
   <ng-content />
 </form>
-
-<footer>
-  @if (isEditing()) {
-  <button matButton="outlined"
-          color="primary"
-          (click)="onCancel()">
-    Cancel
-  </button>
-  <button matButton="outlined"
-          color="primary"
-          (click)="onSave($event)">
-    Save
-  </button>
-  }
-  @else if (isNew()) {
-  <button class="new"
-          matButton="filled"
-          color="primary"
-          (click)="onNew()">
-    New
-  </button>
-  }
-  @else {
-  <button matButton="outlined"
-          color="primary"
-          (click)="onEdit()">
-    Edit
-  </button>
-  }
-</footer>

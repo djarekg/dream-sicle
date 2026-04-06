@@ -1,17 +1,14 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  output,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { FormMode } from '@/core/constants/form-mode';
 
 @Component({
   selector: 'app-form',
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, MatIconModule, MatToolbarModule, MatTooltipModule],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
