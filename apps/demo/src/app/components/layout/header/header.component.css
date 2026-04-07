@@ -69,5 +69,6 @@ header {
 }
 
 ds-breadcrumbs {
-  margin-inline-start: 1rem;
+  display: inline-flex;
+  justify-content: center;
 }
