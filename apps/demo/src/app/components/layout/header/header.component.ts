@@ -10,12 +10,14 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Breadcrumbs } from '@ds/components';
 
 import { AuthService } from '@/core/auth/auth.service';
 
 @Component({
   selector: 'app-header',
   imports: [
+    Breadcrumbs,
     MatButtonModule,
     MatIconModule,
     NgOptimizedImage,

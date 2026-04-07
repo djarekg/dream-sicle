@@ -5,8 +5,11 @@
     "clean": "bunx rimraf node_modules dist"
   },
   "peerDependencies": {
+    "@angular/cdk": "catalog:",
     "@angular/common": "catalog:",
-    "@angular/core": "catalog:"
+    "@angular/core": "catalog:",
+    "@angular/material": "catalog:",
+    "@angular/router": "catalog:"
   },
   "dependencies": {
     "tslib": "catalog:"

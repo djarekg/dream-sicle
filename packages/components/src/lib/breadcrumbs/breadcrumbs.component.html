@@ -1,0 +1,16 @@
+<nav>
+  @for (breadcrumb of breadcrumbs(); track breadcrumb.url; let idx = $index) {
+    @if (idx > 0) {
+      <mat-icon class="separator">arrow_forward_ios</mat-icon>
+    }
+    <button
+      matButton
+      class="breadcrumb"
+      [routerLink]="breadcrumb.url">
+      @if (breadcrumb.icon) {
+        <mat-icon> {{ breadcrumb.icon }}</mat-icon>
+      }
+      {{ breadcrumb.label }}
+    </button>
+  }
+</nav>

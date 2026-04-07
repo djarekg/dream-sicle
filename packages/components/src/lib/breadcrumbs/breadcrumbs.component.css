@@ -1,0 +1,30 @@
+nav {
+  --ds-breadcrumbs-height: 32px;
+
+  display: flex;
+  align-items: center;
+  block-size: var(--ds-breadcrumbs-height);
+  inline-size: fit-content;
+  gap: 0.2rem;
+}
+
+.mat-icon {
+  font-size: 12px;
+  block-size: 12px;
+  inline-size: 12px;
+}
+
+.separator {
+  color: var(--mat-sys-primary);
+}
+
+button {
+  font-size: 12px;
+  padding-inline: 10px;
+
+  .mat-icon {
+    font-size: 16px;
+    block-size: 16px;
+    inline-size: 16px;
+  }
+}
