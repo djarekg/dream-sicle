@@ -45,6 +45,8 @@ export class Breadcrumbs {
       route = route.firstChild;
     }
 
-    return breadcrumbs;
+    // Return breadcrumbs only if there are more than one, otherwise return an empty array.
+    // This prevents showing a single breadcrumb for the root path.
+    return breadcrumbs.length > 1 ? breadcrumbs : [];
   }
 }
