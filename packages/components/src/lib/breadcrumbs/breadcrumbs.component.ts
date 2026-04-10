@@ -19,9 +19,7 @@ export class Breadcrumbs {
   readonly #route = inject(ActivatedRoute);
   readonly #router = inject(Router);
   readonly breadcrumbs = computed<BreadcrumbType[]>(() => {
-    const nav = this.#router.currentNavigation(); // Trigger recomputation on navigation
-    console.log('Current navigation:', nav);
-    console.log('Activated route snapshot:', this.#route.snapshot);
+    this.#router.currentNavigation(); // Trigger recomputation on navigation
     return this.#createBreadcrumbs(this.#route.snapshot);
   });
 
