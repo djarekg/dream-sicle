@@ -1,0 +1,24 @@
+dialog {
+  block-size: fit-content;
+  inline-size: 70vw;
+  background: transparent;
+  border: none;
+  outline: none;
+  z-index: 1000;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--mat-sys-primary);
+  background: var(--mat-sys-surface);
+}
+
+input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}

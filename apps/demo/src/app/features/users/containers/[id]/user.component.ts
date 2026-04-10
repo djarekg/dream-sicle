@@ -1,19 +1,19 @@
-import { Spinner } from "@/components/spinner/spinner.component";
-import { FormMode } from "@/core/constants/form-mode";
-import { UserDetail } from "@/features/users/components/user-detail/user-detail.component";
-import type { UserFormModel } from "@/features/users/forms/user-form.model";
-import { UserService } from "@/features/users/services/user.service";
-import { ChangeDetectionStrategy, Component, inject, resource, signal } from "@angular/core";
-import { MatSnackBar } from "@angular/material/snack-bar";
-import { ActivatedRoute, Router } from "@angular/router";
-import { isNotEmpty } from "@ds/utils";
+import { Component, inject, resource, signal } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
+import { isNotEmpty } from '@ds/utils';
+
+import { Spinner } from '@/components/spinner/spinner.component';
+import { FormMode } from '@/core/constants/form-mode';
+import { UserDetail } from '@/features/users/components/user-detail/user-detail.component';
+import type { UserFormModel } from '@/features/users/forms/user-form.model';
+import { UserService } from '@/features/users/services/user.service';
 
 @Component({
-  selector: "app-user",
+  selector: 'app-user',
   imports: [Spinner, UserDetail],
-  templateUrl: "./user.component.html",
-  styleUrl: "./user.component.css",
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './user.component.html',
+  styleUrl: './user.component.css',
 })
 export default class User {
   readonly #route = inject(ActivatedRoute);
@@ -36,13 +36,13 @@ export default class User {
   });
 
   constructor() {
-    this.#route.queryParams.subscribe((params) => {
-      const mode = (Number(params["mode"]) || FormMode.view) as FormMode;
+    this.#route.queryParams.subscribe(params => {
+      const mode = (Number(params['mode']) || FormMode.view) as FormMode;
       this.mode.set(mode);
     });
 
-    this.#route.paramMap.subscribe((params) => {
-      this.#userId.set(params.get("id"));
+    this.#route.paramMap.subscribe(params => {
+      this.#userId.set(params.get('id'));
     });
   }
 
@@ -63,27 +63,27 @@ export default class User {
       await this.#service.updateUser(user);
     } else {
       const { id } = await this.#service.createUser(user);
-      this.#router.navigate(["/users", id]);
+      this.#router.navigate(['/users', id]);
     }
 
     // Reset mode
     this.mode.set(FormMode.view);
 
-    this.#snackbar.open("User updated successfully", "OK", {
+    this.#snackbar.open('User updated successfully', 'OK', {
       duration: 3000,
-      panelClass: "app-snackbar-success",
+      panelClass: 'app-snackbar-success',
     });
   }
 
   #navigateToUser(mode: FormMode) {
     // If canceling creating new user, navigate back to users route.
     if (mode === FormMode.view && this.mode() === FormMode.new) {
-      this.#router.navigate(["/users"]);
+      this.#router.navigate(['/users']);
       return;
     }
 
     if (mode === FormMode.new) {
-      this.#router.navigate(["/users", 0], { queryParams: { mode: FormMode.new } });
+      this.#router.navigate(['/users', 0], { queryParams: { mode: FormMode.new } });
       return;
     }
 
@@ -92,7 +92,7 @@ export default class User {
       queryParams: {
         mode,
       },
-      queryParamsHandling: "merge",
+      queryParamsHandling: 'merge',
     });
 
     this.#router.navigateByUrl(urlTree);

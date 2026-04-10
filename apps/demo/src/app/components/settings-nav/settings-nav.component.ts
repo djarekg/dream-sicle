@@ -1,11 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  input,
-  output,
-  signal,
-} from '@angular/core';
+import { Component, inject, input, output, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -15,16 +8,9 @@ import { AuthService } from '@/core/auth/auth.service';
 
 @Component({
   selector: 'app-settings-nav',
-  imports: [
-    MatIconModule,
-    MatListModule,
-    NavDrawer,
-    RouterLink,
-    RouterLinkActive,
-  ],
+  imports: [MatIconModule, MatListModule, NavDrawer, RouterLink, RouterLinkActive],
   templateUrl: './settings-nav.component.html',
   styleUrl: './settings-nav.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SettingsNav {
   #authService = inject(AuthService);

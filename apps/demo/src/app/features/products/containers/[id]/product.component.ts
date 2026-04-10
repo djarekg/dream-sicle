@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, resource, signal } from '@angular/core';
+import { Component, inject, resource, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { isNotEmpty } from '@ds/utils';
 
@@ -11,7 +11,6 @@ import { ProductService } from '@/features/products/services/product.service';
   imports: [Spinner, ProductDetail],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class Product {
   readonly #route = inject(ActivatedRoute);

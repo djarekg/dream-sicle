@@ -1,8 +1,6 @@
-import { StateService } from "@/core/services/state.service.js";
-import { FocusMonitor } from "@angular/cdk/a11y";
+import { FocusMonitor } from '@angular/cdk/a11y';
 import {
   booleanAttribute,
-  ChangeDetectionStrategy,
   Component,
   computed,
   effect,
@@ -15,8 +13,8 @@ import {
   signal,
   untracked,
   viewChild,
-} from "@angular/core";
-import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+} from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import {
   ControlValueAccessor,
   FormControl,
@@ -24,18 +22,19 @@ import {
   FormsModule,
   NgControl,
   ReactiveFormsModule,
-} from "@angular/forms";
-import { MAT_FORM_FIELD, MatFormFieldControl } from "@angular/material/form-field";
-import { MatSelect, MatSelectChange, MatSelectModule } from "@angular/material/select";
-import { Subject } from "rxjs";
+} from '@angular/forms';
+import { MAT_FORM_FIELD, MatFormFieldControl } from '@angular/material/form-field';
+import { MatSelect, MatSelectChange, MatSelectModule } from '@angular/material/select';
+import { Subject } from 'rxjs';
+
+import { StateService } from '@/core/services/state.service.js';
 
 type ValueType = string | null;
 
 @Component({
-  selector: "app-state-select",
+  selector: 'app-state-select',
   imports: [FormsModule, MatSelectModule, ReactiveFormsModule],
-  templateUrl: "./state-select.component.html",
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './state-select.component.html',
   providers: [{ provide: MatFormFieldControl, useExisting: StateSelect }],
 })
 export class StateSelect
@@ -50,19 +49,19 @@ export class StateSelect
   });
   readonly stateChanges = new Subject<void>();
   readonly touched = signal(false);
-  readonly controlType = "app-state-select";
+  readonly controlType = 'app-state-select';
   readonly id = `app-state-select-${StateSelect.nextId++}`;
-  readonly _userAriaDescribedBy = input<string>("", { alias: "aria-describedby" });
-  readonly _placeholder = input<string>("", { alias: "placeholder" });
+  readonly _userAriaDescribedBy = input<string>('', { alias: 'aria-describedby' });
+  readonly _placeholder = input<string>('', { alias: 'placeholder' });
   readonly _required = input<boolean, unknown>(false, {
-    alias: "required",
+    alias: 'required',
     transform: booleanAttribute,
   });
   readonly _disabledByInput = input<boolean, unknown>(false, {
-    alias: "disabled",
+    alias: 'disabled',
     transform: booleanAttribute,
   });
-  readonly _value = model<ValueType>(null, { alias: "value" });
+  readonly _value = model<ValueType>(null, { alias: 'value' });
 
   onChange: (_: ValueType) => void = () => {};
   onTouched = () => {};
@@ -178,7 +177,7 @@ export class StateSelect
   }
 
   onContainerClick() {
-    this.#focusMonitor.focusVia(this.stateIdSelect()._elementRef, "program");
+    this.#focusMonitor.focusVia(this.stateIdSelect()._elementRef, 'program');
   }
 
   writeValue(value: ValueType): void {
@@ -195,9 +194,9 @@ export class StateSelect
 
   setDescribedByIds(ids: string[]) {
     if (ids.length) {
-      this.#elementRef.nativeElement.setAttribute("aria-describedby", ids.join(" "));
+      this.#elementRef.nativeElement.setAttribute('aria-describedby', ids.join(' '));
     } else {
-      this.#elementRef.nativeElement.removeAttribute("aria-describedby");
+      this.#elementRef.nativeElement.removeAttribute('aria-describedby');
     }
   }
 

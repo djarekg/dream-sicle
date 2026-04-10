@@ -15,14 +15,14 @@
     },
     {
       "name": "ng: serve",
-      "type": "msedge",
+      "type": "editor-browser",
       "request": "launch",
       "preLaunchTask": "bun: start",
       "url": "http://localhost:4200/"
     },
     {
       "name": "ng: test",
-      "type": "msedge",
+      "type": "editor-browser",
       "request": "launch",
       "preLaunchTask": "npm: test",
       "url": "http://localhost:9876/debug.html"

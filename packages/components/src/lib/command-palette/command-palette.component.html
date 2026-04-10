@@ -1,1 +1,13 @@
-<p>command-palette works!</p>
+<dialog
+  closedby="any"
+  [open]="open()"
+  (close)="onClosed()">
+  <header>
+    <input
+      type="text"
+      placeholder="Type a command..."
+      (input)="onInput($event.target.value)" />
+  </header>
+
+  <div class="content"></div>
+</dialog>

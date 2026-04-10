@@ -3,10 +3,14 @@ export type { ProductDto } from './product';
 export { ProductType } from './product-type';
 export { Role } from './role';
 export {
-  SearchResultTypes,
+  SearchResultType,
+  type CustomerContactSearchResult,
+  type CustomerSearchResult,
+  type ProductSearchResult,
   type SearchResult,
   type SearchResultParams,
-  type SearchResultType,
+  type SearchResultTypeMap,
+  type UserSearchResult,
 } from './search';
 export type { StateDto } from './state';
 export type { UserDto } from './user';

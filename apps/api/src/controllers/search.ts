@@ -1,42 +1,29 @@
-import {
-  SearchResultTypes,
-  type SearchResult,
-  type SearchResultParams,
-  type SearchResultType,
-} from '@ds/contracts';
+import { type SearchResult, type SearchResultParams, SearchResultType } from '@ds/contracts';
 import { isEmpty } from '@ds/utils';
 
 import prisma from '@/db.ts';
 
 export const getSearchResults = async (req: Request) => {
-  const { query, highlightStartTag, highlightEndTag } =
-    (await req.json()) as SearchResultParams;
+  const { query, highlightStartTag, highlightEndTag } = (await req.json()) as SearchResultParams;
 
   if (isEmpty(query)) {
     return Response.json(null);
   }
 
   const [users, customers, customerContacts, products] = await Promise.all([
+    matchTable(SearchResultType.user, query, highlightStartTag, highlightEndTag, 'User_Fts', [
+      'id',
+      'firstName',
+      'lastName',
+      'email',
+      'jobTitle',
+      'streetAddress',
+      'streetAddress2',
+      'city',
+      'phone',
+    ]),
     matchTable(
-      SearchResultTypes.user,
-      query,
-      highlightStartTag,
-      highlightEndTag,
-      'User_Fts',
-      [
-        'id',
-        'firstName',
-        'lastName',
-        'email',
-        'jobTitle',
-        'streetAddress',
-        'streetAddress2',
-        'city',
-        'phone',
-      ],
-    ),
-    matchTable(
-      SearchResultTypes.customer,
+      SearchResultType.customer,
       query,
       highlightStartTag,
       highlightEndTag,
@@ -44,7 +31,7 @@ export const getSearchResults = async (req: Request) => {
       ['id', 'name', 'streetAddress', 'streetAddress2', 'city', 'phone'],
     ),
     matchTable(
-      SearchResultTypes.customerContact,
+      SearchResultType.customerContact,
       query,
       highlightStartTag,
       highlightEndTag,
@@ -61,14 +48,12 @@ export const getSearchResults = async (req: Request) => {
         'phone',
       ],
     ),
-    matchTable(
-      SearchResultTypes.product,
-      query,
-      highlightStartTag,
-      highlightEndTag,
-      'Product_Fts',
-      ['id', 'name', 'description', 'price'],
-    ),
+    matchTable(SearchResultType.product, query, highlightStartTag, highlightEndTag, 'Product_Fts', [
+      'id',
+      'name',
+      'description',
+      'price',
+    ]),
   ]);
 
   const results = [...users, ...customers, ...customerContacts, ...products];
@@ -94,7 +79,7 @@ const matchTable = async (
     ORDER BY rank;
   `;
 
-  console.log('Executing SQL query:', sqlString);
+  console.debug('Executing SQL query:', sqlString);
 
   const results = await prisma.$queryRawUnsafe<SearchResult[]>(sqlString);
 

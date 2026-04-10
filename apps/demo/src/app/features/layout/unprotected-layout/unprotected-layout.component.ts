@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 // import { TitleService } from '@/core/services/title.service.js';
@@ -7,7 +7,6 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   templateUrl: './unprotected-layout.component.html',
   styleUrl: './unprotected-layout.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class UnprotectedLayout {
   // readonly #titleService = inject(TitleService);

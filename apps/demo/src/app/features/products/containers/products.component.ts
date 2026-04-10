@@ -1,11 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  inject,
-  resource,
-  signal,
-} from '@angular/core';
+import { Component, computed, inject, resource, signal } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Gender, ProductType } from '@ds/contracts';
@@ -19,7 +12,6 @@ import { ProductService } from '@/features/products/services/product.service';
   imports: [MatButtonToggleModule, MatToolbarModule, ProductTypeSelect, ProductList],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class Products {
   readonly #service = inject(ProductService);

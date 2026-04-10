@@ -2,7 +2,7 @@ a {
   text-decoration: none;
   color: var(--app-color-primary-low);
 
-  &:not(.mat-mdc-button):hover {
+  &:not(:has(.mat-icon), .mat-mdc-button):hover {
     text-underline-offset: 3px;
     text-decoration: underline;
   }

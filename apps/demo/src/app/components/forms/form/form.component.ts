@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
+import { Component, computed, input, output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -11,7 +11,6 @@ import { FormMode } from '@/core/constants/form-mode';
   imports: [MatButtonModule, MatIconModule, MatToolbarModule, MatTooltipModule],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Form {
   readonly mode = input<FormMode>(FormMode.view);

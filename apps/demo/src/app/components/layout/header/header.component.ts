@@ -1,17 +1,11 @@
 import { NgOptimizedImage } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  DestroyRef,
-  inject,
-  output,
-  signal,
-} from '@angular/core';
+import { Component, DestroyRef, inject, output, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Breadcrumbs } from '@ds/components';
 
+import { Search } from '@/components/search/search.component';
 import { AuthService } from '@/core/auth/auth.service';
 
 @Component({
@@ -23,10 +17,10 @@ import { AuthService } from '@/core/auth/auth.service';
     NgOptimizedImage,
     RouterLink,
     RouterLinkActive,
+    Search,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header {
   #logoHoverResetTimeout: ReturnType<typeof setTimeout> | null = null;

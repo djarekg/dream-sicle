@@ -1,15 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  signal,
-} from '@angular/core';
-import {
-  form,
-  FormField,
-  submit,
-  type ValidationError,
-} from '@angular/forms/signals';
+import { Component, inject, signal } from '@angular/core';
+import { form, FormField, submit, type ValidationError } from '@angular/forms/signals';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -24,7 +14,6 @@ const ERROR_MSG_SIGNIN_FAILED = 'Failed to sign in with email and password';
   imports: [FormField, MatButtonModule, MatFormFieldModule, MatInputModule],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class Signin {
   readonly #service = inject(AuthService);

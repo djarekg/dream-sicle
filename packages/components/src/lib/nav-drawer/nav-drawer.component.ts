@@ -1,16 +1,10 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  input,
-  output,
-} from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'ds-nav-drawer',
   imports: [],
   templateUrl: './nav-drawer.component.html',
   styleUrl: './nav-drawer.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavDrawer {
   readonly headline = input<string>();

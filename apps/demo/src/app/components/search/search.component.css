@@ -1,0 +1,11 @@
+.search-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  inline-size: 200px;
+  background: var(--mat-sys-surface-container-low);
+  border-radius: var(--mat-sys-corner-small);
+  padding: 0.3rem 0.5rem;
+  font: var(--mat-sys-body-medium);
+  color: var(--mat-sys-outline);
+}

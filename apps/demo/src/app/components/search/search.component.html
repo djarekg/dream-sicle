@@ -1,0 +1,18 @@
+<div
+  class="search-placeholder"
+  (click)="open.set(true)">
+  <span>Search...</span>
+  <span class="shortcut">⌘ K</span>
+</div>
+
+@defer (when isBrowser) {
+  @defer (when open(); prefetch on idle) {
+    @if (open()) {
+      <ds-command-palette
+        [(query)]="query"
+        [items]="items()"
+        [open]="open()"
+        (close)="open.set(false)" />
+    }
+  }
+}

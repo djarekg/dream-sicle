@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ActivatedRoute, Router, RouterLink, type ActivatedRouteSnapshot } from '@angular/router';
@@ -14,7 +14,6 @@ type BreadcrumbType = {
   imports: [MatButtonModule, MatIconModule, RouterLink],
   templateUrl: './breadcrumbs.component.html',
   styleUrl: './breadcrumbs.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Breadcrumbs {
   readonly #route = inject(ActivatedRoute);

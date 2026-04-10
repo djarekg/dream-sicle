@@ -1,27 +1,20 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-  linkedSignal,
-  output,
-} from "@angular/core";
-import { apply, disabled, form, FormField, submit } from "@angular/forms/signals";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
-import { MatSlideToggleModule } from "@angular/material/slide-toggle";
-import { MatTooltipModule } from "@angular/material/tooltip";
-import { UserDto } from "@ds/contracts";
+import { Component, computed, input, linkedSignal, output } from '@angular/core';
+import { apply, disabled, form, FormField, submit } from '@angular/forms/signals';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { UserDto } from '@ds/contracts';
 
-import { FormCard } from "@/components/forms/form-card/form-card.component";
-import { Form } from "@/components/forms/form/form.component";
-import { GenderSelect, StateSelect } from "@/components/select";
-import { FormMode } from "@/core/constants/form-mode";
-import { userSchema } from "@/features/users/forms";
-import type { UserFormModel } from "@/features/users/forms/user-form.model";
+import { FormCard } from '@/components/forms/form-card/form-card.component';
+import { Form } from '@/components/forms/form/form.component';
+import { GenderSelect, StateSelect } from '@/components/select';
+import { FormMode } from '@/core/constants/form-mode';
+import { userSchema } from '@/features/users/forms';
+import type { UserFormModel } from '@/features/users/forms/user-form.model';
 
 @Component({
-  selector: "app-user-detail",
+  selector: 'app-user-detail',
   imports: [
     Form,
     FormCard,
@@ -33,9 +26,8 @@ import type { UserFormModel } from "@/features/users/forms/user-form.model";
     MatTooltipModule,
     StateSelect,
   ],
-  templateUrl: "./user-detail.component.html",
-  styleUrl: "./user-detail.component.css",
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './user-detail.component.html',
+  styleUrl: './user-detail.component.css',
 })
 export class UserDetail {
   readonly #user = linkedSignal<UserFormModel>(() => {
@@ -65,7 +57,7 @@ export class UserDetail {
       email,
       phone,
       streetAddress,
-      streetAddress2: streetAddress2 ?? "",
+      streetAddress2: streetAddress2 ?? '',
       city,
       stateId,
       zip,
@@ -85,7 +77,7 @@ export class UserDetail {
 
   protected readonly isEditing = computed(() => this.mode() !== FormMode.view);
   protected readonly readonly = computed(() => this.mode() === FormMode.new);
-  protected readonly form = form(this.#user, (path) => {
+  protected readonly form = form(this.#user, path => {
     apply(path, userSchema);
     disabled(path, () => !this.isEditing());
   });
@@ -109,16 +101,16 @@ export class UserDetail {
 
   protected async onSave() {
     await submit(this.form, {
-      action: async (f) => {
+      action: async f => {
         try {
           this.save.emit(f().value());
           return [];
         } catch (err) {
-          console.error("Failed to save user", err);
+          console.error('Failed to save user', err);
           return [
             {
-              kind: "userSaveError",
-              message: "Failed to save user",
+              kind: 'userSaveError',
+              message: 'Failed to save user',
             },
           ];
         }

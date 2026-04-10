@@ -1,11 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  inject,
-  resource,
-  signal,
-} from '@angular/core';
+import { Component, computed, inject, resource, signal } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -26,7 +19,6 @@ import { UserService } from '@/features/users/services/user.service';
   ],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class Users {
   readonly #service = inject(UserService);

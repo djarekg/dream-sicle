@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
@@ -11,7 +11,6 @@ import type { ProductDto } from '@ds/contracts';
   imports: [MatButtonModule, MatCardModule, MatChipsModule, MatIconModule, RouterLink],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductList {
   readonly products = input.required<ProductDto[]>();
