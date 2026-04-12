@@ -45,6 +45,9 @@ You are an expert in TypeScript, Angular, and scalable web application developme
 - Use native control flow (`@if`, `@for`, `@switch`) instead of `*ngIf`, `*ngFor`, `*ngSwitch`
 - Use the async pipe to handle observables
 - Do not assume globals like (`new Date()`) are available.
+- For Angular HTML suggestions and generation, treat legacy structural control flow as disallowed.
+  - Do not suggest `*ngIf`, `*ngFor`, `*ngSwitch`, `*ngSwitchCase`, `*ngSwitchDefault`, or `ng-container` structural wrappers.
+  - Suggest only built-in control flow blocks: `@if` / `@else if` / `@else`, `@for (...; track ...)`, `@switch` / `@case` / `@default`.
 
 ## Services
 
