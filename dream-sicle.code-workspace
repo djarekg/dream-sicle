@@ -104,6 +104,8 @@
     "html.format.indentInnerHtml": true,
     "html.format.maxPreserveNewLines": 1,
 
+    "css.lint.unknownAtRules": "ignore",
+
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
 
