@@ -1,0 +1,5 @@
+@function --app-color-border-gradient(--color-start, --color-end, --color-background) {
+  result:
+    linear-gradient(var(--color-background), var(--color-background)) padding-box,
+    linear-gradient(90deg, var(--color-start), var(--color-end)) border-box;
+}

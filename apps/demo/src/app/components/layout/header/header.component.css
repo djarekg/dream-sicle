@@ -36,7 +36,7 @@ header {
     gap: 0.9rem;
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--app-color-primary-low);
+    color: var(--app-color-primary);
 
     &:hover {
       text-decoration: none;

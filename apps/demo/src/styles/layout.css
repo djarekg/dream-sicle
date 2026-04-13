@@ -1,6 +1,6 @@
 a {
   text-decoration: none;
-  color: var(--app-color-primary-low);
+  color: var(--app-color-primary);
 
   &:not(:has(.mat-icon), .mat-mdc-button):hover {
     text-underline-offset: 3px;

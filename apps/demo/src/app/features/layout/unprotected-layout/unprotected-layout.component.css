@@ -15,6 +15,6 @@ header {
 .title {
   grid-area: b;
   place-self: center;
-  color: var(--app-color-primary);
+  color: var(--app-color-primary-high);
   font: var(--mat-sys-headline-medium);
 }

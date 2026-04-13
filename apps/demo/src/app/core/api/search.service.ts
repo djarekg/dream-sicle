@@ -2,15 +2,13 @@ import { inject, Injectable } from '@angular/core';
 import type { SearchResult } from '@ds/contracts';
 
 import { ApiService } from '@/core/api/api.service';
+import { HIGHLIGHT_END_TAG, HIGHLIGHT_START_TAG } from '@/core/constants';
 
 type SearchRequest = {
   query: string;
   highlightStartTag: string;
   highlightEndTag: string;
 };
-
-const HIGHLIGHT_START_TAG = '<π>';
-const HIGHLIGHT_END_TAG = '</π>';
 
 @Injectable({
   providedIn: 'root',

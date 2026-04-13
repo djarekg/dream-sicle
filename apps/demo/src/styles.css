@@ -3,6 +3,7 @@
 @import url(./styles/layout.css);
 @import url(./styles/components.css);
 @import url(./styles/scroll-track.css);
+@import url(./styles/functions.css);
 
 html {
   block-size: 100%;

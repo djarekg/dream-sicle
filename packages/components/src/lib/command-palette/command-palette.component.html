@@ -3,11 +3,37 @@
   [open]="open()"
   (close)="onClosed()">
   <header>
+    <mat-icon>search</mat-icon>
     <input
+      autofocus
       type="text"
       placeholder="Type a command..."
+      (keydown)="onInputKeydown($event)"
       (input)="onInput($event.target.value)" />
+    <span class="shortcut">enter</span>
   </header>
 
-  <div class="content"></div>
+  @let list = items();
+
+  @if (list.length > 0) {
+    <div class="content app-scroll-track-transparent">
+      <mat-nav-list aria-label="Select a item">
+        @for (item of list; track item.id) {
+          <a
+            mat-list-item
+            [routerLink]="item.href">
+            <div matListItemMeta>
+              <mat-icon>{{ item.icon }}</mat-icon>
+            </div>
+            <span
+              matListItemTitle
+              [innerHTML]="item.title"></span>
+            <span
+              matListItemLine
+              [innerHTML]="item.description ?? '' | safeHtml"></span>
+          </a>
+        }
+      </mat-nav-list>
+    </div>
+  }
 </dialog>

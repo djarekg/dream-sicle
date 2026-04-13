@@ -40,10 +40,6 @@ export type UserSearchResult = {
   lastName: string;
   email: string;
   jobTitle: string;
-  streetAddress: string;
-  streetAddress2?: string;
-  city: string;
-  phone: string;
 };
 
 /**
@@ -52,10 +48,6 @@ export type UserSearchResult = {
 export type CustomerSearchResult = {
   id: string;
   name: string;
-  streetAddress: string;
-  streetAddress2?: string;
-  city: string;
-  phone: string;
 };
 
 /**
@@ -67,10 +59,6 @@ export type CustomerContactSearchResult = {
   firstName: string;
   lastName: string;
   email: string;
-  streetAddress: string;
-  streetAddress2?: string;
-  city: string;
-  phone: string;
 };
 
 /**
@@ -80,7 +68,6 @@ export type ProductSearchResult = {
   id: string;
   name: string;
   description: string;
-  price: number;
 };
 
 /**

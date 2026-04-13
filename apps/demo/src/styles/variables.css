@@ -1,17 +1,17 @@
 :root {
   /* Colors */
-  --app-color-primary-high: #9b007d;
-  --app-color-primary: #ff24cf;
-  --app-color-primary-low: #ff7dd6;
-  --app-color-primary-lower: #ffaddf;
+  --app-color-primary-higher: #9b007d;
+  --app-color-primary-high: #ff24cf;
+  --app-color-primary: #ff7dd6;
+  --app-color-primary-low: #ffaddf;
   --app-color-secondary: #00f7ff;
   --app-color-secondary-high: #005c5f;
   --app-color-secondary-low: #00bec4;
   --app-color-secondary-lowest: #54f8ff;
   --app-color-brand-gradient: linear-gradient(
     to right bottom,
-    var(--app-color-secondary-low) 35%,
-    var(--app-color-primary-low) 70%
+    var(--app-color-secondary) 35%,
+    var(--app-color-primary) 70%
   );
   --app-color-success: #26a69a;
   --app-color-on-success: var(--mat-sys-on-surface);

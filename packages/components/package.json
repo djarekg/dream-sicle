@@ -1,7 +1,7 @@
 {
   "name": "@ds/components",
   "version": "0.0.1",
-  "script": {
+  "scripts": {
     "clean": "bunx rimraf node_modules dist"
   },
   "peerDependencies": {
@@ -9,7 +9,8 @@
     "@angular/common": "catalog:",
     "@angular/core": "catalog:",
     "@angular/material": "catalog:",
-    "@angular/router": "catalog:"
+    "@angular/router": "catalog:",
+    "@ds/core": "workspace:"
   },
   "dependencies": {
     "tslib": "catalog:"

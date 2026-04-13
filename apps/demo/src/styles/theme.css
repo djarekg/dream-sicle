@@ -271,3 +271,12 @@ html {
   --mat-sys-hover-state-layer-opacity: 0.08;
   --mat-sys-pressed-state-layer-opacity: 0.12;
 }
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
