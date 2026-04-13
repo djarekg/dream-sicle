@@ -1,5 +1,5 @@
 ---
-applyTo: '**/*.component.html'
+applyTo: '**/*.html'
 ---
 
 Use Angular built-in control flow syntax only.

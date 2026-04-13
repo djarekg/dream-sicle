@@ -7,7 +7,7 @@ export default [
       label: 'Users',
       icon: 'groups',
     },
-    loadComponent: () => import('./containers/users.component'),
+    loadComponent: () => import('./containers/users'),
   },
   {
     path: ':id',
@@ -15,6 +15,6 @@ export default [
       label: 'User',
       icon: 'person',
     },
-    loadComponent: () => import('./containers/[id]/user.component'),
+    loadComponent: () => import('./containers/[id]/user'),
   },
 ] satisfies Routes;

@@ -6,7 +6,7 @@ Angular demo application for the dream-sicle workspace.
 
 ## What This Project Contains
 
-- App shell entry point in `src/app/app.component.ts`
+- App shell entry point in `src/app/app.ts`
 - Protected and unprotected route trees in `src/app/routes.ts` and `src/app/routes-unprotected.ts`
 - Feature areas for auth, home, layout, and users under `src/app/features`
 - Reusable app-level layout components under `src/app/components`

@@ -1,1 +1,1 @@
-export { NavDrawer } from './nav-drawer.component';
+export { NavDrawer } from './nav-drawer';

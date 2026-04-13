@@ -4,11 +4,11 @@ export default [
   {
     path: 'signin',
     title: 'Welcome to dream sicle',
-    loadComponent: () => import('@/features/auth/signin/signin.component'),
+    loadComponent: () => import('@/features/auth/signin/signin'),
   },
   {
     path: 'signup',
     title: 'Welcome to dream sicle',
-    loadComponent: () => import('@/features/auth/signup/signup.component'),
+    loadComponent: () => import('@/features/auth/signup/signup'),
   },
 ] satisfies Routes;

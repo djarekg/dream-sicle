@@ -7,7 +7,7 @@ export default [
       label: 'products',
       icon: 'inventory_2',
     },
-    loadComponent: () => import('./containers/products.component'),
+    loadComponent: () => import('./containers/products'),
   },
   {
     path: ':id',
@@ -15,6 +15,6 @@ export default [
       label: 'product',
       icon: 'package_2',
     },
-    loadComponent: () => import('./containers/[id]/product.component'),
+    loadComponent: () => import('./containers/[id]/product'),
   },
 ] satisfies Routes;

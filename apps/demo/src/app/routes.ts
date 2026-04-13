@@ -8,7 +8,7 @@ export default [
       label: 'home',
       icon: 'home',
     },
-    loadComponent: () => import('@/features/home/home.component'),
+    loadComponent: () => import('@/features/home/home'),
   },
   {
     path: 'users',
