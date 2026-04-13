@@ -38,6 +38,7 @@
     "@types/node": "catalog:",
     "jsdom": "catalog:",
     "ng-packagr": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   }
 }

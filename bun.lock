@@ -55,6 +55,7 @@
         "jsdom": "catalog:",
         "ng-packagr": "catalog:",
         "typescript": "catalog:",
+        "vitest": "catalog:",
       },
     },
     "packages/components": {

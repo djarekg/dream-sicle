@@ -29,7 +29,8 @@
     "indentWidth": 2,
     "useTabs": false,
     "closingBracketSameLine": true,
-    "maxAttrsPerLine": 1
+    "maxAttrsPerLine": 1,
+    "component.selfClosing": true
   },
   "includes": ["**/*.{css,scss,ts,js,json,md,html,component.html}"],
   "excludes": [
