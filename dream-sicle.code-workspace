@@ -32,9 +32,6 @@
     "angular.forceStrictTemplates": true,
     "angular.suggest.includeCompletionsWithSnippetText": true,
 
-    "oxc.typeAware": true,
-    "oxc.configPath": "${workspaceFolder:root}/vite.config.ts",
-
     // Maximum number of requests for the chat agent - Prevents AI agents from stopping mid-session
     "chat.agent.maxRequests": 999,
 
@@ -44,7 +41,7 @@
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
     "editor.lightbulb.enabled": "on",
-    "editor.defaultFormatter": "oxc.oxc-vscode",
+    "editor.defaultFormatter": "dprint.dprint",
     "editor.codeActionsOnSave": {
       "source.fixAll.oxc": "explicit",
       // "source.fixAll": "explicit",
@@ -59,32 +56,28 @@
 
     "debug.javascript.unmapMissingSources": true,
 
+      "dprint.experimentalLsp": false,
+
     "[css]": {
-      "editor.defaultFormatter": "oxc.oxc-vscode",
+      "editor.defaultFormatter": "dprint.dprint",
     },
     "[json]": {
-      "editor.defaultFormatter": "oxc.oxc-vscode",
+      "editor.defaultFormatter": "dprint.dprint",
     },
     "[jsonc]": {
-      "editor.defaultFormatter": "oxc.oxc-vscode",
+      "editor.defaultFormatter": "dprint.dprint",
     },
     "[html]": {
-      "editor.defaultFormatter": "oxc.oxc-vscode",
+      "editor.defaultFormatter": "dprint.dprint",
     },
     "[typescript]": {
-      "editor.defaultFormatter": "oxc.oxc-vscode",
+      "editor.defaultFormatter": "dprint.dprint",
     },
     "[javascript]": {
-      "editor.defaultFormatter": "oxc.oxc-vscode",
-    },
-    "[javascriptreact]": {
-      "editor.defaultFormatter": "oxc.oxc-vscode",
-    },
-    "[typescriptreact]": {
-      "editor.defaultFormatter": "oxc.oxc-vscode",
+      "editor.defaultFormatter": "dprint.dprint",
     },
     "[yaml]": {
-      "editor.defaultFormatter": "oxc.oxc-vscode",
+      "editor.defaultFormatter": "dprint.dprint",
     },
     "[xml]": {
       "editor.defaultFormatter": "redhat.vscode-xml",
@@ -160,6 +153,7 @@
       "killnode",
       "libsql",
       "lmdb",
+      "malva",
       "Momo",
       "msgpackr",
       "noshadow",
@@ -172,15 +166,15 @@
       "vite",
       "vitest",
       "voidzero",
-      "wght",
+      "wght"
     ],
   },
   "extensions": {
     "recommendations": [
       "angular.ng-template",
       "vitest.explorer",
-      "voidzero.vite-plus-extension-pack",
       "github.vscode-github-actions",
+      "dprint.dprint",
     ],
   },
 }

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://dprint.dev/schemas/v0.json",
+  "incremental": true,
+  "lineWidth": 100,
+  "indentWidth": 2,
+  "useTabs": false,
+  "typescript": {
+    "module.sortImportDeclarations": "caseInsensitive",
+    "semiColons": "always",
+    "quoteStyle": "preferSingle",
+    "quoteProps": "asNeeded",
+    "trailingCommas": "onlyMultiLine",
+    "arrowFunction.useParentheses": "preferNone"
+  },
+  "json": {
+    "trailingCommas": "never"
+  },
+  "markdown": {
+    "textWrap": "always"
+  },
+  "malva": {
+    "printWidth": 100,
+    "indentWidth": 2,
+    "useTabs": false,
+    "quotes": "preferDouble"
+  },
+  "markup": {
+    "printWidth": 100,
+    "indentWidth": 2,
+    "useTabs": false,
+    "closingBracketSameLine": true,
+    "maxAttrsPerLine": 1
+  },
+  "includes": ["**/*.{css,scss,ts,js,json,md,html,component.html}"],
+  "excludes": [
+    "**/node_modules",
+    "**/dist/**",
+    "**/generated/**",
+    "**/bun.lock"
+  ],
+  "plugins": [
+    "https://plugins.dprint.dev/typescript-0.95.15.wasm",
+    "https://plugins.dprint.dev/json-0.21.3.wasm",
+    "https://plugins.dprint.dev/markdown-0.21.1.wasm",
+    "https://plugins.dprint.dev/g-plane/malva-v0.15.2.wasm",
+    "https://plugins.dprint.dev/g-plane/markup_fmt-v0.27.0.wasm"
+  ]
+}

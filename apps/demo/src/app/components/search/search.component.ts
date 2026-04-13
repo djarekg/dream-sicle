@@ -1,9 +1,7 @@
+import { SearchService } from '@/core/api/search.service';
 import { Component, computed, debounced, inject, resource, signal } from '@angular/core';
 import { CommandItem, CommandPalette } from '@ds/components';
 import { isBrowser } from '@ds/core';
-
-import { SearchService } from '@/core/api/search.service';
-
 import { toCommandItem } from './search-result-util';
 
 const ESCAPE = 'Escape';
@@ -34,13 +32,13 @@ export class Search {
   });
 
   protected readonly items = computed<CommandItem[]>(() =>
-    (this.#resource.value() ?? []).map(toCommandItem),
+    (this.#resource.value() ?? []).map(toCommandItem)
   );
 
   protected handleWindowKeydown(e: KeyboardEvent): void {
     if (
-      (e.key === SEARCH_TRIGGER_KEY && (e.metaKey || e.ctrlKey)) ||
-      e.key === ALT_SEARCH_TRIGGER_KEY
+      (e.key === SEARCH_TRIGGER_KEY && (e.metaKey || e.ctrlKey))
+      || e.key === ALT_SEARCH_TRIGGER_KEY
     ) {
       e.preventDefault();
       this.open.update(display => !display);

@@ -10,15 +10,13 @@
   "type": "module",
   "scripts": {
     "clean": "rm node_modules .angular out-tsc dist bun.lock; bun run --filter '*' clean",
-    "setup": "vp install",
-    "standards:check": "node scripts/standards-check.mjs",
-    "lint": "bun run standards:check",
-    "ready": "bun run standards:check && vp fmt && vp lint && vpr test -r && vpr build -r",
-    "dev": "bun run --filter demo start"
+    "dev": "bun run --filter demo start",
+    "lint": "dprint check",
+    "format": "dprint fmt"
   },
   "devDependencies": {
-    "typescript": "catalog:",
-    "vite-plus": "catalog:"
+    "dprint": "^0.54.0",
+    "typescript": "catalog:"
   },
   "catalog": {
     "@angular/build": "22.0.0-next.4",
@@ -47,14 +45,10 @@
     "prisma": "7.6.0",
     "tslib": "^2.8.1",
     "typescript": "6.0.2",
-    "vite": "npm:@voidzero-dev/vite-plus-core@0.1.15",
-    "vite-plus": "0.1.15",
-    "vitest": "npm:@voidzero-dev/vite-plus-test@0.1.15"
+    "vitest": "latest"
   },
   "overrides": {
-    "typescript": "catalog:",
-    "vite": "catalog:",
-    "vitest": "catalog:"
+    "typescript": "catalog:"
   },
   "engines": {
     "bun": ">=1.3.11"
