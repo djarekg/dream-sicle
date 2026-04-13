@@ -1,14 +1,14 @@
+import { Listbox, Option } from '@angular/aria/listbox';
 import { Component, input, model, output, viewChildren } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListItem, MatListModule } from '@angular/material/list';
 import { RouterLink } from '@angular/router';
-
-import { SafeHtmlPipe } from '../../../../core/src/lib/pipes/safe-html.pipe';
+import { SafeHtmlPipe } from '@ds/core';
 import type { CommandItem } from './command-item';
 
 @Component({
   selector: 'ds-command-palette',
-  imports: [MatIconModule, MatListModule, RouterLink, SafeHtmlPipe],
+  imports: [Listbox, MatIconModule, MatListModule, Option, RouterLink, SafeHtmlPipe],
   templateUrl: './command-palette.html',
   styleUrl: './command-palette.css',
 })

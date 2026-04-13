@@ -5,6 +5,7 @@
     "clean": "bunx rimraf node_modules dist"
   },
   "peerDependencies": {
+    "@angular/aria": "catalog:",
     "@angular/cdk": "catalog:",
     "@angular/common": "catalog:",
     "@angular/core": "catalog:",
