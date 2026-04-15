@@ -4,13 +4,13 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "clean": "bunx rimraf node_modules dist",
+    "clean": "bunx rimraf dist node_modules",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:demo": "node dist/demo/server/server.mjs"
+    "serve:ssr:demo": "bun src/server.ts"
   },
   "dependencies": {
     "@angular/cdk": "catalog:",
@@ -25,16 +25,16 @@
     "@angular/ssr": "catalog:",
     "@ds/contracts": "workspace:*",
     "@ds/utils": "workspace:*",
-    "express": "^5.1.0",
+    "express": "catalog:",
     "ngx-cookie-service-ssr": "catalog:",
-    "rxjs": "~7.8.0",
+    "rxjs": "catalog:",
     "tslib": "catalog:"
   },
   "devDependencies": {
     "@angular/build": "catalog:",
     "@angular/cli": "catalog:",
     "@angular/compiler-cli": "catalog:",
-    "@types/express": "^5.0.1",
+    "@types/express": "catalog:",
     "@types/node": "catalog:",
     "jsdom": "catalog:",
     "ng-packagr": "catalog:",

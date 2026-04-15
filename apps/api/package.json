@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "clean": "bunx rimraf node_modules dist",
+    "clean": "bunx rimraf dist node_modules",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "build": "tsc",
     "dev": "bun run --watch --no-check --env-file ../../packages/db/.env.local --env-file .env.local src/server.ts"
@@ -13,11 +13,11 @@
     "@ds/contracts": "workspace:*",
     "@ds/db": "workspace:*",
     "@ds/utils": "workspace:*",
-    "bcryptjs": "^3.0.3",
-    "jsonwebtoken": "^9.0.3"
+    "bcryptjs": "catalog:",
+    "jsonwebtoken": "catalog:"
   },
   "devDependencies": {
-    "@types/jsonwebtoken": "^9.0.10",
+    "@types/jsonwebtoken": "catalog:",
     "@types/bun": "catalog:",
     "typescript": "catalog:"
   }

@@ -1,3 +1,7 @@
+:host {
+  --_padding: 0.5rem;
+}
+
 dialog {
   --_top: var(--ds-command-palette-top, 100px);
 
@@ -24,7 +28,7 @@ header,
   border: 2px solid var(--ds-command-palette-border-color, var(--mat-sys-primary));
   background: var(--ds-command-palette-background, var(--mat-sys-surface-container-low));
   border-radius: var(--mat-sys-corner-small);
-  padding-inline: 0.5rem;
+  padding-inline: var(--_padding);
 }
 
 header {
@@ -66,48 +70,75 @@ input {
 
 .content {
   overflow-y: auto;
+  padding-block: var(--_padding);
 }
 
-a {
+[ngListbox] {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  block-size: fit-content;
+  border: none;
+  outline: none;
+}
+
+[ngOption] {
   --mat-list-active-indicator-shape: var(--mat-sys-corner-small);
 
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-areas:
+    "icon title shortcut"
+    ". description shortcut";
+  grid-template-columns: fit-content(21px) 1fr fit-content(50px);
+  cursor: pointer;
+  min-block-size: 56px;
+  margin: 1px;
+  padding: 0 var(--_padding);
+  border-radius: var(--mat-sys-corner-small);
+  color: inherit;
 
+  &[data-active="true"],
   &:hover {
-    .mat-icon {
-      color: var(--mat-sys-primary);
-    }
+    background: var(--mat-sys-surface-container-highest);
+    border: none;
+    outline: none;
+  }
+
+  &:active {
+    background: var(--mat-sys-surface-container-high);
   }
 }
 
-::ng-deep .mdc-list-item__content {
-  display: flex;
-  flex-shrink: 0;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-a .mat-mdc-list-item-meta {
-  align-self: center;
-}
-
-.mat-mdc-list-item-title,
-.mat-mdc-list-item-line {
+.icon-content {
+  grid-area: icon;
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-inline-end: 0.75rem;
+
+  .mat-icon {
+    font-size: 16px;
+    inline-size: 16px;
+    block-size: 16px;
+    color: var(--mat-sys-outline);
+  }
 }
 
-.mat-mdc-list-item-title {
-  margin-block-end: -10px;
+.title-content {
+  grid-area: title;
+  display: flex;
+  align-items: center;
+  font: var(--mat-sys-body-medium);
 }
 
-.mat-mdc-list-item-line {
+.description-content {
+  grid-area: description;
+  display: flex;
   align-items: center;
   font: var(--mat-sys-label-small);
   color: var(--mat-sys-on-surface-variant);
 
-  ::ng-deep .icon {
+  .icon {
     font-size: 16px;
     inline-size: 16px;
     block-size: 16px;
@@ -116,14 +147,19 @@ a .mat-mdc-list-item-meta {
   }
 }
 
+.shortcut-content {
+  grid-area: shortcut;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font: var(--mat-sys-label-small);
+  color: var(--mat-sys-outline);
+}
+
 ::ng-deep mark {
   color: var(--ds-command-palette-highlight-color, var(--mat-sys-primary));
   background: var(--ds-command-palette-highlight-background, transparent);
-  /* border: 1px solid var(--ds-command-palette-highlight-border, var(--mat-sys-primary)); */
-  /* border: 1px solid var(--ds-command-palette-border-color, var(--mat-sys-primary)); */
-  /* background: var(--ds-command-palette-background, var(--mat-sys-surface-container-low)); */
   border-radius: var(--mat-sys-corner-extra-small);
-  /* padding: 0 0.03rem; */
   padding: 0;
   font-weight: 600;
   line-height: inherit;

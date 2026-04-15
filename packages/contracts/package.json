@@ -32,12 +32,8 @@
     "access": "public"
   },
   "scripts": {
-    "clean": "bunx rimraf node_modules dist",
-    "build": "vp pack",
-    "dev": "vp pack --watch",
-    "test": "vp test",
-    "check": "vp check",
-    "prepublishOnly": "vp run build"
+    "clean": "bunx rimraf dist node_modules",
+    "build": "tsc"
   },
   "devDependencies": {
     "@types/bun": "catalog:",

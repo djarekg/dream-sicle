@@ -37,7 +37,7 @@
     "**/node_modules",
     "**/dist/**",
     "**/generated/**",
-    "**/bun.lock"
+    "bun.lock"
   ],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.95.15.wasm",

@@ -17,7 +17,7 @@
     }
   },
   "scripts": {
-    "clean": "bunx rimraf node_modules dist",
+    "clean": "bunx rimraf dist node_modules",
     "db:clean": "bunx rimraf dev.db prisma/migrations",
     "db:migrate": "bunx prisma migrate dev --name init",
     "db:generate": "bunx prisma generate",
@@ -29,7 +29,7 @@
     "@prisma/client": "catalog:",
     "@prisma/driver-adapter-utils": "catalog:",
     "async-mutex": "^0.5.0",
-    "bcryptjs": "~3.0.3",
+    "bcryptjs": "catalog:",
     "js-base64": "^3.7.8",
     "promise-limit": "^2.7.0",
     "typescript": "catalog:"

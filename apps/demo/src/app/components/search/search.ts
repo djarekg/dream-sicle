@@ -49,4 +49,8 @@ export class Search {
       this.open.set(false);
     }
   }
+
+  protected onClose(): void {
+    this.open.set(false);
+  }
 }

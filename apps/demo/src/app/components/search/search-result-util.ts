@@ -1,5 +1,5 @@
 import type { CommandItem } from '@ds/components';
-import { SearchResultType, type SearchResult, type SearchResultTypeMap } from '@ds/contracts';
+import { type SearchResult, SearchResultType, type SearchResultTypeMap } from '@ds/contracts';
 import { isEmpty } from '@ds/utils';
 
 import { HIGHLIGHT_END_TAG, HIGHLIGHT_START_TAG } from '@/core/constants';
@@ -25,15 +25,23 @@ const parseHighlighting = (text: string | null | undefined) => {
     .replace(HIGHLIGHT_REGEX, '<mark>$1</mark>')
     .replace(/>([^<]+)</g, (_match, content: string) => `>${content.replaceAll(' ', '&nbsp;')}<`);
 
-  return `<div style="display:grid;grid-template-columns: 50% 1fr;inline-size:100%;">${cleanedText}</div>`;
+  // return `<div style="display:grid;grid-template-columns: 50% 1fr;inline-size:100%;">${cleanedText}</div>`;
+  return cleanedText;
 };
 
-const formatTextWithIcon = (text: string | null | undefined, icon: string) => {
+const formatText = (text: string | null | undefined) => {
   if (isEmpty(text)) {
     return '';
   }
 
-  return `<span style="display:flex;align-items:center;"><span class="icon material-symbols-outlined">${icon}</span style="display:inline-block;">${text}</span>`;
+  // return `
+  //   <span style="display:flex;align-items:center;">
+  //     <span class="material-symbols-outlined" style="font-size:16px;inline-size:16px;block-size:16px;">${icon}</span>
+  //     <span style="display:inline-block;">${text}</span>
+  //   </span>
+  // `;
+
+  return `<span>${text}</span>`; // Icon removed for now to simplify styling, can be re-added later if needed
 };
 
 /**
@@ -51,10 +59,10 @@ export const toCommandItem = (item: SearchResult): CommandItem => {
         id: item.type + '-' + json.id,
         href: `/users/${json.id}`,
         icon: 'person',
-        title: parseHighlighting(`${json.firstName} ${json.lastName}`),
-        description: parseHighlighting(
-          `${formatTextWithIcon(json.jobTitle, 'work')}${formatTextWithIcon(json.email, 'email')}`,
-        ),
+        title: parseHighlighting(`${json.firstName}&nbsp;${json.lastName}`),
+        description: `${
+          formatText(parseHighlighting(json.jobTitle))
+        }&nbsp;&nbsp;&bull;&nbsp;&nbsp;${formatText(parseHighlighting(json.email))}`,
       };
     }
     case SearchResultType.customer: {
@@ -74,8 +82,8 @@ export const toCommandItem = (item: SearchResult): CommandItem => {
         id: item.type + '-' + json.id,
         href: `/customers/${json.customerId}/contacts/${json.id}`,
         icon: 'contacts',
-        title: parseHighlighting(`${json.firstName}${json.lastName}`),
-        description: parseHighlighting(formatTextWithIcon(json.email, 'email')),
+        title: parseHighlighting(`${json.firstName} ${json.lastName}`),
+        description: formatText(parseHighlighting(json.email)),
       };
     }
     case SearchResultType.product: {
@@ -86,7 +94,7 @@ export const toCommandItem = (item: SearchResult): CommandItem => {
         href: `/products/${json.id}`,
         icon: 'inventory_2',
         title: parseHighlighting(json.name),
-        description: parseHighlighting(formatTextWithIcon(json.description, 'description')),
+        description: formatText(parseHighlighting(json.description)),
       };
     }
     default:
