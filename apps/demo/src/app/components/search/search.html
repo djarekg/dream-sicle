@@ -5,11 +5,14 @@
   <span class="shortcut">⌘ k</span>
 </div>
 
-@defer (when isBrowser) { @defer (when open(); prefetch on idle) { @if (open()) {
-<ds-command-palette
-  [(query)]="query"
-  [items]="items()"
-  [open]="open()"
-  (close)="onClose()"
-/>
-} } }
+@defer (when isBrowser) {
+  @defer (when open(); prefetch on idle) {
+    @if (open()) {
+      <ds-command-palette
+        [(query)]="query"
+        [items]="items()"
+        [open]="open()"
+        (close)="onClose()" />
+    }
+  }
+}

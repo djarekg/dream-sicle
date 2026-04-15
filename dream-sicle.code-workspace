@@ -41,7 +41,7 @@
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
     "editor.lightbulb.enabled": "on",
-    "editor.defaultFormatter": "dprint.dprint",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll.oxc": "explicit",
       // "source.fixAll": "explicit",
@@ -59,25 +59,25 @@
       "dprint.experimentalLsp": false,
 
     "[css]": {
-      "editor.defaultFormatter": "dprint.dprint",
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[json]": {
-      "editor.defaultFormatter": "dprint.dprint",
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[jsonc]": {
-      "editor.defaultFormatter": "dprint.dprint",
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[html]": {
-      "editor.defaultFormatter": "dprint.dprint",
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[typescript]": {
-      "editor.defaultFormatter": "dprint.dprint",
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[javascript]": {
-      "editor.defaultFormatter": "dprint.dprint",
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[yaml]": {
-      "editor.defaultFormatter": "dprint.dprint",
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[xml]": {
       "editor.defaultFormatter": "redhat.vscode-xml",
@@ -146,8 +146,10 @@
     "cSpell.words": [
       "bcryptjs",
       "closedby",
+      "dbaeumer",
       "describedby",
       "dotenv",
+      "esbenp",
       "esbuild",
       "evenodd",
       "killnode",
@@ -174,7 +176,8 @@
       "angular.ng-template",
       "vitest.explorer",
       "github.vscode-github-actions",
-      "dprint.dprint",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
     ],
   },
 }

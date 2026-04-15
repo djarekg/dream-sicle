@@ -26,6 +26,10 @@
       "@angular/platform-server": "22.0.0-next.7",
       "@angular/router": "22.0.0-next.7",
       "@angular/ssr": "22.0.0-next.5",
+      "@eslint/css": "^1.1.0",
+      "@eslint/js": "^10.0.1",
+      "@eslint/json": "^1.2.0",
+      "@eslint/markdown": "^8.0.1",
       "@prisma/adapter-libsql": "7.6.0",
       "@prisma/client": "7.6.0",
       "@prisma/driver-adapter-utils": "7.6.0",
@@ -35,16 +39,20 @@
       "@types/node": "latest",
       "bcryptjs": "^3.0.3",
       "dotenv": "^17.3.1",
+      "eslint": "^10.2.0",
       "express": "^5.1.0",
+      "globals": "^17.5.0",
       "happy-dom": "~20.8.4",
       "jsdom": "^29.0.1",
       "jsonwebtoken": "^9.0.3",
       "ng-packagr": "22.0.0-next.1",
       "ngx-cookie-service-ssr": "^21.3.1",
+      "prettier": "^3.8.3",
       "prisma": "7.6.0",
       "rxjs": "~7.8.0",
       "tslib": "^2.8.1",
       "typescript": "6.0.2",
+      "typescript-eslint": "latest",
       "vitest": "latest"
     }
   },
@@ -56,8 +64,15 @@
     "format": "dprint fmt"
   },
   "devDependencies": {
-    "dprint": "^0.54.0",
-    "typescript": "catalog:"
+    "@eslint/css": "catalog:",
+    "@eslint/js": "catalog:",
+    "@eslint/json": "catalog:",
+    "@eslint/markdown": "catalog:",
+    "eslint": "catalog:",
+    "globals": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:"
   },
   "overrides": {
     "typescript": "catalog:"
