@@ -3,6 +3,7 @@
 {
   "extends": "./tsconfig.ng.json",
   "compilerOptions": {
-    "outDir": "./out-tsc/spec"
+    "outDir": "./out-tsc/spec",
+    "types": ["vitest/globals", "node"]
   }
 }

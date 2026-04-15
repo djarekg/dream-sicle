@@ -2,6 +2,15 @@
 /* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "extends": "../../tsconfig.spec.json",
-  "compilerOptions": {},
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/app/*"],
+      "@/environment": ["./src/environments/environment.ts"],
+      "@ds/components": ["../../packages/components/src/index.ts"],
+      "@ds/contracts": ["../../packages/contracts/src/index.ts"],
+      "@ds/core": ["../../packages/core/src/index.ts"],
+      "@ds/utils": ["../../packages/utils/src/index.ts"]
+    }
+  },
   "include": ["src/**/*.d.ts", "src/**/*.spec.ts"]
 }

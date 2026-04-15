@@ -41,7 +41,7 @@ describe('randomInRange()', () => {
   });
 
   it('throws when min is greater than max', () => {
-    expect(() => randomInRange(8, 7)).toThrowError(
+    expect(() => randomInRange(8, 7)).toThrow(
       'Min value cannot be greater than max value.',
     );
   });
@@ -129,7 +129,7 @@ describe('validation assertions', () => {
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
       expect((error as Error).message).toBe('empty value');
-      expect((error as Error & { cause?: { code?: string } }).cause?.code).toBe(
+      expect((error as Error & { cause?: { code?: string; }; }).cause?.code).toBe(
         'IsEmpty',
       );
     }
@@ -154,7 +154,7 @@ describe('validation assertions', () => {
     } catch (error) {
       expect(error).toBeInstanceOf(Error);
       expect((error as Error).message).toBe('null value');
-      expect((error as Error & { cause?: { code?: string } }).cause?.code).toBe(
+      expect((error as Error & { cause?: { code?: string; }; }).cause?.code).toBe(
         'IsNull',
       );
     }
