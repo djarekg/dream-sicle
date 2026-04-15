@@ -4,15 +4,34 @@ import { isEmpty } from '@ds/utils';
 
 import { HIGHLIGHT_END_TAG, HIGHLIGHT_START_TAG } from '@/core/constants';
 
+/**
+ * Ensures exhaustive handling of discriminated unions by throwing for unknown values.
+ *
+ * @param value The value that should be impossible to reach.
+ * @returns Never returns; always throws.
+ */
 export const assertNever = (value: never): never => {
   throw new Error(`Unhandled search result type: ${value}`);
 };
 
+/**
+ * Deserializes a search result JSON payload into a type-safe result model.
+ *
+ * @param _type The result type used to drive the inferred return type.
+ * @param json The serialized search result payload.
+ * @returns The parsed search result object for the provided type.
+ */
 export const deserializeResultJson = <TType extends SearchResult['type']>(
   _type: TType,
   json: string,
 ): SearchResultTypeMap[TType] => JSON.parse(json) as SearchResultTypeMap[TType];
 
+/**
+ * Replaces backend highlight tags with semantic HTML and preserves spacing for display.
+ *
+ * @param text The text that may contain highlight tags.
+ * @returns A formatted HTML string or an empty string for empty input.
+ */
 export const formatHighlightedText = (text: string | null | undefined) => {
   if (isEmpty(text)) {
     return '';
@@ -23,11 +42,17 @@ export const formatHighlightedText = (text: string | null | undefined) => {
   const cleanedText = text
     .trim()
     .replace(highlightRegex, '<mark>$1</mark>')
-    .replace(/>([^<]+)</g, (_match, content: string) => `>${content.replaceAll(' ', '&nbsp;')}<`);
+    .replace(/\s/g, '&nbsp;');
 
   return cleanedText;
 };
 
+/**
+ * Wraps text in a span for consistent rendering in command palette descriptions.
+ *
+ * @param text The plain text content to wrap.
+ * @returns A wrapped HTML span string or an empty string for empty input.
+ */
 export const formatText = (text: string | null | undefined) => {
   if (isEmpty(text)) {
     return '';
