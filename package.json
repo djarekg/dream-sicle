@@ -26,7 +26,6 @@
       "@angular/platform-server": "22.0.0-next.7",
       "@angular/router": "22.0.0-next.7",
       "@angular/ssr": "22.0.0-next.5",
-      "@eslint/css": "^1.1.0",
       "@eslint/js": "^10.0.1",
       "@eslint/json": "^1.2.0",
       "@eslint/markdown": "^8.0.1",
@@ -64,7 +63,6 @@
     "format": "dprint fmt"
   },
   "devDependencies": {
-    "@eslint/css": "catalog:",
     "@eslint/js": "catalog:",
     "@eslint/json": "catalog:",
     "@eslint/markdown": "catalog:",

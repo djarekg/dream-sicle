@@ -13,6 +13,16 @@ html {
     )
   );
 
+  @include mat.chips-overrides(
+    (
+      container-height: 16px,
+      container-shape-radius: var(--mat-sys-corner-extra-small),
+      label-text-size: 0.7em,
+      label-text-line-height: 1.1,
+      label-text-weight: 300,
+    )
+  );
+
   @include mat.slide-toggle-overrides(
     (
       track-height: 22px,

@@ -10,10 +10,11 @@
     "@angular/common": "catalog:",
     "@angular/core": "catalog:",
     "@angular/material": "catalog:",
-    "@angular/router": "catalog:",
-    "@ds/core": "workspace:"
+    "@angular/router": "catalog:"
   },
   "dependencies": {
+    "@ds/core": "workspace:",
+    "@ds/utils": "workspace:",
     "tslib": "catalog:"
   },
   "devDependencies": {

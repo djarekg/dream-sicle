@@ -8,4 +8,5 @@ export type CommandItem = {
   description?: string;
   icon?: string;
   href?: string;
+  tags?: string[];
 };

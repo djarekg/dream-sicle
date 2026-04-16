@@ -128,7 +128,21 @@ input {
   grid-area: title;
   display: flex;
   align-items: center;
+  gap: 1rem;
   font: var(--mat-sys-body-medium);
+}
+
+.tags-content {
+  --mat-chip-elevated-container-color: transparent;
+  --mat-chip-label-text-color: var(--mat-sys-inverse-surface);
+  --mat-chip-outline-color: var(--mat-sys-inverse-surface);
+
+  display: flex;
+  align-items: center;
+
+  ::ng-deep .mat-mdc-standard-chip .mdc-evolution-chip__action--primary {
+    padding-inline: 6px;
+  }
 }
 
 .description-content {

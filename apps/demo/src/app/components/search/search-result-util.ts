@@ -1,18 +1,8 @@
 import type { CommandItem } from '@ds/components';
 import { type SearchResult, SearchResultType, type SearchResultTypeMap } from '@ds/contracts';
-import { isEmpty } from '@ds/utils';
+import { assert, isEmpty } from '@ds/utils';
 
 import { HIGHLIGHT_END_TAG, HIGHLIGHT_START_TAG } from '@/core/constants';
-
-/**
- * Ensures exhaustive handling of discriminated unions by throwing for unknown values.
- *
- * @param value The value that should be impossible to reach.
- * @returns Never returns; always throws.
- */
-export const assertNever = (value: never): never => {
-  throw new Error(`Unhandled search result type: ${value}`);
-};
 
 /**
  * Deserializes a search result JSON payload into a type-safe result model.
@@ -58,7 +48,7 @@ export const formatText = (text: string | null | undefined) => {
     return '';
   }
 
-  return `<span>${text}</span>`; // Icon removed for now to simplify styling, can be re-added later if needed
+  return `<span>${text}</span>`;
 };
 
 /**
@@ -77,9 +67,10 @@ export const toCommandItem = (item: SearchResult): CommandItem => {
         href: `/users/${json.id}`,
         icon: 'person',
         title: formatHighlightedText(`${json.firstName}&nbsp;${json.lastName}`),
-        description: `${
-          formatText(formatHighlightedText(json.jobTitle))
-        }&nbsp;&nbsp;&bull;&nbsp;&nbsp;${formatText(formatHighlightedText(json.email))}`,
+        description: `${formatText(
+          formatHighlightedText(json.jobTitle),
+        )}&nbsp;&nbsp;&bull;&nbsp;&nbsp;${formatText(formatHighlightedText(json.email))}`,
+        tags: ['user'],
       };
     }
     case SearchResultType.customer: {
@@ -90,6 +81,7 @@ export const toCommandItem = (item: SearchResult): CommandItem => {
         href: `/customers/${json.id}`,
         icon: 'business',
         title: formatHighlightedText(json.name),
+        tags: ['customer'],
       };
     }
     case SearchResultType.customerContact: {
@@ -101,6 +93,7 @@ export const toCommandItem = (item: SearchResult): CommandItem => {
         icon: 'contacts',
         title: formatHighlightedText(`${json.firstName}&nbsp;${json.lastName}`),
         description: formatText(formatHighlightedText(json.email)),
+        tags: ['customer contact'],
       };
     }
     case SearchResultType.product: {
@@ -112,9 +105,10 @@ export const toCommandItem = (item: SearchResult): CommandItem => {
         icon: 'inventory_2',
         title: formatHighlightedText(json.name),
         description: formatText(formatHighlightedText(json.description)),
+        tags: ['product'],
       };
     }
     default:
-      return assertNever(item.type);
+      return assert.never(item.type);
   }
 };

@@ -13,38 +13,42 @@
       type="text"
       placeholder="Type a command..."
       (keydown)="onInputKeydown($event)"
-      (input)="onInput($event.target.value)"
-    />
+      (input)="query.set(search.value)" />
     <span class="shortcut">enter</span>
   </header>
 
   @if (list?.length) {
-  <div class="content app-scroll-track-transparent">
-    <div
-      ngListbox
-      aria-label="Select item"
-      selectionMode="follow">
-      @for (item of list; track item.id) {
-      <a
-        ngOption
-        [value]="item.id"
-        [routerLink]="item.href"
-        (click)="closeDialog()">
-        <div class="icon-content">
-          <mat-icon>{{ item.icon }}</mat-icon>
-        </div>
-        <div
-          class="title-content"
-          [innerHTML]="item.title">
-        </div>
-        <div
-          class="description-content"
-          [innerHTML]="item.description ?? '' | safeHtml">
-        </div>
-        <div class="shortcut-content">Jump to</div>
-      </a>
-      }
+    <div class="content app-scroll-track-transparent">
+      <div
+        ngListbox
+        aria-label="Select item"
+        selectionMode="follow">
+        @for (item of list; track item.id) {
+          <a
+            ngOption
+            [value]="item.id"
+            [routerLink]="item.href"
+            (click)="closeDialog()">
+            <div class="icon-content">
+              <mat-icon>{{ item.icon }}</mat-icon>
+            </div>
+            <div class="title-content">
+              <span [innerHTML]="item.title"></span>
+              <div class="tags-content">
+                <mat-chip-set>
+                  @for (tag of item.tags; track tag) {
+                    <mat-chip>{{ tag }}</mat-chip>
+                  }
+                </mat-chip-set>
+              </div>
+            </div>
+            <div
+              class="description-content"
+              [innerHTML]="item.description ?? '' | safeHtml"></div>
+            <div class="shortcut-content">Jump to</div>
+          </a>
+        }
+      </div>
     </div>
-  </div>
   }
 </dialog>

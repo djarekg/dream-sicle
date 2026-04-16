@@ -4,7 +4,8 @@
   "extends": "../../tsconfig.lib.json",
   "compilerOptions": {
     "paths": {
-      "@ds/core": ["../core/src/index.ts"]
+      "@ds/core": ["../core/src/index.ts"],
+      "@ds/utils": ["../utils/src/index.ts"]
     }
   },
   "include": ["src/**/*.ts"],

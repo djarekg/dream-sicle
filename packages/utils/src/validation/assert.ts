@@ -11,9 +11,10 @@ import { isEmpty, isNullOrUndefined } from '../index';
 export function isNotEmpty<T>(
   value: T | null | undefined,
   message: string,
+  ...args: unknown[]
 ): asserts value is T {
   if (isEmpty(value)) {
-    console.error('assertIsNotEmpty', arguments);
+    console.error('assertIsNotEmpty', ...args);
     throw new Error(message, { cause: { code: 'IsEmpty' } });
   }
 }
@@ -29,9 +30,20 @@ export function isNotEmpty<T>(
 export function isNotNull<T>(
   value: T | null | undefined,
   message: string,
+  ...args: unknown[]
 ): asserts value is T {
   if (isNullOrUndefined(value)) {
-    console.error('assertIsNotNull', arguments);
+    console.error('assertIsNotNull', ...args);
     throw new Error(message, { cause: { code: 'IsNull' } });
   }
+}
+
+/**
+ * Ensures exhaustive handling of discriminated unions by throwing for unknown values.
+ *
+ * @param value The value that should be impossible to reach.
+ * @returns Never returns; always throws.
+ */
+export function never(value: never): never {
+  throw new Error(`Unhandled type: ${value}`);
 }

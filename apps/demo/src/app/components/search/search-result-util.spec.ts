@@ -2,27 +2,9 @@ import { SearchResultType } from '@ds/contracts';
 
 import { HIGHLIGHT_END_TAG, HIGHLIGHT_START_TAG } from '@/core/constants';
 
-import {
-  assertNever,
-  deserializeResultJson,
-  formatHighlightedText,
-  formatText,
-} from './search-result-util';
+import { deserializeResultJson, formatHighlightedText, formatText } from './search-result-util';
 
 describe('search-result-util', () => {
-  describe('assertNever', () => {
-    it('throws with a descriptive message', () => {
-      expect(() => assertNever(999 as never)).toThrow('Unhandled search result type: 999');
-    });
-
-    it('is pure and deterministic for the same input', () => {
-      const call = () => assertNever(42 as never);
-
-      expect(call).toThrow('Unhandled search result type: 42');
-      expect(call).toThrow('Unhandled search result type: 42');
-    });
-  });
-
   describe('deserializeResultJson', () => {
     it('deserializes user search result JSON into the expected shape', () => {
       const json = JSON.stringify({
