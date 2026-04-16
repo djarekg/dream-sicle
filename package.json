@@ -73,6 +73,9 @@
     "typescript-eslint": "catalog:"
   },
   "overrides": {
+    "@angular/common": "catalog:",
+    "@angular/core": "catalog:",
+    "@angular/ssr": "catalog:",
     "typescript": "catalog:"
   }
 }

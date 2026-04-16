@@ -151,6 +151,9 @@
     "@prisma/client",
   ],
   "overrides": {
+    "@angular/common": "catalog:",
+    "@angular/core": "catalog:",
+    "@angular/ssr": "catalog:",
     "typescript": "catalog:",
   },
   "catalog": {
