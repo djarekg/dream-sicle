@@ -13,6 +13,7 @@
     "serve:ssr:demo": "bun src/server.ts"
   },
   "dependencies": {
+    "@angular/aria": "catalog:",
     "@angular/cdk": "catalog:",
     "@angular/common": "catalog:",
     "@angular/compiler": "catalog:",

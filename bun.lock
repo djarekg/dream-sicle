@@ -35,6 +35,7 @@
       "name": "@ds/demo",
       "version": "0.0.1",
       "dependencies": {
+        "@angular/aria": "catalog:",
         "@angular/cdk": "catalog:",
         "@angular/common": "catalog:",
         "@angular/compiler": "catalog:",
