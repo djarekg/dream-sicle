@@ -5,6 +5,7 @@
 dialog {
   --_top: var(--ds-command-palette-top, 100px);
 
+  container: command-palette / inline-size;
   position: absolute;
   inset: 0;
   inset-block-start: var(--_top);
@@ -20,6 +21,12 @@ dialog {
   border: none;
   outline: none;
   z-index: 1000;
+}
+
+@container app-container (width < 750px) {
+  dialog {
+    inline-size: 100vw;
+  }
 }
 
 header,
