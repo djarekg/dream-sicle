@@ -28,18 +28,13 @@ export default [
     },
     loadChildren: () => import('@/features/products/routes'),
   },
-  // {
-  //   title: 'Customers',
-  //   loadChildren: () => import('@/features/customers/routes'),
-  // },
-  // {
-  //   path: 'settings',
-  //   title: 'Settings',
-  //   loadChildren: () => import('@/features/settings/routes'),
-  // },
-  // {
-  //   path: 'products',
-  //   title: 'Products',
-  //   loadChildren: () => import('@/features/products/routes'),
-  // },
+  {
+    path: 'customers',
+    title: 'Customers',
+    data: {
+      label: 'Customers',
+      icon: 'groups_3',
+    },
+    loadChildren: () => import('@/features/customers/routes'),
+  },
 ] satisfies Routes;

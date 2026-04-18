@@ -1,5 +1,6 @@
 import { IS_DEV, PORT } from './config.ts';
 import { authRoutes } from './routes/auth.ts';
+import { customerRoutes } from './routes/customer.ts';
 import { productRoutes } from './routes/product.ts';
 import { searchRoutes } from './routes/search.ts';
 import { stateRoutes } from './routes/state.ts';
@@ -11,6 +12,7 @@ export const server = Bun.serve({
   development: IS_DEV,
   routes: {
     ...authRoutes,
+    ...customerRoutes,
     ...stateRoutes,
     ...userRoutes,
     ...productRoutes,

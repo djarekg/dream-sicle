@@ -1,3 +1,4 @@
+export type { CustomerDto } from './customer';
 export { Gender } from './gender';
 export type { ProductDto } from './product';
 export { ProductType } from './product-type';
