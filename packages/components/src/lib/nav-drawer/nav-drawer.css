@@ -3,7 +3,7 @@
 }
 
 aside {
-  --_inline-size: var(--ds-nav-drawer-inline-size, 260px);
+  --_inline-size: var(--ds-nav-drawer-inline-size, 320px);
   --_padding: var(--ds-nav-drawer-padding, 2rem 1rem);
 
   content-visibility: hidden;
@@ -19,7 +19,7 @@ aside {
   inset-inline-end: 0;
   padding: var(--_padding);
   background: var(--mat-sys-surface);
-  box-shadow: var(--mat-sys-level4);
+  box-shadow: var(--mat-sys-level2);
   border-start-start-radius: var(--mat-sys-corner-extra-large);
   border-end-start-radius: var(--mat-sys-corner-extra-large);
   z-index: 1000;
