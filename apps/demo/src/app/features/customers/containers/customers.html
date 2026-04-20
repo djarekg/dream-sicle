@@ -1,1 +1,30 @@
-<p>customers works!</p>
+<header>
+  <mat-button-toggle-group
+    name="view"
+    aria-label="View mode"
+    hideSingleSelectionIndicator="false"
+    [value]="selectedViewMode()"
+    (change)="selectedViewMode.set($event.value)">
+    <mat-button-toggle
+      value="cards"
+      matTooltip="Cards view"
+      matTooltipPosition="above">
+      <mat-icon>cards</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle
+      value="table"
+      matTooltip="Table view"
+      matTooltipPosition="above">
+      <mat-icon>table</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</header>
+
+@switch (selectedViewMode()) {
+  @case ('cards') {
+    <app-customer-cards [customers]="customers()"></app-customer-cards>
+  }
+  @case ('table') {
+    <app-customer-table [customers]="customers()"></app-customer-table>
+  }
+}

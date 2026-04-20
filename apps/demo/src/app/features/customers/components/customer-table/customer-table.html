@@ -1,0 +1,18 @@
+<table ngGrid>
+  <thead>
+    <tr ngGridRow>
+      <th ngGridCell>Name</th>
+      <th ngGridCell>City</th>
+      <th ngGridCell>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (customer of customers(); track customer.id) {
+      <tr ngGridRow>
+        <td ngGridCell>{{ customer.name }}</td>
+        <td ngGridCell>{{ customer.city }}</td>
+        <td ngGridCell>{{ customer.stateId }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

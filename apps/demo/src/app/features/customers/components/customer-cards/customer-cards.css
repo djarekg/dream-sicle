@@ -1,0 +1,31 @@
+:host {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-auto-rows: auto;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.mat-mdc-card {
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+  }
+}
+
+.mat-mdc-card-subtitle {
+  font-size: 0.775rem;
+  color: var(--mat-sys-outline);
+}
+
+.meta {
+  margin-block-start: 0.5rem;
+}
+
+.mat-mdc-card-content p {
+  font-size: 0.675rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

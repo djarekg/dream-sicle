@@ -1,0 +1,19 @@
+:host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+header {
+  position: sticky;
+  inset-block-start: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 100;
+  inline-size: 100%;
+  backdrop-filter: blur(4px);
+  background: transparent;
+}

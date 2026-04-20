@@ -1,0 +1,8 @@
+@for (customer of customers(); track customer.id) {
+  <mat-card>
+    <mat-card-title>{{ customer.name }}</mat-card-title>
+    <mat-card-content>
+      <p>Phone: {{ customer.phone }}</p>
+    </mat-card-content>
+  </mat-card>
+}

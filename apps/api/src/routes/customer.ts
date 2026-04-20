@@ -1,4 +1,9 @@
-import { getCustomer, getCustomers } from '@/controllers/customers.ts';
+import {
+  deleteCustomer,
+  getCustomer,
+  getCustomers,
+  updateCustomer,
+} from '@/controllers/customers.ts';
 import { withCors } from '@/middleware/with-cors.ts';
 
 /**
@@ -6,5 +11,9 @@ import { withCors } from '@/middleware/with-cors.ts';
  */
 export const customerRoutes = {
   '/customers': withCors(async () => getCustomers()),
-  '/customers/:id': withCors(async req => getCustomer(req)),
+  '/customers/:id': {
+    GET: withCors(async req => getCustomer(req)),
+    POST: withCors(async req => updateCustomer(req)),
+    DELETE: withCors(async req => deleteCustomer(req)),
+  },
 };

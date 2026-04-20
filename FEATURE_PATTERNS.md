@@ -562,7 +562,7 @@ export default [
 **Key Features:**
 
 - Lazy-loaded components with dynamic imports
-- Metadata in route data (for navigation, icons, labels)
+- Metadata in route data (for breadcrumbs, navigation, icons, labels)
 - Dynamic route parameters `:id`
 - Standalone component routing (no NgModules)
 
