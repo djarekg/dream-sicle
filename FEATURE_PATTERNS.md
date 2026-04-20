@@ -37,10 +37,10 @@ features/
 ```
 products/
   components/
-    product-list/            # Presents array of products (dumb)
-      product-list.ts
-      product-list.html
-      product-list.css
+    product-cards/           # Presents array of products (dumb)
+      product-cards.ts
+      product-cards.html
+      product-cards.css
     product-detail/          # Presents single product (dumb)
       product-detail.ts
       product-detail.html
@@ -93,12 +93,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { Gender, ProductType } from '@ds/contracts';
 
 import { ProductTypeSelect } from '@/components/select';
-import { ProductList } from '@/features/products/components/product-list/product-list';
+import { ProductCards } from '@/features/products/components/product-cards/product-cards';
 import { ProductService } from '@/features/products/services/product.service';
 
 @Component({
   selector: 'app-products',
-  imports: [MatButtonToggleModule, MatToolbarModule, ProductTypeSelect, ProductList],
+  imports: [MatButtonToggleModule, MatToolbarModule, ProductTypeSelect, ProductCards],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })
@@ -147,7 +147,7 @@ export default class Products {
 
 ### Presentational Component Pattern
 
-**Example: `product-list.ts`** (Dumb Component)
+**Example: `product-cards.ts`** (Dumb Component)
 
 ```typescript
 import { Component, input } from '@angular/core';
@@ -157,12 +157,12 @@ import type { ProductDto } from '@ds/contracts';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-product-list',
+  selector: 'app-product-cards',
   imports: [MatButtonModule, MatCardModule, RouterLink],
-  templateUrl: './product-list.html',
-  styleUrl: './product-list.css',
+  templateUrl: './product-cards.html',
+  styleUrl: './product-cards.css',
 })
-export class ProductList {
+export class ProductCards {
   // Use input() for required data
   readonly products = input.required<ProductDto[]>();
 }
@@ -396,7 +396,7 @@ export const apiInterceptor: HttpInterceptorFn = (req, next) => {
 
 **Templates use `@if`, `@for`, `@switch` instead of `*ngIf`, `*ngFor`**
 
-**Example: `product-list.html`**
+**Example: `product-cards.html`**
 
 ```html
 @for (product of products(); track product.id) {
@@ -438,7 +438,7 @@ export const apiInterceptor: HttpInterceptorFn = (req, next) => {
 - Material Design variables (`--mat-sys-*`)
 - Responsive design with `grid-template-columns: repeat(auto-fill, minmax(...))`
 
-**Example: `product-list.css`**
+**Example: `product-cards.css`**
 
 ```css
 :host {

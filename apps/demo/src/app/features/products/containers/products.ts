@@ -4,12 +4,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { Gender, ProductType } from '@ds/contracts';
 
 import { ProductTypeSelect } from '@/components/select';
-import { ProductList } from '@/features/products/components/product-list/product-list';
 import { ProductService } from '@/features/products/services/product.service';
+import { ProductCards } from '../components/product-cards/product-cards';
 
 @Component({
   selector: 'app-products',
-  imports: [MatButtonToggleModule, MatToolbarModule, ProductTypeSelect, ProductList],
+  imports: [MatButtonToggleModule, MatToolbarModule, ProductTypeSelect, ProductCards],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })
