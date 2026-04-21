@@ -1,6 +1,7 @@
 <mat-form-field>
   <mat-label>Product types</mat-label>
   <mat-select
+    [disabled]="disabled()"
     [multiple]="multiple()"
     [value]="value()"
     (valueChange)="onChange($event)">

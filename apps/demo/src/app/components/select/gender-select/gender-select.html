@@ -1,8 +1,11 @@
 <mat-form-field>
   <mat-label>Gender</mat-label>
-  <mat-select [disabled]="disabled()" [value]="value()" (valueChange)="onChange($event)">
-    @for (type of genders; track type.value) {
-      <mat-option [value]="type.value">{{ type.key | titlecase }}</mat-option>
+  <mat-select
+    [disabled]="disabled()"
+    [value]="value()"
+    (valueChange)="onChange($event)">
+    @for (type of genders; track type) {
+      <mat-option [value]="type">{{ type | titlecase }}</mat-option>
     }
   </mat-select>
 </mat-form-field>

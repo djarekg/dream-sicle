@@ -12,6 +12,5 @@ export const userSchema = schema<UserFormModel>(path => {
   required(path.stateId, { message: 'State is required' });
   required(path.zip, { message: 'ZIP is required' });
   required(path.isActive, { message: 'Active status is required' });
-
   email(path.email, { message: 'Email is invalid' });
 });

@@ -14,9 +14,10 @@ export type ProductTypeSelectType = ProductType | ProductType[] | null;
   styleUrl: './product-type-select.css',
 })
 export class ProductTypeSelect implements FormValueControl<ProductTypeSelectType> {
-  readonly value = model<ProductTypeSelectType>(null);
+  readonly disabled = input(false);
   readonly errors = input<readonly WithOptionalFieldTree<ValidationError>[]>([]);
   readonly multiple = input(false, { transform: value => coerceBooleanProperty(value) });
+  readonly value = model<ProductTypeSelectType>(null);
 
   protected readonly productTypes = ProductType;
 
