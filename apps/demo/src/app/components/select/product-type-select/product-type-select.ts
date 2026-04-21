@@ -18,12 +18,7 @@ export class ProductTypeSelect implements FormValueControl<ProductTypeSelectType
   readonly errors = input<readonly WithOptionalFieldTree<ValidationError>[]>([]);
   readonly multiple = input(false, { transform: value => coerceBooleanProperty(value) });
 
-  protected readonly productTypes = Object.keys(ProductType).map(key => {
-    return {
-      key,
-      value: key,
-    };
-  });
+  protected readonly productTypes = ProductType;
 
   onChange(value: ProductTypeSelectType) {
     this.value.set(value);

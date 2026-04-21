@@ -4,8 +4,8 @@
     [multiple]="multiple()"
     [value]="value()"
     (valueChange)="onChange($event)">
-    @for (type of productTypes; track type.value) {
-      <mat-option [value]="type.value">{{ type.key | titlecase }}</mat-option>
+    @for (type of productTypes; track type) {
+      <mat-option [value]="type">{{ type | titlecase }}</mat-option>
     }
   </mat-select>
 </mat-form-field>
