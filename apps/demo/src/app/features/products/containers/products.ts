@@ -1,15 +1,24 @@
+import { ProductTypeSelect } from '@/components/select';
+import { ViewMode } from '@/core/constants/view-mode';
+import { ProductTable } from '@/features/products/components/product-table/product-table';
+import { ProductService } from '@/features/products/services/product.service';
 import { Component, computed, inject, resource, signal } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { Gender, ProductType } from '@ds/contracts';
-
-import { ProductTypeSelect } from '@/components/select';
-import { ProductService } from '@/features/products/services/product.service';
 import { ProductCards } from '../components/product-cards/product-cards';
 
 @Component({
   selector: 'app-products',
-  imports: [MatButtonToggleModule, MatToolbarModule, ProductTypeSelect, ProductCards],
+  imports: [
+    MatButtonToggleModule,
+    MatIconModule,
+    MatTooltipModule,
+    ProductTypeSelect,
+    ProductCards,
+    ProductTable,
+  ],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })
@@ -20,6 +29,7 @@ export default class Products {
     loader: () => this.#service.getProducts(),
   });
 
+  protected readonly selectedViewMode = signal<ViewMode>(ViewMode.cards);
   protected readonly selectedType = signal<ProductType | null>(null);
   protected readonly selectedActive = signal<'ACTIVE' | 'INACTIVE' | 'ALL'>('ALL');
   protected readonly selectedGender = signal<Gender | 'ALL'>('ALL');

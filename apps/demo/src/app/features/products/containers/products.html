@@ -1,50 +1,93 @@
-<mat-toolbar>
-  <mat-button-toggle-group
-    [aria-label]="selectedActive()"
-    [value]="selectedActive()"
-    (change)="selectedActive.set($event.value)">
-    <mat-button-toggle
-      value="ALL"
-      [checked]="selectedActive() === 'ALL'">
-      All
-    </mat-button-toggle>
-    <mat-button-toggle
-      value="ACTIVE"
-      [checked]="selectedActive() === 'ACTIVE'">
-      Active
-    </mat-button-toggle>
-    <mat-button-toggle
-      value="INACTIVE"
-      [checked]="selectedActive() === 'INACTIVE'">
-      Inactive
-    </mat-button-toggle>
-  </mat-button-toggle-group>
+<header>
+  <div class="header-start">
+    <mat-button-toggle-group
+      name="view"
+      aria-label="View mode"
+      hideSingleSelectionIndicator="false"
+      [value]="selectedViewMode()"
+      (change)="selectedViewMode.set($event.value)">
+      <mat-button-toggle
+        value="cards"
+        matTooltip="Cards view"
+        matTooltipPosition="above">
+        <mat-icon>cards</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle
+        value="table"
+        matTooltip="Table view"
+        matTooltipPosition="above">
+        <mat-icon>table</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
 
-  <mat-button-toggle-group
-    [aria-label]="selectedGender()"
-    [value]="selectedGender()"
-    (change)="selectedGender.set($event.value)">
-    <mat-button-toggle
-      value="ALL"
-      [checked]="selectedGender() === 'ALL'">
-      All
-    </mat-button-toggle>
-    <mat-button-toggle
-      value="MALE"
-      [checked]="selectedGender() === 'MALE'">
-      Male
-    </mat-button-toggle>
-    <mat-button-toggle
-      value="FEMALE"
-      [checked]="selectedGender() === 'FEMALE'">
-      Female
-    </mat-button-toggle>
-  </mat-button-toggle-group>
+  <div class="header-end">
+    <mat-button-toggle-group
+      [aria-label]="selectedActive()"
+      [value]="selectedActive()"
+      (change)="selectedActive.set($event.value)">
+      <mat-button-toggle
+        value="ALL"
+        matTooltip="No active status filter"
+        matTooltipPosition="above"
+        [checked]="selectedActive() === 'ALL'">
+        All
+      </mat-button-toggle>
+      <mat-button-toggle
+        value="ACTIVE"
+        matTooltip="Filter by 'Active'"
+        matTooltipPosition="above"
+        [checked]="selectedActive() === 'ACTIVE'">
+        Active
+      </mat-button-toggle>
+      <mat-button-toggle
+        value="INACTIVE"
+        matTooltip="Filter by 'Inactive'"
+        matTooltipPosition="above"
+        [checked]="selectedActive() === 'INACTIVE'">
+        Inactive
+      </mat-button-toggle>
+    </mat-button-toggle-group>
 
-  <app-product-type-select
-    class="type-filter"
-    [value]="selectedType()"
-    (valueChange)="onTypeChange($event)" />
-</mat-toolbar>
+    <mat-button-toggle-group
+      [aria-label]="selectedGender()"
+      [value]="selectedGender()"
+      (change)="selectedGender.set($event.value)">
+      <mat-button-toggle
+        value="ALL"
+        matTooltip="No gender filter"
+        matTooltipPosition="above"
+        [checked]="selectedGender() === 'ALL'">
+        All
+      </mat-button-toggle>
+      <mat-button-toggle
+        value="MALE"
+        matTooltip="Filter by 'Male'"
+        matTooltipPosition="above"
+        [checked]="selectedGender() === 'MALE'">
+        Male
+      </mat-button-toggle>
+      <mat-button-toggle
+        value="FEMALE"
+        matTooltip="Filter by 'Female'"
+        matTooltipPosition="above"
+        [checked]="selectedGender() === 'FEMALE'">
+        Female
+      </mat-button-toggle>
+    </mat-button-toggle-group>
 
-<app-product-cards [products]="products()" />
+    <app-product-type-select
+      class="type-filter"
+      [value]="selectedType()"
+      (valueChange)="onTypeChange($event)" />
+  </div>
+</header>
+
+@switch (selectedViewMode()) {
+  @case ('cards') {
+    <app-product-cards [products]="products()" />
+  }
+  @case ('table') {
+    <app-product-table [products]="products()" />
+  }
+}

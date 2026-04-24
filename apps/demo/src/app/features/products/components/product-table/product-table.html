@@ -1,0 +1,64 @@
+<table ngGrid>
+  <thead>
+    <tr ngGridRow>
+      <th
+        ngGridCell
+        style="inline-size: 250px">
+        <button
+          ngGridCellWidget
+          type="button"
+          aria-label="Sort by name"
+          (click)="sortByName()">
+          Name
+        </button>
+      </th>
+      <th ngGridCell>
+        <button
+          ngGridCellWidget
+          type="button"
+          aria-label="Sort by description"
+          (click)="sortByDescription()">
+          Description
+        </button>
+      </th>
+      <th ngGridCell>
+        <button
+          ngGridCellWidget
+          type="button"
+          aria-label="Sort by type"
+          (click)="sortByType()">
+          Type
+        </button>
+      </th>
+      <th ngGridCell>
+        <button
+          ngGridCellWidget
+          type="button"
+          aria-label="Sort by price"
+          (click)="sortByPrice()">
+          Price
+        </button>
+      </th>
+      <th ngGridCell>
+        <button
+          ngGridCellWidget
+          type="button"
+          aria-label="Sort by gender"
+          (click)="sortByGender()">
+          Gender
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (product of productsSorted(); track product.id) {
+      <tr ngGridRow>
+        <td ngGridCell>{{ product.name }}</td>
+        <td ngGridCell>{{ product.description }}</td>
+        <td ngGridCell>{{ product.productType }}</td>
+        <td ngGridCell>{{ product.price }}</td>
+        <td ngGridCell>{{ product.gender }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

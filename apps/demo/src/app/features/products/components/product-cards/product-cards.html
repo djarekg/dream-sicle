@@ -9,7 +9,7 @@
       <p>{{ product.description }}</p>
       <div class="meta">
         <mat-chip-set aria-label="Product details">
-          <mat-chip>${{ product.price }}</mat-chip>
+          <mat-chip class="price">${{ product.price }}</mat-chip>
           <mat-chip>{{ product.gender }}</mat-chip>
         </mat-chip-set>
       </div>
@@ -18,9 +18,9 @@
     <mat-card-actions>
       <a
         [routerLink]="['/products', product.id]"
-        mat-button
-        >View Details</a
-      >
+        mat-button>
+        View Details
+      </a>
     </mat-card-actions>
   </mat-card>
 }

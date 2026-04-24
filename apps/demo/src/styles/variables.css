@@ -20,4 +20,7 @@
 
   /* Sizes */
   --app-header-height: 92px;
+
+  /* Filters */
+  --app-backdrop-filter: blur(4px);
 }
