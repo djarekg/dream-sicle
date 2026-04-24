@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { computed, inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Service, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { Role } from '@ds/contracts';
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
@@ -10,9 +10,7 @@ import { AUTH_TOKEN_CACHE_KEY } from '@/core/auth/auth-token-cache-key';
 import { AuthCookie } from './auth-cookie.js';
 import { AuthStatus } from './auth-status.js';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class AuthService {
   readonly #api = inject(ApiService);
   readonly #http = inject(HttpClient);
@@ -99,10 +97,9 @@ export class AuthService {
    * Signout the user and redirect to the home page.
    */
   async signout() {
-    const { success = false } = await this.#api.post<
-      unknown,
-      { success: boolean }
-    >('/auth/signout');
+    const { success = false } = await this.#api.post<unknown, { success: boolean }>(
+      '/auth/signout',
+    );
 
     if (success) {
       this.#cookieService.delete(AUTH_TOKEN_CACHE_KEY, '/');

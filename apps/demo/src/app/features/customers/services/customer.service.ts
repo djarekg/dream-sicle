@@ -1,12 +1,10 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Service } from '@angular/core';
 import type { CustomerDto } from '@ds/contracts';
 
 import { ApiService } from '@/core/api/api.service';
 import type { CustomerUpdateModel } from '@/features/customers/models/customer-update';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class CustomerService {
   readonly #api = inject(ApiService);
 

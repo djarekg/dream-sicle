@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Service } from '@angular/core';
 import type { SearchResult } from '@ds/contracts';
 
 import { ApiService } from '@/core/api/api.service';
@@ -10,9 +10,7 @@ type SearchRequest = {
   highlightEndTag: string;
 };
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class SearchService {
   readonly #api = inject(ApiService);
 

@@ -1,12 +1,10 @@
-import { ApiService } from "@/core/api/api.service.js";
-import { inject, Injectable } from "@angular/core";
-import type { StateDto } from "@ds/contracts";
+import { ApiService } from '@/core/api/api.service.js';
+import { inject, Service } from '@angular/core';
+import type { StateDto } from '@ds/contracts';
 
-@Injectable({
-  providedIn: "root",
-})
+@Service()
 export class StateService {
   readonly #api = inject(ApiService);
 
-  getStates = () => this.#api.get<StateDto[]>("/states");
+  getStates = () => this.#api.get<StateDto[]>('/states');
 }

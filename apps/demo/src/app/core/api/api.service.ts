@@ -1,13 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Service } from '@angular/core';
 
 type HttpOptions = {
   cache: RequestCache;
 };
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class ApiService {
   readonly #http = inject(HttpClient);
 
