@@ -5,7 +5,7 @@
       aria-label="View mode"
       hideSingleSelectionIndicator="false"
       [value]="selectedViewMode()"
-      (change)="selectedViewMode.set($event.value)">
+      (change)="onViewModeChange($event.value)">
       <mat-button-toggle
         value="cards"
         matTooltip="Cards view"
