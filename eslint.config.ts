@@ -6,13 +6,16 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default defineConfig([
+  tseslint.configs.recommended,
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
     plugins: { js },
     extends: ['js/recommended'],
     languageOptions: { globals: globals.browser },
+    rules: {
+      '@typescript-eslint/ban-ts-comment': 'off',
+    },
   },
-  tseslint.configs.recommended,
   { files: ['**/*.json'], plugins: { json }, language: 'json/json', extends: ['json/recommended'] },
   {
     files: ['**/*.jsonc'],
