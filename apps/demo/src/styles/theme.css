@@ -270,6 +270,9 @@ html {
   --mat-sys-focus-state-layer-opacity: 0.12;
   --mat-sys-hover-state-layer-opacity: 0.08;
   --mat-sys-pressed-state-layer-opacity: 0.12;
+
+  /* COMPONENT SYSTEM VARIABLES */
+  --mat-icon-color: var(--mat-sys-on-surface);
 }
 
 .material-symbols-outlined {

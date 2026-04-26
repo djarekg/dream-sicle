@@ -30,7 +30,9 @@
           Type
         </button>
       </th>
-      <th ngGridCell>
+      <th
+        ngGridCell
+        right>
         <button
           ngGridCellWidget
           type="button"
@@ -48,16 +50,47 @@
           Gender
         </button>
       </th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     @for (product of productsSorted(); track product.id) {
       <tr ngGridRow>
-        <td ngGridCell>{{ product.name }}</td>
+        <td ngGridCell>
+          <div
+            #widgetName="ngGridCellWidget"
+            ngGridCellWidget
+            aria-label="edit product"
+            widgetType="editable"
+            (activated)="startInlineEdit($event, product, inputName)"
+            (deactivated)="completeInlineEdit($event, 'name', product)">
+            <span [class.hidden]="widgetName.isActivated()">{{ product.name }}</span>
+            <input
+              #inputName
+              [class.hidden]="!widgetName.isActivated()"
+              [(value)]="inlineEditValue" />
+            <mat-icon
+              class="product-edit-button"
+              matTooltip="Edit product name"
+              [class.hidden]="widgetName.isActivated()"
+              (click)="onClickEdit(widgetName, product, inputName)">
+              edit
+            </mat-icon>
+          </div>
+        </td>
         <td ngGridCell>{{ product.description }}</td>
         <td ngGridCell>{{ product.productType }}</td>
         <td ngGridCell>{{ product.price }}</td>
         <td ngGridCell>{{ product.gender }}</td>
+        <td ngGridCell>
+          <a
+            ngGridCellWidget
+            aria-label="Open product details"
+            matTooltip="Open product details"
+            [routerLink]="['/products', product.id]">
+            <mat-icon>open_in_browser</mat-icon>
+          </a>
+        </td>
       </tr>
     }
   </tbody>

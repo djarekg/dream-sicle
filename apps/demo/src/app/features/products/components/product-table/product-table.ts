@@ -1,11 +1,14 @@
 import type { SortableColumn, SortState } from '@/core/types';
 import { Grid, GridCell, GridCellWidget, GridRow } from '@angular/aria/grid';
-import { Component, input, linkedSignal, signal } from '@angular/core';
+import { Component, input, linkedSignal, model, signal } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { RouterLink } from '@angular/router';
 import { ProductDto } from '@ds/contracts';
 
 @Component({
   selector: 'app-product-table',
-  imports: [Grid, GridRow, GridCell, GridCellWidget],
+  imports: [Grid, GridRow, GridCell, GridCellWidget, MatIconModule, MatTooltipModule, RouterLink],
   templateUrl: './product-table.html',
   styleUrl: './product-table.css',
 })
@@ -17,6 +20,8 @@ export class ProductTable {
 
   readonly products = input<ProductDto[]>([]);
   readonly #sortState = signal<SortState>(this.#defaultSortState);
+
+  protected inlineEditValue = model<string>('');
 
   protected readonly productsSorted = linkedSignal<ProductDto[]>(() =>
     this.#sortProducts(this.products(), this.#sortState()),
@@ -40,6 +45,47 @@ export class ProductTable {
 
   protected sortByGender() {
     this.#updateSortState('gender');
+  }
+
+  protected onClickEdit(widget: GridCellWidget, product: ProductDto, inputEl: HTMLInputElement) {
+    if (widget.isActivated()) return;
+
+    widget.activate();
+    setTimeout(() => this.startInlineEdit(undefined, product, inputEl));
+  }
+
+  protected startInlineEdit(
+    e: KeyboardEvent | FocusEvent | undefined,
+    product: ProductDto,
+    inputEl: HTMLInputElement,
+  ) {
+    this.inlineEditValue.set(product.name);
+    inputEl.focus();
+
+    if (!(e instanceof KeyboardEvent)) return;
+
+    // Start editing with an alphanumeric character.
+    if (e.key.length === 1) {
+      this.inlineEditValue.set(e.key);
+    }
+  }
+
+  protected completeInlineEdit(e: Event | undefined, field: string, product: ProductDto) {
+    if (e instanceof KeyboardEvent && e.key !== 'Enter') return;
+
+    // @ts-ignore: Dynamic field update for simplicity. In a real app, consider a more robust solution.
+    product[field] = this.inlineEditValue();
+
+    this.productsSorted.update(products => {
+      const index = products.findIndex(p => p.id === product.id);
+      if (index !== -1) {
+        // Clone products because signals require immutability to trigger updates.
+        const updatedProducts = [...products];
+        updatedProducts[index] = { ...product };
+        return updatedProducts;
+      }
+      return products;
+    });
   }
 
   /**

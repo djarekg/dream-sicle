@@ -1,29 +1,79 @@
 table {
   border: 1px solid var(--mat-sys-outline);
   border-radius: var(--mat-sys-corner-medium);
+}
 
-  th,
-  td {
-    padding: 0.75rem 1rem;
-  }
+th [ngGridCellWidget],
+td {
+  padding: 0.75rem 1rem;
 }
 
 th {
-  cursor: pointer;
-}
+  &,
+  [ngGridCellWidget] {
+    text-align: left;
 
-td {
-  &:focus-within,
-  &:hover {
-    outline-offset: -1px;
-    outline: 1px solid color-mix(in srgb, var(--mat-sys-primary) 60%, transparent);
+    &[right] {
+      text-align: right;
+    }
+  }
+
+  button {
+    border: unset;
+    padding: unset;
+    color: unset;
+    background: unset;
+    outline: unset;
+    block-size: 100%;
+    inline-size: 100%;
+    cursor: pointer;
+    font: var(--mat-sys-label-large);
   }
 }
 
-button {
-  border: unset;
-  padding: unset;
-  color: unset;
-  /* background: unset; */
+td {
+  position: relative;
+
+  &:not(:has(a)) {
+    &:focus-within,
+    &:hover {
+      outline-offset: -1px;
+      outline: 1px solid color-mix(in srgb, var(--mat-sys-primary) 60%, transparent);
+    }
+  }
+
+  &:hover {
+    .product-edit-button {
+      opacity: 1;
+    }
+  }
+
+  input {
+    border: unset;
+    padding: unset;
+    color: unset;
+    background: var(--mat-sys-surface-variant);
+    outline: unset;
+    font: var(--mat-sys-body-medium);
+  }
+}
+
+[ngGridCellWidget] {
   outline: unset;
+}
+
+.mat-icon:hover {
+  color: var(--mat-sys-primary);
+}
+
+.product-edit-button {
+  position: absolute;
+  inset-inline-end: 0.5rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.hidden {
+  display: none;
 }
