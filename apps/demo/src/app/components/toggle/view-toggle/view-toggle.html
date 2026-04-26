@@ -1,0 +1,20 @@
+<mat-button-toggle-group
+  name="view"
+  aria-label="View mode"
+  hideSingleSelectionIndicator="false"
+  [disabled]="disabled()"
+  [value]="value()"
+  (change)="value.set($event.value)">
+  <mat-button-toggle
+    value="cards"
+    matTooltip="Cards view"
+    matTooltipPosition="above">
+    <mat-icon>cards</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle
+    value="table"
+    matTooltip="Table view"
+    matTooltipPosition="above">
+    <mat-icon>table</mat-icon>
+  </mat-button-toggle>
+</mat-button-toggle-group>

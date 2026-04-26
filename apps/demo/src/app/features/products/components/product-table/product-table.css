@@ -19,3 +19,11 @@ td {
     outline: 1px solid color-mix(in srgb, var(--mat-sys-primary) 60%, transparent);
   }
 }
+
+button {
+  border: unset;
+  padding: unset;
+  color: unset;
+  /* background: unset; */
+  outline: unset;
+}

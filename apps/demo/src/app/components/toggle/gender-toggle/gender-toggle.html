@@ -1,0 +1,24 @@
+<mat-button-toggle-group
+  aria-label="Gender filter"
+  [disabled]="disabled()"
+  [value]="value()"
+  (change)="value.set($event.value)">
+  <mat-button-toggle
+    value="ALL"
+    matTooltip="No gender filter"
+    matTooltipPosition="above">
+    All
+  </mat-button-toggle>
+  <mat-button-toggle
+    value="MALE"
+    matTooltip="Filter by 'Male'"
+    matTooltipPosition="above">
+    Male
+  </mat-button-toggle>
+  <mat-button-toggle
+    value="FEMALE"
+    matTooltip="Filter by 'Female'"
+    matTooltipPosition="above">
+    Female
+  </mat-button-toggle>
+</mat-button-toggle-group>

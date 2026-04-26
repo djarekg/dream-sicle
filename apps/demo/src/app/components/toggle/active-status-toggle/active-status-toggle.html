@@ -1,0 +1,24 @@
+<mat-button-toggle-group
+  aria-label="Active status filter"
+  [disabled]="disabled()"
+  [value]="value()"
+  (change)="value.set($event.value)">
+  <mat-button-toggle
+    value="ALL"
+    matTooltip="No active status filter"
+    matTooltipPosition="above">
+    All
+  </mat-button-toggle>
+  <mat-button-toggle
+    value="ACTIVE"
+    matTooltip="Filter by 'Active'"
+    matTooltipPosition="above">
+    Active
+  </mat-button-toggle>
+  <mat-button-toggle
+    value="INACTIVE"
+    matTooltip="Filter by 'Inactive'"
+    matTooltipPosition="above">
+    Inactive
+  </mat-button-toggle>
+</mat-button-toggle-group>

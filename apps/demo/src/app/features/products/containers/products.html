@@ -1,85 +1,24 @@
 <header>
   <div class="header-start">
-    <mat-button-toggle-group
-      name="view"
-      aria-label="View mode"
-      hideSingleSelectionIndicator="false"
+    <app-view-toggle
       [value]="selectedViewMode()"
-      (change)="onViewModeChange($event.value)">
-      <mat-button-toggle
-        value="cards"
-        matTooltip="Cards view"
-        matTooltipPosition="above">
-        <mat-icon>cards</mat-icon>
-      </mat-button-toggle>
-      <mat-button-toggle
-        value="table"
-        matTooltip="Table view"
-        matTooltipPosition="above">
-        <mat-icon>table</mat-icon>
-      </mat-button-toggle>
-    </mat-button-toggle-group>
+      (valueChange)="onViewModeChange($event)" />
   </div>
 
   <div class="header-end">
-    <mat-button-toggle-group
-      [aria-label]="selectedActive()"
+    <app-active-status-toggle
       [value]="selectedActive()"
-      (change)="selectedActive.set($event.value)">
-      <mat-button-toggle
-        value="ALL"
-        matTooltip="No active status filter"
-        matTooltipPosition="above"
-        [checked]="selectedActive() === 'ALL'">
-        All
-      </mat-button-toggle>
-      <mat-button-toggle
-        value="ACTIVE"
-        matTooltip="Filter by 'Active'"
-        matTooltipPosition="above"
-        [checked]="selectedActive() === 'ACTIVE'">
-        Active
-      </mat-button-toggle>
-      <mat-button-toggle
-        value="INACTIVE"
-        matTooltip="Filter by 'Inactive'"
-        matTooltipPosition="above"
-        [checked]="selectedActive() === 'INACTIVE'">
-        Inactive
-      </mat-button-toggle>
-    </mat-button-toggle-group>
+      (valueChange)="selectedActive.set($event)" />
 
-    <mat-button-toggle-group
-      [aria-label]="selectedGender()"
+    <app-gender-toggle
       [value]="selectedGender()"
-      (change)="selectedGender.set($event.value)">
-      <mat-button-toggle
-        value="ALL"
-        matTooltip="No gender filter"
-        matTooltipPosition="above"
-        [checked]="selectedGender() === 'ALL'">
-        All
-      </mat-button-toggle>
-      <mat-button-toggle
-        value="MALE"
-        matTooltip="Filter by 'Male'"
-        matTooltipPosition="above"
-        [checked]="selectedGender() === 'MALE'">
-        Male
-      </mat-button-toggle>
-      <mat-button-toggle
-        value="FEMALE"
-        matTooltip="Filter by 'Female'"
-        matTooltipPosition="above"
-        [checked]="selectedGender() === 'FEMALE'">
-        Female
-      </mat-button-toggle>
-    </mat-button-toggle-group>
+      (valueChange)="selectedGender.set($event)" />
 
     <app-product-type-select
+      multiple
       class="type-filter"
       [value]="selectedType()"
-      (valueChange)="onTypeChange($event)" />
+      (valueChange)="selectedType.set($event)" />
   </div>
 </header>
 
