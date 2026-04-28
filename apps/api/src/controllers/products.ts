@@ -5,6 +5,11 @@ import prisma from '@/db.ts';
 import { ApiError, ApiStatus } from '@/types/index.ts';
 import { parseParams } from '@/utils/params.ts';
 
+type UpdateProductPayload = Pick<
+  ProductDto,
+  'name' | 'description' | 'price' | 'gender' | 'productType' | 'isActive'
+>;
+
 const toProductDto = (product: ProductModel): ProductDto => {
   return {
     id: product.id,
@@ -46,4 +51,31 @@ export const getProduct = async (req: Request) => {
 export const getProducts = async () => {
   const products = await prisma.product.findMany();
   return Response.json(products.map(toProductDto));
+};
+
+/**
+ * Update a product by ID.
+ */
+export const updateProduct = async (req: Request) => {
+  const { id } = parseParams<{ id: string }>(req);
+
+  if (!id) {
+    throw new ApiError(ApiStatus.badRequest, 'Product ID is required');
+  }
+
+  const payload = (await req.json()) as Partial<UpdateProductPayload>;
+
+  const product = await prisma.product.update({
+    where: { id },
+    data: {
+      name: payload.name,
+      description: payload.description,
+      price: payload.price,
+      gender: payload.gender,
+      productType: payload.productType,
+      isActive: payload.isActive,
+    },
+  });
+
+  return Response.json(toProductDto(product));
 };

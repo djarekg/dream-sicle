@@ -27,6 +27,8 @@
     <app-product-cards [products]="products()" />
   }
   @case ('table') {
-    <app-product-table [products]="products()" />
+    <app-product-table
+      [products]="products()"
+      (productChange)="updateProduct($event)" />
   }
 }

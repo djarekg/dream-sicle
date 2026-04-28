@@ -6,8 +6,6 @@
     var(--mat-sys-tertiary),
     var(--mat-sys-surface-container-low)
   );
-  /* --ds-command-palette-highlight-color: inherit;
-  --ds-command-palette-highlight-background: var(--app-color-brand-gradient); */
 }
 
 .search-placeholder {
@@ -21,10 +19,3 @@
   font: var(--mat-sys-body-medium);
   color: var(--mat-sys-outline);
 }
-
-/* ds-command-palette {
-  ::ng-deep mark {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-} */

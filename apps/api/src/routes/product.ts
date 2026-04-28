@@ -1,4 +1,4 @@
-import { getProduct, getProducts } from '@/controllers/products.ts';
+import { getProduct, getProducts, updateProduct } from '@/controllers/products.ts';
 import { withCors } from '@/middleware/with-cors.ts';
 
 /**
@@ -6,5 +6,8 @@ import { withCors } from '@/middleware/with-cors.ts';
  */
 export const productRoutes = {
   '/products': withCors(async () => getProducts()),
-  '/products/:id': withCors(async req => getProduct(req)),
+  '/products/:id': {
+    GET: withCors(async req => getProduct(req)),
+    POST: withCors(async req => updateProduct(req)),
+  },
 };

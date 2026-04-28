@@ -9,4 +9,6 @@ export class ProductService {
 
   getProduct = (id: string) => this.#api.get<ProductDto>(`/products/${id}`);
   getProducts = () => this.#api.get<ProductDto[]>('/products');
+  updateProduct = (product: ProductDto) =>
+    this.#api.post<ProductDto, ProductDto>(`/products/${product.id}`, product);
 }

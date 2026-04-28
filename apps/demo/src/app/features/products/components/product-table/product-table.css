@@ -1,11 +1,16 @@
+:host {
+  --_outline: 1px solid color-mix(in srgb, var(--mat-sys-primary) 60%, transparent);
+}
+
 table {
   border: 1px solid var(--mat-sys-outline);
   border-radius: var(--mat-sys-corner-medium);
+  inline-size: 100%;
 }
 
 th [ngGridCellWidget],
 td {
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 th {
@@ -33,12 +38,13 @@ th {
 
 td {
   position: relative;
+  border: 6px solid var(--mat-sys-surface);
 
   &:not(:has(a)) {
     &:focus-within,
     &:hover {
       outline-offset: -1px;
-      outline: 1px solid color-mix(in srgb, var(--mat-sys-primary) 60%, transparent);
+      outline: var(--_outline);
     }
   }
 
@@ -48,13 +54,19 @@ td {
     }
   }
 
+  &:has([data-active-control="widget"]) {
+    /* border: 6px solid var(--mat-sys-surface); */
+    background: var(--mat-sys-surface-container-low);
+  }
+
   input {
     border: unset;
     padding: unset;
     color: unset;
-    background: var(--mat-sys-surface-variant);
+    background: var(--mat-sys-surface-container-low);
     outline: unset;
     font: var(--mat-sys-body-medium);
+    inline-size: 100%;
   }
 }
 

@@ -59,6 +59,10 @@ export default class Products {
     return this.#resource.value().filter(product => this.#matchesProductFilters(product, filters));
   });
 
+  protected updateProduct(product: ProductDto) {
+    this.#service.updateProduct(product);
+  }
+
   protected onViewModeChange(view: ViewMode) {
     if (view === this.selectedViewMode()) {
       return;

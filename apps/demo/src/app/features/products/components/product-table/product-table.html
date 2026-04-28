@@ -62,23 +62,46 @@
             ngGridCellWidget
             aria-label="edit product"
             widgetType="editable"
-            (activated)="startInlineEdit($event, product, inputName)"
+            (activated)="startInlineEdit($event, 'name', product, inputName)"
             (deactivated)="completeInlineEdit($event, 'name', product)">
             <span [class.hidden]="widgetName.isActivated()">{{ product.name }}</span>
             <input
               #inputName
               [class.hidden]="!widgetName.isActivated()"
-              [(value)]="inlineEditValue" />
+              [value]="inlineEditValue()"
+              (blur)="inlineEditValue.set(inputName.value)" />
             <mat-icon
               class="product-edit-button"
               matTooltip="Edit product name"
               [class.hidden]="widgetName.isActivated()"
-              (click)="onClickEdit(widgetName, product, inputName)">
+              (click)="onClickEdit(widgetName, 'name', product, inputName)">
               edit
             </mat-icon>
           </div>
         </td>
-        <td ngGridCell>{{ product.description }}</td>
+        <td ngGridCell>
+          <div
+            #widgetDescription="ngGridCellWidget"
+            ngGridCellWidget
+            aria-label="edit product description"
+            widgetType="editable"
+            (activated)="startInlineEdit($event, 'description', product, inputDescription)"
+            (deactivated)="completeInlineEdit($event, 'description', product)">
+            <span [class.hidden]="widgetDescription.isActivated()">{{ product.description }}</span>
+            <input
+              #inputDescription
+              [class.hidden]="!widgetDescription.isActivated()"
+              [value]="inlineEditValue()"
+              (blur)="inlineEditValue.set(inputDescription.value)" />
+            <mat-icon
+              class="product-edit-button"
+              matTooltip="Edit product description"
+              [class.hidden]="widgetDescription.isActivated()"
+              (click)="onClickEdit(widgetDescription, 'description', product, inputDescription)">
+              edit
+            </mat-icon>
+          </div>
+        </td>
         <td ngGridCell>{{ product.productType }}</td>
         <td ngGridCell>{{ product.price }}</td>
         <td ngGridCell>{{ product.gender }}</td>
