@@ -4,11 +4,21 @@ import { Component, computed, input, output, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterLink } from '@angular/router';
+import { GridCell as DsGridCell } from '@ds/components';
 import { ProductDto } from '@ds/contracts';
 
 @Component({
   selector: 'app-product-table',
-  imports: [Grid, GridRow, GridCell, GridCellWidget, MatIconModule, MatTooltipModule, RouterLink],
+  imports: [
+    DsGridCell,
+    Grid,
+    GridRow,
+    GridCell,
+    GridCellWidget,
+    MatIconModule,
+    MatTooltipModule,
+    RouterLink,
+  ],
   templateUrl: './product-table.html',
   styleUrl: './product-table.css',
 })
@@ -21,8 +31,6 @@ export class ProductTable {
   readonly products = input<ProductDto[]>([]);
   readonly productChange = output<ProductDto>();
   readonly #sortState = signal<SortState>(this.#defaultSortState);
-
-  protected readonly inlineEditValue = signal<string>('');
 
   protected readonly productsSorted = computed<ProductDto[]>(() =>
     this.#sortProducts(this.products(), this.#sortState()),
@@ -48,42 +56,9 @@ export class ProductTable {
     this.#updateSortState('gender');
   }
 
-  protected onClickEdit(
-    widget: GridCellWidget,
-    field: string,
-    product: ProductDto,
-    inputEl: HTMLInputElement,
-  ) {
-    if (widget.isActivated()) return;
-
-    widget.activate();
-    setTimeout(() => this.startInlineEdit(undefined, field, product, inputEl));
-  }
-
-  protected startInlineEdit(
-    e: KeyboardEvent | FocusEvent | undefined,
-    field: string,
-    product: ProductDto,
-    inputEl: HTMLInputElement,
-  ) {
-    this.inlineEditValue.set(((product as Record<string, unknown>)[field] as string) ?? '');
-    inputEl.focus();
-
-    if (!(e instanceof KeyboardEvent)) return;
-
-    // Start editing with an alphanumeric character.
-    if (e.key.length === 1) {
-      this.inlineEditValue.set(e.key);
-    }
-  }
-
-  protected completeInlineEdit(e: Event | undefined, field: string, product: ProductDto) {
-    if (e instanceof KeyboardEvent && e.key !== 'Enter') return;
-
-    const latestValue = this.inlineEditValue();
-
+  protected updateProduct(product: ProductDto, field: string, value: string) {
     // @ts-ignore: Dynamic field update for simplicity. In a real app, consider a more robust solution.
-    product[field] = latestValue;
+    product[field] = value;
 
     this.productChange.emit({ ...product });
   }

@@ -1,0 +1,29 @@
+:host {
+  --_edit-button-opacity: 0;
+
+  &:hover {
+    --_edit-button-opacity: 1;
+  }
+}
+
+input {
+  border: unset;
+  padding: unset;
+  color: unset;
+  background: var(--mat-sys-surface-container-low);
+  outline: unset;
+  font: var(--mat-sys-body-medium);
+  inline-size: 100%;
+}
+
+.edit-button {
+  position: absolute;
+  inset-inline-end: 0.5rem;
+  cursor: pointer;
+  opacity: var(--_edit-button-opacity);
+  transition: opacity 0.2s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}

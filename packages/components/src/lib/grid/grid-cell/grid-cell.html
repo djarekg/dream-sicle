@@ -1,0 +1,21 @@
+<div
+  #widget="ngGridCellWidget"
+  ngGridCellWidget
+  aria-label="edit {{ field() }}"
+  widgetType="editable"
+  (activated)="startInlineEdit($event)"
+  (deactivated)="completeInlineEdit($event)">
+  <span [class.hidden]="widget.isActivated()">{{ value() }}</span>
+  <input
+    #input
+    [class.hidden]="!widget.isActivated()"
+    [value]="value()"
+    (blur)="onInputBlur(input.value, widget)" />
+  <mat-icon
+    class="edit-button"
+    matTooltip="Edit {{ field() }}"
+    [class.hidden]="widget.isActivated()"
+    (click)="onClickEdit(widget)">
+    edit
+  </mat-icon>
+</div>
