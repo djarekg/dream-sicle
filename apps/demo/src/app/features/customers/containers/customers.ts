@@ -1,3 +1,4 @@
+import { Spinner } from '@/components/spinner/spinner';
 import { ViewMode } from '@/core/constants';
 import { CustomerCards, CustomerTable } from '@/features/customers/components';
 import { CustomerService } from '@/features/customers/services/customer.service';
@@ -8,7 +9,14 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-customers',
-  imports: [CustomerCards, CustomerTable, MatButtonToggleModule, MatIconModule, MatTooltipModule],
+  imports: [
+    CustomerCards,
+    CustomerTable,
+    MatButtonToggleModule,
+    MatIconModule,
+    MatTooltipModule,
+    Spinner,
+  ],
   templateUrl: './customers.html',
   styleUrl: './customers.css',
 })

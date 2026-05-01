@@ -25,6 +25,12 @@
     <app-customer-cards [customers]="customers()"></app-customer-cards>
   }
   @case ('table') {
-    <app-customer-table [customers]="customers()"></app-customer-table>
+    @defer (on idle) {
+      <app-customer-table [customers]="customers()"></app-customer-table>
+    } @placeholder {
+      <div></div>
+    } @loading {
+      <app-spinner />
+    }
   }
 }

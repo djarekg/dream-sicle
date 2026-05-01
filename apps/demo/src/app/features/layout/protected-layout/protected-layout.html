@@ -4,6 +4,10 @@
   <router-outlet />
 </main>
 
-<app-settings-nav
-  [opened]="isOpened()"
-  (close)="isOpened.set(false)" />
+@defer (when isOpened()) {
+  <app-settings-nav
+    [opened]="isOpened()"
+    (close)="isOpened.set(false)" />
+} @placeholder {
+  <div></div>
+}

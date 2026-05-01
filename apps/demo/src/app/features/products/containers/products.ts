@@ -1,4 +1,5 @@
 import { ProductTypeSelect } from '@/components/select';
+import { Spinner } from '@/components/spinner/spinner';
 import {
   ActiveStatusToggle,
   GenderToggle,
@@ -34,6 +35,7 @@ type ProductFilters = {
     ProductTypeSelect,
     ProductCards,
     ProductTable,
+    Spinner,
   ],
   templateUrl: './products.html',
   styleUrl: './products.css',
