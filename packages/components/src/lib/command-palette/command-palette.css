@@ -20,7 +20,7 @@ dialog {
   background: transparent;
   border: none;
   outline: none;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 @container app-container (width < 750px) {
