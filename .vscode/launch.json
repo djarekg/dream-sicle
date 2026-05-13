@@ -3,15 +3,22 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "api: launch",
-      "type": "node-terminal",
+      "name": ".NET API",
+      "type": "coreclr",
       "request": "launch",
-      "cwd": "${workspaceFolder}/apps/api",
-      "command": "bun run dev",
-      "skipFiles": ["**/<node_internals>/**"],
-      "sourceMaps": true,
-      "smartStep": true,
-      "internalConsoleOptions": "openOnSessionStart"
+      "preLaunchTask": "dotnet: build",
+      "program": "${workspaceFolder}/apps/Api/bin/Debug/net10.0/Api.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/apps/Api",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        "uriFormat": "%s/swagger"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
     },
     {
       "name": "ng: serve",
@@ -24,14 +31,14 @@
       "name": "ng: test",
       "type": "editor-browser",
       "request": "launch",
-      "preLaunchTask": "npm: test",
+      "preLaunchTask": "bun: test",
       "url": "http://localhost:9876/debug.html"
     }
   ],
   "compounds": [
     {
       "name": "debug: api + ng",
-      "configurations": ["api: launch", "ng: serve"],
+      "configurations": [".NET API", "ng: serve"],
       "stopAll": true,
       "presentation": {
         "hidden": false,

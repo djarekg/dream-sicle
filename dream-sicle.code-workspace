@@ -144,8 +144,10 @@
     },
 
     "cSpell.words": [
+      "ASPNETCORE",
       "bcryptjs",
       "closedby",
+      "coreclr",
       "dbaeumer",
       "describedby",
       "dotenv",
