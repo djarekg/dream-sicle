@@ -764,8 +764,8 @@ export default [
 
 ## 12. Files to Reference
 
-- **Products Feature:** `apps/demo/src/app/features/products/`
-- **API Service:** `apps/demo/src/app/core/api/api.service.ts`
-- **Shared Components:** `apps/demo/src/app/components/`
+- **Products Feature:** `apps/web/src/app/features/products/`
+- **API Service:** `apps/web/src/app/core/api/api.service.ts`
+- **Shared Components:** `apps/web/src/app/components/`
 - **Contracts/Types:** `packages/contracts/`
 - **Utils:** `packages/utils/`

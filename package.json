@@ -58,7 +58,7 @@
   "scripts": {
     "clean": "bunx rimraf dist out-tsc .angular node_modules bun.lock; bun run --filter '*' clean",
     "setup": "bun run clean; bun install",
-    "dev:demo": "bun run --filter demo start",
+    "dev:web": "bun run --filter web start",
     "lint": "dprint check",
     "format": "dprint fmt"
   },

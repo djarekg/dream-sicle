@@ -1,8 +1,8 @@
-# @dream-sicle/demo
+# @dream-sicle/web
 
 Angular demo application for the dream-sicle workspace.
 
-`@dream-sicle/demo` is the main UI app in the repository. It uses Angular with SSR support and composes shared workspace packages to exercise authentication, layout, routing, and user-facing flows.
+`@dream-sicle/web` is the main UI app in the repository. It uses Angular with SSR support and composes shared workspace packages to exercise authentication, layout, routing, and user-facing flows.
 
 ## What This Project Contains
 
@@ -39,22 +39,22 @@ Angular demo application for the dream-sicle workspace.
 Run from the workspace root:
 
 ```bash
-bun --filter @dream-sicle/demo start
+bun --filter @dream-sicle/web start
 ```
 
 Useful scripts:
 
-- `bun --filter @dream-sicle/demo build`
-- `bun --filter @dream-sicle/demo watch`
-- `bun --filter @dream-sicle/demo test`
-- `bun --filter @dream-sicle/demo serve:ssr:demo`
+- `bun --filter @dream-sicle/web build`
+- `bun --filter @dream-sicle/web watch`
+- `bun --filter @dream-sicle/web test`
+- `bun --filter @dream-sicle/web serve:ssr:web`
 
 ## Example Workflow
 
 Start the app locally and open the users area:
 
 ```bash
-bun --filter @dream-sicle/demo start
+bun --filter @dream-sicle/web start
 ```
 
 Then navigate to `http://localhost:4200/users` to exercise the routed users feature.

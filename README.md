@@ -8,7 +8,7 @@ The workspace is organized so UI, API, database, and shared contracts can evolve
 
 ### Applications
 
-- [demo](apps/demo/README.md) - Angular demo application with SSR support, authentication flows, users pages, and shared layout infrastructure.
+- [demo](apps/web/README.md) - Angular demo application with SSR support, authentication flows, users pages, and shared layout infrastructure.
 - [api](apps/api/README.md) - Internal Node-based API serving auth, users, and search endpoints.
 
 ### Shared Packages
@@ -45,7 +45,7 @@ bun install
 bun run dev
 ```
 
-This runs the `@dream-sicle/demo` application in development mode.
+This runs the `@dream-sicle/web` application in development mode.
 
 ## Common Workspace Commands
 
@@ -56,7 +56,7 @@ This runs the `@dream-sicle/demo` application in development mode.
 
 ## How the Projects Fit Together
 
-- `@dream-sicle/demo` consumes `@dream-sicle/components`, `@dream-sicle/core`, `@dream-sicle/contracts`, and `@dream-sicle/utils`.
+- `@dream-sicle/web` consumes `@dream-sicle/components`, `@dream-sicle/core`, `@dream-sicle/contracts`, and `@dream-sicle/utils`.
 - `@dream-sicle/api` consumes `@dream-sicle/contracts`, `@dream-sicle/db`, and `@dream-sicle/utils`.
 - `@dream-sicle/db` is the source of truth for schema, generated Prisma types, and seed data.
 - `@dream-sicle/contracts` keeps the browser and API aligned on payload shapes without exposing database internals.

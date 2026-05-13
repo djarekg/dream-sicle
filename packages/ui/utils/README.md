@@ -87,4 +87,4 @@ Run from the workspace root:
 
 - [workspace](../../README.md)
 - [api](../../apps/api/README.md)
-- [demo](../../apps/demo/README.md)
+- [demo](../../apps/web/README.md)

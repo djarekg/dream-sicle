@@ -7,32 +7,32 @@
   },
   "newProjectRoot": "packages",
   "projects": {
-    "@dream-sicle/demo": {
+    "@dream-sicle/web": {
       "projectType": "application",
       "schematics": {},
-      "root": "apps/demo",
-      "sourceRoot": "apps/demo/src",
+      "root": "apps/web",
+      "sourceRoot": "apps/web/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "apps/demo/src/main.ts",
-            "tsConfig": "apps/demo/tsconfig.json",
+            "browser": "apps/web/src/main.ts",
+            "tsConfig": "apps/web/tsconfig.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "apps/demo/public"
+                "input": "apps/web/public"
               }
             ],
-            "styles": ["apps/demo/src/styles/theme.scss", "apps/demo/src/styles.css"],
-            "server": "apps/demo/src/main.server.ts",
+            "styles": ["apps/web/src/styles/theme.scss", "apps/web/src/styles.css"],
+            "server": "apps/web/src/main.server.ts",
             "outputMode": "server",
             "security": {
               "allowedHosts": []
             },
             "ssr": {
-              "entry": "apps/demo/src/server.ts"
+              "entry": "apps/web/src/server.ts"
             }
           },
           "configurations": {
@@ -57,8 +57,8 @@
               "sourceMap": true,
               "fileReplacements": [
                 {
-                  "replace": "apps/demo/src/environments/environment.ts",
-                  "with": "apps/demo/src/environments/environment.development.ts"
+                  "replace": "apps/web/src/environments/environment.ts",
+                  "with": "apps/web/src/environments/environment.development.ts"
                 }
               ]
             }
@@ -73,10 +73,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "@dream-sicle/demo:build:production"
+              "buildTarget": "@dream-sicle/web:build:production"
             },
             "development": {
-              "buildTarget": "@dream-sicle/demo:build:development"
+              "buildTarget": "@dream-sicle/web:build:development"
             }
           },
           "defaultConfiguration": "development"

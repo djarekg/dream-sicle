@@ -1,5 +1,5 @@
 {
-  "name": "@dream-sicle/demo",
+  "name": "@dream-sicle/web",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -10,7 +10,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:demo": "bun src/server.ts"
+    "serve:ssr:web": "bun src/server.ts"
   },
   "dependencies": {
     "@angular/aria": "catalog:",
