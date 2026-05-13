@@ -1,7 +1,7 @@
 import { Component, inject, resource, signal } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { isNotEmpty } from '@ds/utils';
+import { isNotEmpty } from '@dream-sicle/utils';
 
 import { Spinner } from '@/components/spinner/spinner';
 import { FormMode } from '@/core/constants/form-mode';

@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "packages",
   "projects": {
-    "@ds/demo": {
+    "@dream-sicle/demo": {
       "projectType": "application",
       "schematics": {},
       "root": "apps/demo",
@@ -73,10 +73,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "@ds/demo:build:production"
+              "buildTarget": "@dream-sicle/demo:build:production"
             },
             "development": {
-              "buildTarget": "@ds/demo:build:development"
+              "buildTarget": "@dream-sicle/demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,20 +86,20 @@
         }
       }
     },
-    "@ds/core": {
+    "@dream-sicle/core": {
       "projectType": "library",
-      "root": "packages/core",
-      "sourceRoot": "packages/core/src",
+      "root": "packages/ui/core",
+      "sourceRoot": "packages/ui/core/src",
       "prefix": "ds",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
           "configurations": {
             "production": {
-              "tsConfig": "packages/core/tsconfig.prod.json"
+              "tsConfig": "packages/ui/core/tsconfig.prod.json"
             },
             "development": {
-              "tsConfig": "packages/core/tsconfig.json"
+              "tsConfig": "packages/ui/core/tsconfig.json"
             }
           },
           "defaultConfiguration": "production"
@@ -107,25 +107,25 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "packages/core/tsconfig.spec.json"
+            "tsConfig": "packages/ui/core/tsconfig.spec.json"
           }
         }
       }
     },
-    "@ds/components": {
+    "@dream-sicle/components": {
       "projectType": "library",
-      "root": "packages/components",
-      "sourceRoot": "packages/components/src",
+      "root": "packages/ui/components",
+      "sourceRoot": "packages/ui/components/src",
       "prefix": "ds",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
           "configurations": {
             "production": {
-              "tsConfig": "packages/components/tsconfig.prod.json"
+              "tsConfig": "packages/ui/components/tsconfig.prod.json"
             },
             "development": {
-              "tsConfig": "packages/components/tsconfig.json"
+              "tsConfig": "packages/ui/components/tsconfig.json"
             }
           },
           "defaultConfiguration": "production"
@@ -133,7 +133,7 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "packages/components/tsconfig.spec.json"
+            "tsConfig": "packages/ui/components/tsconfig.spec.json"
           }
         }
       }

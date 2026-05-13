@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { CustomerDto } from '@ds/contracts';
+import { CustomerDto } from '@dream-sicle/contracts';
 
 @Component({
   selector: 'app-customer-cards',

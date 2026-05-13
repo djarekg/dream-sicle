@@ -1,6 +1,10 @@
-import type { CommandItem } from '@ds/components';
-import { type SearchResult, SearchResultType, type SearchResultTypeMap } from '@ds/contracts';
-import { assert, isEmpty } from '@ds/utils';
+import type { CommandItem } from '@dream-sicle/components';
+import {
+  type SearchResult,
+  SearchResultType,
+  type SearchResultTypeMap,
+} from '@dream-sicle/contracts';
+import { assert, isEmpty } from '@dream-sicle/utils';
 
 import { HIGHLIGHT_END_TAG, HIGHLIGHT_START_TAG } from '@/core/constants';
 

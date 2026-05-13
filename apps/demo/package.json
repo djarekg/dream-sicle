@@ -1,5 +1,5 @@
 {
-  "name": "@ds/demo",
+  "name": "@dream-sicle/demo",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -24,8 +24,8 @@
     "@angular/platform-server": "catalog:",
     "@angular/router": "catalog:",
     "@angular/ssr": "catalog:",
-    "@ds/contracts": "workspace:*",
-    "@ds/utils": "workspace:*",
+    "@dream-sicle/contracts": "workspace:*",
+    "@dream-sicle/utils": "workspace:*",
     "express": "catalog:",
     "ngx-cookie-service-ssr": "catalog:",
     "rxjs": "catalog:",

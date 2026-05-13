@@ -1,8 +1,8 @@
-# @ds/contracts
+# @dream-sicle/contracts
 
 Shared API request and response contracts for dream-sicle applications.
 
-`@ds/contracts` defines client-safe types that can be imported by browser and server projects without exposing database model details or ORM-specific implementation choices.
+`@dream-sicle/contracts` defines client-safe types that can be imported by browser and server projects without exposing database model details or ORM-specific implementation choices.
 
 ## What This Package Contains
 
@@ -31,7 +31,12 @@ Shared API request and response contracts for dream-sicle applications.
 ## Example
 
 ```ts
-import { Genders, SearchResultTypes, type SearchResultParams, type UserDto } from '@ds/contracts';
+import {
+  Genders,
+  SearchResultTypes,
+  type SearchResultParams,
+  type UserDto,
+} from '@dream-sicle/contracts';
 
 const query: SearchResultParams = {
   query: 'john',
@@ -50,10 +55,10 @@ console.log(SearchResultTypes.user, query, renderUser);
 
 Run from the workspace root:
 
-- `bun --filter @ds/contracts build`
-- `bun --filter @ds/contracts dev`
-- `bun --filter @ds/contracts test`
-- `bun --filter @ds/contracts check`
+- `bun --filter @dream-sicle/contracts build`
+- `bun --filter @dream-sicle/contracts dev`
+- `bun --filter @dream-sicle/contracts test`
+- `bun --filter @dream-sicle/contracts check`
 
 ## Related Projects
 

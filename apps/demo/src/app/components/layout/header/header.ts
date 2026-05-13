@@ -3,7 +3,7 @@ import { Component, DestroyRef, inject, output, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { Breadcrumbs } from '@ds/components';
+import { Breadcrumbs } from '@dream-sicle/components';
 
 import { Search } from '@/components/search/search';
 import { AuthService } from '@/core/auth/auth.service';

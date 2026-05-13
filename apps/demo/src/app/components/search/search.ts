@@ -7,9 +7,9 @@ import {
   resource,
   signal,
 } from '@angular/core';
-import { CommandItem, CommandPalette } from '@ds/components';
-import { isBrowser } from '@ds/core';
-import { isEmpty } from '@ds/utils';
+import { CommandItem, CommandPalette } from '@dream-sicle/components';
+import { isBrowser } from '@dream-sicle/core';
+import { isEmpty } from '@dream-sicle/utils';
 import { toCommandItem } from './search-result-util';
 
 const ESCAPE = 'Escape';

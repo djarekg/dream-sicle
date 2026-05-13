@@ -1,7 +1,7 @@
 import { ApiService } from '@/core/api/api.service';
 import type { UserFormModel } from '@/features/users/forms/user-form.model';
 import { inject, Service } from '@angular/core';
-import type { UserDto } from '@ds/contracts';
+import type { UserDto } from '@dream-sicle/contracts';
 
 @Service()
 export class UserService {

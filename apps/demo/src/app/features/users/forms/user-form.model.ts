@@ -1,3 +1,3 @@
-import type { UserDto } from '@ds/contracts';
+import type { UserDto } from '@dream-sicle/contracts';
 
 export type UserFormModel = Omit<UserDto, 'dateCreated'>;

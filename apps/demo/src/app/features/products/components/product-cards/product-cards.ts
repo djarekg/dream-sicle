@@ -4,7 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import type { ProductDto } from '@ds/contracts';
+import type { ProductDto } from '@dream-sicle/contracts';
 
 @Component({
   selector: 'app-product-cards',

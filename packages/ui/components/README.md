@@ -1,8 +1,8 @@
-# @ds/components
+# @dream-sicle/components
 
 Shared Angular UI components for the dream-sicle workspace.
 
-`@ds/components` contains reusable presentation components that can be consumed by workspace applications. The package currently exposes the command palette component used by the demo app's protected layout.
+`@dream-sicle/components` contains reusable presentation components that can be consumed by workspace applications. The package currently exposes the command palette component used by the demo app's protected layout.
 
 ## What This Package Contains
 
@@ -24,12 +24,14 @@ Shared Angular UI components for the dream-sicle workspace.
 
 ```ts
 import { Component } from '@angular/core';
-import { CommandPalette } from '@ds/components';
+import { CommandPalette } from '@dream-sicle/components';
 
 @Component({
   selector: 'app-example',
   imports: [CommandPalette],
-  template: `<ds-command-palette />`,
+  template: `
+    <ds-command-palette />
+  `,
 })
 export class ExampleComponent {}
 ```
@@ -38,8 +40,8 @@ export class ExampleComponent {}
 
 Run from the workspace root:
 
-- `bun exec ng build @ds/components`
-- `bun exec ng test @ds/components`
+- `bun exec ng build @dream-sicle/components`
+- `bun exec ng test @dream-sicle/components`
 
 ## Related Projects
 

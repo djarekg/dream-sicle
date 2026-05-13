@@ -9,7 +9,7 @@
   "workspaces": {
     "packages": [
       "apps/*",
-      "packages/*"
+      "packages/ui/*"
     ],
     "catalog": {
       "@angular/aria": "22.0.0-next.7",

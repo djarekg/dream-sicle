@@ -4,7 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { UserDto } from '@ds/contracts';
+import { UserDto } from '@dream-sicle/contracts';
 
 import { FormCard } from '@/components/forms/form-card/form-card';
 import { Form } from '@/components/forms/form/form';

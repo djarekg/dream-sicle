@@ -1,6 +1,6 @@
 import { Grid, GridCell, GridRow } from '@angular/aria/grid';
 import { Component, input } from '@angular/core';
-import type { CustomerDto } from '@ds/contracts';
+import type { CustomerDto } from '@dream-sicle/contracts';
 
 @Component({
   selector: 'app-customer-table',

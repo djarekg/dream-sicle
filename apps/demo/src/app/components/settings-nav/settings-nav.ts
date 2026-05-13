@@ -2,7 +2,7 @@ import { Component, inject, input, output, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NavDrawer } from '@ds/components';
+import { NavDrawer } from '@dream-sicle/components';
 
 import { AuthService } from '@/core/auth/auth.service';
 

@@ -1,6 +1,6 @@
 import { ApiService } from '@/core/api/api.service.js';
 import { inject, Service } from '@angular/core';
-import type { StateDto } from '@ds/contracts';
+import type { StateDto } from '@dream-sicle/contracts';
 
 @Service()
 export class StateService {

@@ -6,7 +6,7 @@ import {
   type WithOptionalFieldTree,
 } from '@angular/forms/signals';
 import { MatSelectModule } from '@angular/material/select';
-import { Gender } from '@ds/contracts';
+import { Gender } from '@dream-sicle/contracts';
 
 type ValueType = Gender | undefined;
 

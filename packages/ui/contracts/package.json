@@ -1,17 +1,18 @@
 {
-  "name": "@ds/utils",
+  "name": "@dream-sicle/contracts",
   "version": "0.0.1",
-  "description": "Utility functions for dream sicle web component library",
-  "homepage": "https://github.com/griffidi/dream-sicle#readme",
+  "description": "Shared API contract types for dream-sicle applications.",
+  "homepage": "https://github.com/djarekg/dream-sicle#readme",
   "bugs": {
-    "url": "https://github.com/griffidi/dream-sicle/issues"
+    "url": "https://github.com/djarekg/dream-sicle/issues"
   },
   "author": "Dustin Griffith <djarekg@gmail.com>",
   "license": "MIT",
   "keywords": [
-    "web-components",
-    "custom-elements",
-    "utils"
+    "contracts",
+    "types",
+    "api",
+    "dream-sicle"
   ],
   "type": "module",
   "sideEffects": false,

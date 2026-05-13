@@ -1,4 +1,4 @@
-import type { CustomerDto } from '@ds/contracts';
+import type { CustomerDto } from '@dream-sicle/contracts';
 
 export type CustomerUpdateModel = Pick<
   CustomerDto,

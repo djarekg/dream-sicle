@@ -1,8 +1,8 @@
-# @ds/utils
+# @dream-sicle/utils
 
 Shared utility functions and lightweight types for dream-sicle packages and applications.
 
-`@ds/utils` centralizes framework-agnostic helpers for cookies, formatting, environment checks, null and emptiness guards, URLs, validation, and common types.
+`@dream-sicle/utils` centralizes framework-agnostic helpers for cookies, formatting, environment checks, null and emptiness guards, URLs, validation, and common types.
 
 ## What This Package Contains
 
@@ -63,7 +63,7 @@ import {
   isEmpty,
   removeTrailingSlash,
   type PlainObject,
-} from '@ds/utils';
+} from '@dream-sicle/utils';
 
 const payload: PlainObject = { q: 'users', baseUrl: 'https://example.com/' };
 
@@ -78,10 +78,10 @@ if (!isEmpty(payload.q)) {
 
 Run from the workspace root:
 
-- `bun --filter @ds/utils build`
-- `bun --filter @ds/utils dev`
-- `bun --filter @ds/utils test`
-- `bun --filter @ds/utils check`
+- `bun --filter @dream-sicle/utils build`
+- `bun --filter @dream-sicle/utils dev`
+- `bun --filter @dream-sicle/utils test`
+- `bun --filter @dream-sicle/utils check`
 
 ## Related Projects
 

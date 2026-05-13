@@ -1,20 +1,15 @@
 {
-  "name": "@ds/components",
+  "name": "@dream-sicle/core",
   "version": "0.0.1",
   "scripts": {
     "clean": "bunx rimraf dist node_modules"
   },
   "peerDependencies": {
-    "@angular/aria": "catalog:",
-    "@angular/cdk": "catalog:",
     "@angular/common": "catalog:",
     "@angular/core": "catalog:",
-    "@angular/material": "catalog:",
-    "@angular/router": "catalog:"
+    "@angular/platform-browser": "catalog:"
   },
   "dependencies": {
-    "@ds/core": "workspace:",
-    "@ds/utils": "workspace:",
     "tslib": "catalog:"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { computed, inject, Service, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { Role } from '@ds/contracts';
+import { Role } from '@dream-sicle/contracts';
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
 
 import { ApiService } from '@/core/api/api.service.js';

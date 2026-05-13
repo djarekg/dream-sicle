@@ -56,7 +56,7 @@
 
     "debug.javascript.unmapMissingSources": true,
 
-      "dprint.experimentalLsp": false,
+    "dprint.experimentalLsp": false,
 
     "[css]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -168,7 +168,7 @@
       "vite",
       "vitest",
       "voidzero",
-      "wght"
+      "wght",
     ],
   },
   "extensions": {
@@ -178,6 +178,8 @@
       "github.vscode-github-actions",
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode",
+      "ms-dotnettools.csharp",
+      "ms-dotnettools.csdevkit",
     ],
   },
 }

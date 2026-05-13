@@ -42,7 +42,7 @@ export const customerRoutes = {
 
 ## Controller Conventions
 
-- Import DTO types from `@ds/contracts` and model types from `@ds/db`.
+- Import DTO types from `@dream-sicle/contracts` and model types from `@dream-sicle/db`.
 - Use `prisma` from `@/db.ts` for data access.
 - Use `parseParams<{ id: string }>(req)` to read route parameters.
 - Validate required params (and body fields when needed) before calling Prisma.

@@ -1,5 +1,5 @@
 import { inject, Service } from '@angular/core';
-import type { SearchResult } from '@ds/contracts';
+import type { SearchResult } from '@dream-sicle/contracts';
 
 import { ApiService } from '@/core/api/api.service';
 import { HIGHLIGHT_END_TAG, HIGHLIGHT_START_TAG } from '@/core/constants';

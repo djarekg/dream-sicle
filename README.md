@@ -45,7 +45,7 @@ bun install
 bun run dev
 ```
 
-This runs the `@ds/demo` application in development mode.
+This runs the `@dream-sicle/demo` application in development mode.
 
 ## Common Workspace Commands
 
@@ -56,10 +56,10 @@ This runs the `@ds/demo` application in development mode.
 
 ## How the Projects Fit Together
 
-- `@ds/demo` consumes `@ds/components`, `@ds/core`, `@ds/contracts`, and `@ds/utils`.
-- `@ds/api` consumes `@ds/contracts`, `@ds/db`, and `@ds/utils`.
-- `@ds/db` is the source of truth for schema, generated Prisma types, and seed data.
-- `@ds/contracts` keeps the browser and API aligned on payload shapes without exposing database internals.
+- `@dream-sicle/demo` consumes `@dream-sicle/components`, `@dream-sicle/core`, `@dream-sicle/contracts`, and `@dream-sicle/utils`.
+- `@dream-sicle/api` consumes `@dream-sicle/contracts`, `@dream-sicle/db`, and `@dream-sicle/utils`.
+- `@dream-sicle/db` is the source of truth for schema, generated Prisma types, and seed data.
+- `@dream-sicle/contracts` keeps the browser and API aligned on payload shapes without exposing database internals.
 
 ## Project Documentation
 

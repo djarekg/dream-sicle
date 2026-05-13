@@ -1,5 +1,5 @@
 import { inject, Service } from '@angular/core';
-import type { CustomerDto } from '@ds/contracts';
+import type { CustomerDto } from '@dream-sicle/contracts';
 
 import { ApiService } from '@/core/api/api.service';
 import type { CustomerUpdateModel } from '@/features/customers/models/customer-update';

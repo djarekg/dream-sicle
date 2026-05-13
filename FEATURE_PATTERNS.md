@@ -90,7 +90,7 @@ customers/
 import { Component, computed, inject, resource, signal } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { Gender, ProductType } from '@ds/contracts';
+import { Gender, ProductType } from '@dream-sicle/contracts';
 
 import { ProductTypeSelect } from '@/components/select';
 import { ProductCards } from '@/features/products/components/product-cards/product-cards';
@@ -153,7 +153,7 @@ export default class Products {
 import { Component, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import type { ProductDto } from '@ds/contracts';
+import type { ProductDto } from '@dream-sicle/contracts';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -185,7 +185,7 @@ export class ProductCards {
 ```typescript
 import { Component, inject, resource, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { isNotEmpty } from '@ds/utils';
+import { isNotEmpty } from '@dream-sicle/utils';
 
 import { Spinner } from '@/components/spinner/spinner';
 import { ProductDetail } from '@/features/products/components/product-detail/product-detail';
@@ -242,7 +242,7 @@ export default class Product {
 
 ```typescript
 import { inject, Injectable } from '@angular/core';
-import type { ProductDto } from '@ds/contracts';
+import type { ProductDto } from '@dream-sicle/contracts';
 
 import { ApiService } from '@/core/api/api.service';
 
@@ -272,7 +272,7 @@ export class ProductService {
 
 ```typescript
 import { inject, Injectable } from '@angular/core';
-import type { UserDto } from '@ds/contracts';
+import type { UserDto } from '@dream-sicle/contracts';
 
 import { ApiService } from '@/core/api/api.service';
 import type { UserFormModel } from '@/features/users/forms/user-form.model';
@@ -469,7 +469,7 @@ export const apiInterceptor: HttpInterceptorFn = (req, next) => {
 import { Component, input, model } from '@angular/core';
 import { FormValueControl, ValidationError } from '@angular/forms/signals';
 import { MatSelectModule } from '@angular/material/select';
-import { ProductType } from '@ds/contracts';
+import { ProductType } from '@dream-sicle/contracts';
 
 @Component({
   selector: 'app-product-type-select',
@@ -519,7 +519,7 @@ export class Spinner {}
 
 ### Shared Utilities Library
 
-**From `@ds/utils` package:**
+**From `@dream-sicle/utils` package:**
 
 - `isEmpty()`, `isNotEmpty()`
 - `isNullOrUndefined()`, `isNotNullOrUndefined()`
@@ -572,10 +572,10 @@ export default [
 
 ### Using DTOs from Contracts Package
 
-**From `@ds/contracts`:**
+**From `@dream-sicle/contracts`:**
 
 ```typescript
-import type { ProductDto } from '@ds/contracts';
+import type { ProductDto } from '@dream-sicle/contracts';
 
 // Services use DTOs for type safety
 getProducts = () => this.#api.get<ProductDto[]>('/products');
@@ -668,7 +668,7 @@ features/customers/
 
 ```typescript
 import { inject, Injectable } from '@angular/core';
-import type { CustomerDto } from '@ds/contracts';
+import type { CustomerDto } from '@dream-sicle/contracts';
 
 import { ApiService } from '@/core/api/api.service';
 
@@ -715,7 +715,7 @@ export default class Customers {
 
 ```typescript
 import { Component, input } from '@angular/core';
-import type { CustomerDto } from '@ds/contracts';
+import type { CustomerDto } from '@dream-sicle/contracts';
 
 @Component({
   selector: 'app-customer-list',

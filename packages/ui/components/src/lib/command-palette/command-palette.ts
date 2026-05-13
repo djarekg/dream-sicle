@@ -3,7 +3,7 @@ import { Component, effect, type ElementRef, input, model, output, viewChild } f
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { SafeHtmlPipe } from '@ds/core';
+import { SafeHtmlPipe } from '@dream-sicle/core';
 import type { CommandItem } from './command-item';
 
 @Component({

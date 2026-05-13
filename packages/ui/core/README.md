@@ -1,8 +1,8 @@
-# @ds/core
+# @dream-sicle/core
 
 Shared Angular runtime helpers for the dream-sicle workspace.
 
-`@ds/core` is a small Angular library that holds cross-cutting framework helpers which do not belong in a specific feature package. It currently focuses on platform detection utilities used by SSR-aware components and layouts.
+`@dream-sicle/core` is a small Angular library that holds cross-cutting framework helpers which do not belong in a specific feature package. It currently focuses on platform detection utilities used by SSR-aware components and layouts.
 
 ## What This Package Contains
 
@@ -27,13 +27,15 @@ Use the helpers inside an Angular injection context:
 
 ```ts
 import { Component, signal } from '@angular/core';
-import { isBrowser } from '@ds/core';
+import { isBrowser } from '@dream-sicle/core';
 
 @Component({
   selector: 'app-example',
-  template: `@if (runningInBrowser()) {
-    <p>Browser only</p>
-  }`,
+  template: `
+    @if (runningInBrowser()) {
+      <p>Browser only</p>
+    }
+  `,
 })
 export class ExampleComponent {
   protected readonly runningInBrowser = signal(isBrowser());
@@ -44,8 +46,8 @@ export class ExampleComponent {
 
 Run from the workspace root:
 
-- `bun exec ng build @ds/core`
-- `bun exec ng test @ds/core`
+- `bun exec ng build @dream-sicle/core`
+- `bun exec ng test @dream-sicle/core`
 
 ## Related Projects
 

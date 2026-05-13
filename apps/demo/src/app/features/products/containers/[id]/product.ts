@@ -1,6 +1,6 @@
 import { Component, inject, resource, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { isNotEmpty } from '@ds/utils';
+import { isNotEmpty } from '@dream-sicle/utils';
 
 import { Spinner } from '@/components/spinner/spinner';
 import { ProductDetail } from '@/features/products/components/product-detail/product-detail';

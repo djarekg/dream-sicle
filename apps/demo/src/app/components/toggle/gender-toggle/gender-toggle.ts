@@ -2,7 +2,7 @@ import { Component, input, model } from '@angular/core';
 import { FormValueControl, ValidationError, WithOptionalFieldTree } from '@angular/forms/signals';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { Gender } from '@ds/contracts';
+import { Gender } from '@dream-sicle/contracts';
 
 export type GenderFilter = Gender | 'ALL';
 

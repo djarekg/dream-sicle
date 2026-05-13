@@ -12,7 +12,7 @@ import { ProductTable } from '@/features/products/components/product-table/produ
 import { ProductService } from '@/features/products/services/product.service';
 import { Component, computed, inject, resource, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductType, type ProductDto } from '@ds/contracts';
+import { ProductType, type ProductDto } from '@dream-sicle/contracts';
 import { ProductCards } from '../components/product-cards/product-cards';
 
 /** Parses the view mode from the query parameter. */
