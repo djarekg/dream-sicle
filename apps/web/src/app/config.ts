@@ -6,11 +6,7 @@ import {
   provideAppInitializer,
   provideBrowserGlobalErrorListeners,
 } from '@angular/core';
-import {
-  provideClientHydration,
-  withEventReplay,
-  withIncrementalHydration,
-} from '@angular/platform-browser';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 import { apiInterceptor } from '@/core/api/api.interceptor';
 import { authInterceptor } from '@/core/auth/auth.interceptor';
@@ -19,9 +15,7 @@ import { provideOptionDefaults } from '@/core/options/defaults';
 
 import { provideRouting } from './core/providers/router';
 
-const hydrationProviders = isDevMode()
-  ? []
-  : [provideClientHydration(withIncrementalHydration(), withEventReplay())];
+const hydrationProviders = isDevMode() ? [] : [provideClientHydration(withEventReplay())];
 
 export const appConfig: ApplicationConfig = {
   providers: [

@@ -66,6 +66,7 @@
     "@eslint/js": "catalog:",
     "@eslint/json": "catalog:",
     "@eslint/markdown": "catalog:",
+    "ajv": "^8.20.0",
     "eslint": "catalog:",
     "globals": "catalog:",
     "prettier": "catalog:",

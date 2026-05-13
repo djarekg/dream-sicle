@@ -24,14 +24,12 @@ export const provideRouting = () =>
       {
         path: '',
         canActivateChild: [authGuard],
-        loadComponent: () =>
-          import('@/features/layout/protected-layout/protected-layout'),
+        loadComponent: () => import('@/features/layout/protected-layout/protected-layout'),
         loadChildren: () => import('@/routes'),
       },
       {
         path: 'unprotected',
-        loadComponent: () =>
-          import('@/features/layout/unprotected-layout/unprotected-layout'),
+        loadComponent: () => import('@/features/layout/unprotected-layout/unprotected-layout'),
         loadChildren: () => import('@/routes-unprotected'),
       },
     ],
@@ -44,25 +42,7 @@ export const provideRouting = () =>
       }
       return void 0;
     }),
-    withViewTransitions(/*{
-    onViewTransitionCreated: ({ transition, to }) => {
-      transitionCreated.next();
-      const router = inject(Router);
-      const toTree = createUrlTreeFromSnapshot(to, []);
-      // Skip the transition if the only thing changing is the fragment and queryParams
-      if (
-        router.isActive(toTree, {
-          paths: 'exact',
-          matrixParams: 'exact',
-          fragment: 'ignored',
-          queryParams: 'ignored',
-        })
-      ) {
-        transition.skipTransition();
-      }
-    },
-  }*/
-    ),
+    withViewTransitions(),
     withComponentInputBinding(),
     withPreloading(PreloadAllModules),
   );
