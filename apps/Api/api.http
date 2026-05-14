@@ -22,6 +22,11 @@ Accept: application/json
 GET {{api_HostAddress}}/auth/is-authenticated
 Accept: application/json
 
+### Sign out current token
+POST {{api_HostAddress}}/auth/signout
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+
 @userId = replace-me-user-id
 
 ### Get all users

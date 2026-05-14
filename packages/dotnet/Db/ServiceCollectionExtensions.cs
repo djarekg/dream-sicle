@@ -19,6 +19,7 @@ public static class ServiceCollectionExtensions
     services.AddScoped<IUserRepository, UserRepository>();
     services.AddScoped<IProductRepository, ProductRepository>();
     services.AddScoped<ICustomerRepository, CustomerRepository>();
+    services.AddScoped<TokenRevocationRepository>();
 
     return services;
   }

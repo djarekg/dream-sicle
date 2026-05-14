@@ -18,7 +18,7 @@ export class SettingsNav {
   readonly opened = input.required<boolean>();
   readonly close = output<void>();
 
-  protected userId = signal(this.#authService.userId);
+  protected userName = signal(this.#authService.userName);
 
   protected onSignOut(): void {
     this.#authService.signout();

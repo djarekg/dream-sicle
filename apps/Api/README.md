@@ -39,6 +39,13 @@ curl http://localhost:5066/auth/is-authenticated \
   -H "Authorization: Bearer <access_token>"
 ```
 
+- [`POST /auth/signout`](Controllers/AuthController.cs): Revokes the current access token and returns a signout success payload for client cleanup. The token is added to a revocation list to prevent reuse. Example:
+
+```bash
+curl -X POST http://localhost:5066/auth/signout \
+  -H "Authorization: Bearer <access_token>"
+```
+
 - [`GET /users`](Controllers/UsersController.cs): Returns all users.
 - [`GET /users/{id}`](Controllers/UsersController.cs): Returns one user by ID.
 - [`POST /users`](Controllers/UsersController.cs): Creates a user.

@@ -20,6 +20,7 @@ public class LuckyDayDbContext : DbContext
   public DbSet<State> States => Set<State>();
   public DbSet<User> Users => Set<User>();
   public DbSet<UserCredential> UserCredentials => Set<UserCredential>();
+  public DbSet<TokenRevocation> TokenRevocations => Set<TokenRevocation>();
   public DbSet<Customer> Customers => Set<Customer>();
   public DbSet<CustomerContact> CustomerContacts => Set<CustomerContact>();
   public DbSet<Product> Products => Set<Product>();
@@ -81,6 +82,17 @@ public class LuckyDayDbContext : DbContext
     modelBuilder.Entity<UserCredential>()
         .HasIndex(uc => uc.UserId)
         .IsUnique();
+
+    // TokenRevocation Configuration
+    modelBuilder.Entity<TokenRevocation>()
+        .HasKey(tr => tr.Id);
+
+    modelBuilder.Entity<TokenRevocation>()
+        .Property(tr => tr.Email)
+        .IsRequired();
+
+    modelBuilder.Entity<TokenRevocation>()
+        .HasIndex(tr => tr.ExpiresAtUtc);
 
     // Customer Configuration
     modelBuilder.Entity<Customer>()

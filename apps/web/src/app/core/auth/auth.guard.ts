@@ -7,7 +7,11 @@ export const authGuard = () => {
   const router = inject(Router);
   const service = inject(AuthService);
 
-  if (service.isAuthenticated()) return true;
+  return service.refresh().then(() => {
+    if (service.isAuthenticated()) {
+      return true;
+    }
 
-  return router.createUrlTree(['/unprotected/signin']);
+    return router.createUrlTree(['/unprotected/signin']);
+  });
 };

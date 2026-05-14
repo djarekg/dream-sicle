@@ -1,7 +1,5 @@
 using DreamSicle.Api.Models;
 using DreamSicle.Api.Services;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,13 +29,13 @@ public class AuthController(AuthService authService) : ControllerBase
             return Unauthorized("Invalid credentials.");
         }
 
-        Response.Cookies.Append("session", token.AccessToken, new Microsoft.AspNetCore.Http.CookieOptions
-        {
-            HttpOnly = true,
-            Secure = HttpContext.Request.IsHttps,
-            SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Lax,
-            Expires = new DateTimeOffset(token.ExpiresAtUtc)
-        });
+        // Response.Cookies.Append("session", token.AccessToken, new CookieOptions
+        // {
+        //     HttpOnly = true,
+        //     Secure = HttpContext.Request.IsHttps,
+        //     SameSite = SameSiteMode.Lax,
+        //     Expires = new DateTimeOffset(token.ExpiresAtUtc)
+        // });
 
         return Ok(token);
     }
@@ -52,11 +50,20 @@ public class AuthController(AuthService authService) : ControllerBase
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     public ActionResult<AuthStatusResult> IsAuthenticated()
     {
-        var email = User.FindFirstValue(JwtRegisteredClaimNames.Email)
-            ?? User.FindFirstValue(ClaimTypes.Email)
-            ?? User.FindFirstValue(JwtRegisteredClaimNames.Sub);
-        var role = User.FindFirstValue(ClaimTypes.Role);
+        return Ok(authService.Verify(User));
+    }
 
-        return Ok(new AuthStatusResult(true, email, role));
+    /// <summary>
+    /// Signs out the current authenticated user session on the server by revoking the access token.
+    /// </summary>
+    /// <returns>A success payload for client-side auth cleanup.</returns>
+    [Authorize]
+    [HttpPost("signout")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    public async Task<IActionResult> SignoutAsync()
+    {
+        var result = await authService.SignoutAsync(HttpContext, User);
+        return Ok(result);
     }
 }

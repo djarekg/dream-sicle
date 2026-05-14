@@ -1,4 +1,5 @@
 using DreamSicle.Db;
+using DreamSicle.Db.Data;
 using Microsoft.Data.Sqlite;
 
 namespace DreamSicle.Api.Configuration;
@@ -44,7 +45,7 @@ public static class DatabaseConfigurationExtensions
     }
 
     using var scope = app.Services.CreateScope();
-    var dbContext = scope.ServiceProvider.GetRequiredService<DreamSicle.Db.Data.LuckyDayDbContext>();
+    var dbContext = scope.ServiceProvider.GetRequiredService<LuckyDayDbContext>();
     await DbInitializer.InitializeDatabaseAsync(dbContext);
   }
 }

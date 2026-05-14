@@ -2,12 +2,14 @@ using DreamSicle.Api.Configuration;
 using DreamSicle.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+var jwtConfiguration = new JwtConfigurationService(builder.Configuration);
 
 // Add services to the container.
 builder.Services.AddDatabaseConfiguration(builder.Configuration, builder.Environment);
+builder.Services.AddSingleton<IJwtConfigurationService>(jwtConfiguration);
 builder.Services.AddControllers();
 builder.Services.AddCorsConfiguration(builder.Configuration);
-builder.Services.AddJwtAuthenticationConfiguration(builder.Configuration);
+builder.Services.AddJwtAuthenticationConfiguration(jwtConfiguration);
 
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<UserService>();
