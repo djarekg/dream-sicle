@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { computed, inject, isDevMode, Service, signal } from '@angular/core';
+import { computed, inject, Service, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
 
@@ -96,7 +96,6 @@ export class AuthService {
             this.#cookieService.set(AUTH_TOKEN_CACHE_KEY, JSON.stringify({ accessToken, email }), {
               path: '/',
               expires: new Date(expiresAtUtc),
-              httpOnly: isDevMode(),
             });
             this.#status.set('authenticated');
             this.authenticate();
