@@ -12,6 +12,7 @@ public interface IUnitOfWork : IDisposable
   IProductInventoryRepository ProductInventories { get; }
   IProductSaleRepository ProductSales { get; }
   ITokenRevocationRepository TokenRevocations { get; }
+  ISearchRepository Search { get; }
 
   Task<int> SaveChangesAsync();
   Task BeginTransactionAsync();
@@ -32,6 +33,7 @@ public class UnitOfWork(LuckyDayDbContext context) : IUnitOfWork
   private IProductInventoryRepository? _productInventoryRepository;
   private IProductSaleRepository? _productSaleRepository;
   private ITokenRevocationRepository? _tokenRevocationRepository;
+  private ISearchRepository? _searchRepository;
 
   public IUserRepository Users => _userRepository ??= new UserRepository(_context);
   public IProductRepository Products => _productRepository ??= new ProductRepository(_context);
@@ -43,6 +45,7 @@ public class UnitOfWork(LuckyDayDbContext context) : IUnitOfWork
   public IProductInventoryRepository ProductInventories => _productInventoryRepository ??= new ProductInventoryRepository(_context);
   public IProductSaleRepository ProductSales => _productSaleRepository ??= new ProductSaleRepository(_context);
   public ITokenRevocationRepository TokenRevocations => _tokenRevocationRepository ??= new TokenRevocationRepository(_context);
+  public ISearchRepository Search => _searchRepository ??= new SearchRepository(_context);
 
   public async Task<int> SaveChangesAsync()
   {

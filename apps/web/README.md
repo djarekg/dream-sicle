@@ -19,7 +19,7 @@ Angular demo application for the dream-sicle workspace.
 - Lazy-loaded users feature routes
 - Shared command palette integration through `@dream-sicle/components`
 - Shared browser/server platform helpers through `@dream-sicle/core`
-- Shared contract and utility packages for API-safe typing and common helpers
+- Shared utility packages for common helpers and reusable runtime code
 
 ## Current Routes
 
@@ -65,5 +65,4 @@ Then navigate to `http://localhost:4200/users` to exercise the routed users feat
 - [api](../api/README.md)
 - [components](../../packages/components/README.md)
 - [core](../../packages/core/README.md)
-- [contracts](../../packages/contracts/README.md)
 - [utils](../../packages/utils/README.md)

@@ -7,7 +7,18 @@ var jwtConfiguration = new JwtConfigurationService(builder.Configuration);
 // Add services to the container.
 builder.Services.AddDatabaseConfiguration(builder.Configuration, builder.Environment);
 builder.Services.AddSingleton<IJwtConfigurationService>(jwtConfiguration);
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+  options.JsonSerializerOptions.Converters.Add(
+    new System.Text.Json.Serialization.JsonStringEnumConverter(
+      new UpperInvariantJsonNamingPolicy()));
+});
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+  options.SerializerOptions.Converters.Add(
+    new System.Text.Json.Serialization.JsonStringEnumConverter(
+      new UpperInvariantJsonNamingPolicy()));
+});
 builder.Services.AddCorsConfiguration(builder.Configuration);
 builder.Services.AddJwtAuthenticationConfiguration(jwtConfiguration);
 
@@ -21,6 +32,7 @@ builder.Services.AddScoped<UserCredentialService>();
 builder.Services.AddScoped<ProductColorService>();
 builder.Services.AddScoped<ProductInventoryService>();
 builder.Services.AddScoped<ProductSaleService>();
+builder.Services.AddScoped<SearchService>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

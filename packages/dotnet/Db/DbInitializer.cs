@@ -20,6 +20,9 @@ public static class DbInitializer
 
       // Seed the database
       await DatabaseSeeder.SeedDatabaseAsync(context);
+
+      // Build and synchronize FTS tables used by the search endpoint
+      await SearchFtsInitializer.EnsureAsync(context);
     }
     finally
     {
@@ -37,5 +40,8 @@ public static class DbInitializer
 
     // Seed the database
     await DatabaseSeeder.SeedDatabaseAsync(context);
+
+    // Build and synchronize FTS tables used by the search endpoint
+    await SearchFtsInitializer.EnsureAsync(context);
   }
 }

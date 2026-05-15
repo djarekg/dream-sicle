@@ -2,7 +2,7 @@
 
 dream-sicle is a bun workspace that groups the demo Angular application, the internal API, and a small set of shared libraries used across the stack.
 
-The workspace is organized so UI, API, database, and shared contracts can evolve together without duplicating types or utility code.
+The workspace is organized so UI, API, database, and shared packages can evolve together without duplicating types or utility code.
 
 ## Workspace Projects
 
@@ -13,7 +13,6 @@ The workspace is organized so UI, API, database, and shared contracts can evolve
 
 ### Shared Packages
 
-- [contracts](packages/contracts/README.md) - Shared DTO and request/response contract types.
 - [core](packages/core/README.md) - Angular runtime helpers used by application and component code.
 - [components](packages/components/README.md) - Shared Angular UI components.
 - [db](packages/db/README.md) - Prisma schema, generated client, seed workflow, and database-facing types.
@@ -56,10 +55,9 @@ This runs the `@dream-sicle/web` application in development mode.
 
 ## How the Projects Fit Together
 
-- `@dream-sicle/web` consumes `@dream-sicle/components`, `@dream-sicle/core`, `@dream-sicle/contracts`, and `@dream-sicle/utils`.
-- `@dream-sicle/api` consumes `@dream-sicle/contracts`, `@dream-sicle/db`, and `@dream-sicle/utils`.
+- `@dream-sicle/web` consumes `@dream-sicle/components`, `@dream-sicle/core`, `@dream-sicle/db`, and `@dream-sicle/utils`.
+- `@dream-sicle/api` consumes `@dream-sicle/db` and `@dream-sicle/utils`.
 - `@dream-sicle/db` is the source of truth for schema, generated Prisma types, and seed data.
-- `@dream-sicle/contracts` keeps the browser and API aligned on payload shapes without exposing database internals.
 
 ## Project Documentation
 

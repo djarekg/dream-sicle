@@ -90,11 +90,11 @@ customers/
 import { Component, computed, inject, resource, signal } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { Gender, ProductType } from '@dream-sicle/contracts';
 
 import { ProductTypeSelect } from '@/components/select';
 import { ProductCards } from '@/features/products/components/product-cards/product-cards';
 import { ProductService } from '@/features/products/services/product.service';
+import { Gender, ProductType } from '@/features/products/models/product.model';
 
 @Component({
   selector: 'app-products',
@@ -153,8 +153,9 @@ export default class Products {
 import { Component, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import type { ProductDto } from '@dream-sicle/contracts';
 import { RouterLink } from '@angular/router';
+
+import type { Product } from '@/features/products/models/product.model';
 
 @Component({
   selector: 'app-product-cards',
@@ -164,7 +165,7 @@ import { RouterLink } from '@angular/router';
 })
 export class ProductCards {
   // Use input() for required data
-  readonly products = input.required<ProductDto[]>();
+  readonly products = input.required<Product[]>();
 }
 ```
 
@@ -242,9 +243,9 @@ export default class Product {
 
 ```typescript
 import { inject, Injectable } from '@angular/core';
-import type { ProductDto } from '@dream-sicle/contracts';
 
 import { ApiService } from '@/core/api/api.service';
+import type { Product } from '@/features/products/models/product.model';
 
 @Injectable({
   providedIn: 'root',
@@ -253,8 +254,8 @@ export class ProductService {
   readonly #api = inject(ApiService);
 
   // Return promises (not observables) from API methods
-  getProduct = (id: string) => this.#api.get<ProductDto>(`/products/${id}`);
-  getProducts = () => this.#api.get<ProductDto[]>('/products');
+  getProduct = (id: string) => this.#api.get<Product>(`/products/${id}`);
+  getProducts = () => this.#api.get<Product[]>('/products');
 }
 ```
 
@@ -272,10 +273,10 @@ export class ProductService {
 
 ```typescript
 import { inject, Injectable } from '@angular/core';
-import type { UserDto } from '@dream-sicle/contracts';
 
 import { ApiService } from '@/core/api/api.service';
 import type { UserFormModel } from '@/features/users/forms/user-form.model';
+import type { User } from '@/features/users/models/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -283,8 +284,8 @@ import type { UserFormModel } from '@/features/users/forms/user-form.model';
 export class UserService {
   readonly #api = inject(ApiService);
 
-  getUser = (id: string) => this.#api.get<UserDto>(`/users/${id}`);
-  getUsers = () => this.#api.get<UserDto[]>('/users');
+  getUser = (id: string) => this.#api.get<User>(`/users/${id}`);
+  getUsers = () => this.#api.get<User[]>('/users');
   updateUser = (user: UserFormModel) => this.#api.post<UserFormModel>(`/users/${user.id}`, user);
   createUser = (user: UserFormModel) =>
     this.#api.put<UserFormModel, { id: string }>('/users', user);
@@ -469,7 +470,8 @@ export const apiInterceptor: HttpInterceptorFn = (req, next) => {
 import { Component, input, model } from '@angular/core';
 import { FormValueControl, ValidationError } from '@angular/forms/signals';
 import { MatSelectModule } from '@angular/material/select';
-import { ProductType } from '@dream-sicle/contracts';
+
+import { ProductType } from '@/features/products/models/product.model';
 
 @Component({
   selector: 'app-product-type-select',
@@ -570,21 +572,21 @@ export default [
 
 ## 8. Type Safety
 
-### Using DTOs from Contracts Package
+### Using Feature Models
 
-**From `@dream-sicle/contracts`:**
+**From the owning feature's model files:**
 
 ```typescript
-import type { ProductDto } from '@dream-sicle/contracts';
+import type { Product } from '@/features/products/models/product.model';
 
-// Services use DTOs for type safety
-getProducts = () => this.#api.get<ProductDto[]>('/products');
+// Services use feature models for type safety
+getProducts = () => this.#api.get<Product[]>('/products');
 ```
 
 **Example DTO:**
 
 ```typescript
-export type ProductDto = {
+export type Product = {
   id: string;
   name: string;
   productType: ProductType;
@@ -668,7 +670,8 @@ features/customers/
 
 ```typescript
 import { inject, Injectable } from '@angular/core';
-import type { CustomerDto } from '@dream-sicle/contracts';
+
+import type { Customer } from '@/features/customers/models/customer.model';
 
 import { ApiService } from '@/core/api/api.service';
 
@@ -678,8 +681,8 @@ import { ApiService } from '@/core/api/api.service';
 export class CustomerService {
   readonly #api = inject(ApiService);
 
-  getCustomer = (id: string) => this.#api.get<CustomerDto>(`/customers/${id}`);
-  getCustomers = () => this.#api.get<CustomerDto[]>('/customers');
+  getCustomer = (id: string) => this.#api.get<Customer>(`/customers/${id}`);
+  getCustomers = () => this.#api.get<Customer[]>('/customers');
 }
 ```
 
@@ -715,7 +718,8 @@ export default class Customers {
 
 ```typescript
 import { Component, input } from '@angular/core';
-import type { CustomerDto } from '@dream-sicle/contracts';
+
+import type { Customer } from '@/features/customers/models/customer.model';
 
 @Component({
   selector: 'app-customer-list',
@@ -724,7 +728,7 @@ import type { CustomerDto } from '@dream-sicle/contracts';
   styleUrl: './customer-list.css',
 })
 export class CustomerList {
-  readonly customers = input.required<CustomerDto[]>();
+  readonly customers = input.required<Customer[]>();
 }
 ```
 
@@ -767,5 +771,4 @@ export default [
 - **Products Feature:** `apps/web/src/app/features/products/`
 - **API Service:** `apps/web/src/app/core/api/api.service.ts`
 - **Shared Components:** `apps/web/src/app/components/`
-- **Contracts/Types:** `packages/contracts/`
 - **Utils:** `packages/utils/`

@@ -30,9 +30,6 @@
       "path": "./packages/ui/components/tsconfig.spec.json"
     },
     {
-      "path": "./packages/ui/contracts/tsconfig.json"
-    },
-    {
       "path": "./packages/ui/utils/tsconfig.json"
     }
   ]

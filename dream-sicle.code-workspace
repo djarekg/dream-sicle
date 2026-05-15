@@ -164,6 +164,7 @@
       "opsz",
       "packagr",
       "PERFERNOTTOSAY",
+      "PREFERNOTTOSAY",
       "sicle",
       "titlecase",
       "typescale",
@@ -172,6 +173,9 @@
       "voidzero",
       "wght",
     ],
+    "[csharp]": {
+      "editor.defaultFormatter": "ms-dotnettools.csharp",
+    },
   },
   "extensions": {
     "recommendations": [
