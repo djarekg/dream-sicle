@@ -1,5 +1,5 @@
+import type { ProductDto } from '@/features/products/models/product.model';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ProductDto } from '@dream-sicle/contracts';
 
 import { ProductTable } from './product-table';
 

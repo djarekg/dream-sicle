@@ -1,9 +1,9 @@
+import { ProductType } from '@/core/models/product-type';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { TitleCasePipe } from '@angular/common';
 import { Component, input, model } from '@angular/core';
 import { FormValueControl, ValidationError, WithOptionalFieldTree } from '@angular/forms/signals';
 import { MatSelectModule } from '@angular/material/select';
-import { ProductType } from '@dream-sicle/contracts';
 
 export type ProductTypeSelectType = ProductType | ProductType[] | null;
 

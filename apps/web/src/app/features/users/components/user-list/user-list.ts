@@ -3,9 +3,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { UserDto } from '@dream-sicle/contracts';
 
 import { FormMode } from '@/core/constants/form-mode';
+import type { UserDto } from '@/features/users/models/user.model';
 
 @Component({
   selector: 'app-user-list',

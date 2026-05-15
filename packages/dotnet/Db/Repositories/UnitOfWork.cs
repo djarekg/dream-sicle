@@ -5,12 +5,13 @@ public interface IUnitOfWork : IDisposable
   IUserRepository Users { get; }
   IProductRepository Products { get; }
   ICustomerRepository Customers { get; }
-  IRepository<State> States { get; }
-  IRepository<UserCredential> UserCredentials { get; }
-  IRepository<CustomerContact> CustomerContacts { get; }
-  IRepository<ProductColor> ProductColors { get; }
-  IRepository<ProductInventory> ProductInventories { get; }
-  IRepository<ProductSale> ProductSales { get; }
+  IStateRepository States { get; }
+  IUserCredentialRepository UserCredentials { get; }
+  ICustomerContactRepository CustomerContacts { get; }
+  IProductColorRepository ProductColors { get; }
+  IProductInventoryRepository ProductInventories { get; }
+  IProductSaleRepository ProductSales { get; }
+  ITokenRevocationRepository TokenRevocations { get; }
 
   Task<int> SaveChangesAsync();
   Task BeginTransactionAsync();
@@ -24,22 +25,24 @@ public class UnitOfWork(LuckyDayDbContext context) : IUnitOfWork
   private IUserRepository? _userRepository;
   private IProductRepository? _productRepository;
   private ICustomerRepository? _customerRepository;
-  private IRepository<State>? _stateRepository;
-  private IRepository<UserCredential>? _userCredentialRepository;
-  private IRepository<CustomerContact>? _customerContactRepository;
-  private IRepository<ProductColor>? _productColorRepository;
-  private IRepository<ProductInventory>? _productInventoryRepository;
-  private IRepository<ProductSale>? _productSaleRepository;
+  private IStateRepository? _stateRepository;
+  private IUserCredentialRepository? _userCredentialRepository;
+  private ICustomerContactRepository? _customerContactRepository;
+  private IProductColorRepository? _productColorRepository;
+  private IProductInventoryRepository? _productInventoryRepository;
+  private IProductSaleRepository? _productSaleRepository;
+  private ITokenRevocationRepository? _tokenRevocationRepository;
 
   public IUserRepository Users => _userRepository ??= new UserRepository(_context);
   public IProductRepository Products => _productRepository ??= new ProductRepository(_context);
   public ICustomerRepository Customers => _customerRepository ??= new CustomerRepository(_context);
-  public IRepository<State> States => _stateRepository ??= new Repository<State>(_context);
-  public IRepository<UserCredential> UserCredentials => _userCredentialRepository ??= new Repository<UserCredential>(_context);
-  public IRepository<CustomerContact> CustomerContacts => _customerContactRepository ??= new Repository<CustomerContact>(_context);
-  public IRepository<ProductColor> ProductColors => _productColorRepository ??= new Repository<ProductColor>(_context);
-  public IRepository<ProductInventory> ProductInventories => _productInventoryRepository ??= new Repository<ProductInventory>(_context);
-  public IRepository<ProductSale> ProductSales => _productSaleRepository ??= new Repository<ProductSale>(_context);
+  public IStateRepository States => _stateRepository ??= new StateRepository(_context);
+  public IUserCredentialRepository UserCredentials => _userCredentialRepository ??= new UserCredentialRepository(_context);
+  public ICustomerContactRepository CustomerContacts => _customerContactRepository ??= new CustomerContactRepository(_context);
+  public IProductColorRepository ProductColors => _productColorRepository ??= new ProductColorRepository(_context);
+  public IProductInventoryRepository ProductInventories => _productInventoryRepository ??= new ProductInventoryRepository(_context);
+  public IProductSaleRepository ProductSales => _productSaleRepository ??= new ProductSaleRepository(_context);
+  public ITokenRevocationRepository TokenRevocations => _tokenRevocationRepository ??= new TokenRevocationRepository(_context);
 
   public async Task<int> SaveChangesAsync()
   {

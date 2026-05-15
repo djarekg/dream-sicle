@@ -1,4 +1,4 @@
-import { SearchResultType } from '@dream-sicle/contracts';
+import { SearchResultType } from '@/core/models/search-result.model';
 
 import { HIGHLIGHT_END_TAG, HIGHLIGHT_START_TAG } from '@/core/constants';
 

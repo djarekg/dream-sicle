@@ -1,6 +1,6 @@
+import type { CustomerDto } from '@/features/customers/models/customer.model';
 import { Component, input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { CustomerDto } from '@dream-sicle/contracts';
 
 @Component({
   selector: 'app-customer-cards',

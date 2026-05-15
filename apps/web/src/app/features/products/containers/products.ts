@@ -8,11 +8,12 @@ import {
   type GenderFilter,
 } from '@/components/toggle';
 import { ViewMode } from '@/core/constants/view-mode';
+import { ProductType } from '@/core/models/product-type';
 import { ProductTable } from '@/features/products/components/product-table/product-table';
+import type { ProductDto } from '@/features/products/models/product.model';
 import { ProductService } from '@/features/products/services/product.service';
 import { Component, computed, inject, resource, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductType, type ProductDto } from '@dream-sicle/contracts';
 import { ProductCards } from '../components/product-cards/product-cards';
 
 /** Parses the view mode from the query parameter. */

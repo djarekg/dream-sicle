@@ -3,8 +3,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { Gender } from '@dream-sicle/contracts';
 
+import { Gender } from '@/core/models/gender';
 import { UserList } from '@/features/users/components/user-list/user-list';
 import { UserService } from '@/features/users/services/user.service';
 

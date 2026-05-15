@@ -4,7 +4,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { UserDto } from '@dream-sicle/contracts';
 
 import { FormCard } from '@/components/forms/form-card/form-card';
 import { Form } from '@/components/forms/form/form';
@@ -12,6 +11,7 @@ import { GenderSelect, StateSelect } from '@/components/select';
 import { FormMode } from '@/core/constants/form-mode';
 import { userSchema } from '@/features/users/forms';
 import type { UserFormModel } from '@/features/users/forms/user-form.model';
+import type { UserDto } from '@/features/users/models/user.model';
 
 @Component({
   selector: 'app-user-detail',

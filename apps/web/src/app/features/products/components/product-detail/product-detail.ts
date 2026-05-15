@@ -1,9 +1,9 @@
+import type { ProductDto } from '@/features/products/models/product.model';
 import { DatePipe } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
-import type { ProductDto } from '@dream-sicle/contracts';
 
 @Component({
   selector: 'app-product-detail',

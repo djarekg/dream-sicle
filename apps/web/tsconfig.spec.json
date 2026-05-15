@@ -7,7 +7,6 @@
       "@/*": ["./src/app/*"],
       "@/environment": ["./src/environments/environment.ts"],
       "@dream-sicle/components": ["../../packages/ui/components/src/index.ts"],
-      "@dream-sicle/contracts": ["../../packages/ui/contracts/src/index.ts"],
       "@dream-sicle/core": ["../../packages/ui/core/src/index.ts"],
       "@dream-sicle/utils": ["../../packages/ui/utils/src/index.ts"]
     }

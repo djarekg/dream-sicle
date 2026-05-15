@@ -24,7 +24,6 @@
     "@angular/platform-server": "catalog:",
     "@angular/router": "catalog:",
     "@angular/ssr": "catalog:",
-    "@dream-sicle/contracts": "workspace:*",
     "@dream-sicle/utils": "workspace:*",
     "express": "catalog:",
     "ngx-cookie-service-ssr": "catalog:",

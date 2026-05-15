@@ -12,7 +12,15 @@ builder.Services.AddCorsConfiguration(builder.Configuration);
 builder.Services.AddJwtAuthenticationConfiguration(jwtConfiguration);
 
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<CustomerService>();
+builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<StateService>();
+builder.Services.AddScoped<CustomerContactService>();
+builder.Services.AddScoped<UserCredentialService>();
+builder.Services.AddScoped<ProductColorService>();
+builder.Services.AddScoped<ProductInventoryService>();
+builder.Services.AddScoped<ProductSaleService>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

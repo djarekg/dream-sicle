@@ -1,12 +1,12 @@
 import type { CommandItem } from '@dream-sicle/components';
-import {
-  type SearchResult,
-  SearchResultType,
-  type SearchResultTypeMap,
-} from '@dream-sicle/contracts';
 import { assert, isEmpty } from '@dream-sicle/utils';
 
 import { HIGHLIGHT_END_TAG, HIGHLIGHT_START_TAG } from '@/core/constants';
+import {
+  SearchResultType,
+  type SearchResult,
+  type SearchResultTypeMap,
+} from '@/core/models/search-result.model';
 
 /**
  * Deserializes a search result JSON payload into a type-safe result model.

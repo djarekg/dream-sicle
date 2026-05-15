@@ -1,11 +1,11 @@
 import type { SortableColumn, SortState } from '@/core/types';
+import type { ProductDto } from '@/features/products/models/product.model';
 import { Grid, GridCell, GridCellWidget, GridRow } from '@angular/aria/grid';
 import { Component, computed, input, output, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterLink } from '@angular/router';
 import { GridCell as DsGridCell } from '@dream-sicle/components';
-import { ProductDto } from '@dream-sicle/contracts';
 
 @Component({
   selector: 'app-product-table',

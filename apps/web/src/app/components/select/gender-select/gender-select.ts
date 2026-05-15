@@ -1,3 +1,4 @@
+import { Gender } from '@/core/models/gender';
 import { TitleCasePipe } from '@angular/common';
 import { Component, input, model } from '@angular/core';
 import {
@@ -6,7 +7,6 @@ import {
   type WithOptionalFieldTree,
 } from '@angular/forms/signals';
 import { MatSelectModule } from '@angular/material/select';
-import { Gender } from '@dream-sicle/contracts';
 
 type ValueType = Gender | undefined;
 
