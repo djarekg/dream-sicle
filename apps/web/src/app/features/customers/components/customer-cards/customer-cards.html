@@ -1,8 +1,28 @@
-@for (customer of customers(); track customer.id) {
+@for (customer of customerCards(); track customer.id) {
   <mat-card>
-    <mat-card-title>{{ customer.name }}</mat-card-title>
+    <mat-card-header>
+      <mat-card-title>
+        {{ customer.name }}
+        @if (!customer.isActive) {
+          <span class="active-status">inactive</span>
+        }
+      </mat-card-title>
+    </mat-card-header>
+
     <mat-card-content>
-      <p>Phone: {{ customer.phone }}</p>
+      <div class="meta">
+        <mat-chip-set aria-label="Product details">
+          <mat-chip>{{ customer.city }}, {{ customer.stateName }}</mat-chip>
+        </mat-chip-set>
+      </div>
     </mat-card-content>
+
+    <mat-card-actions>
+      <a
+        [routerLink]="['/customers', customer.id]"
+        mat-button>
+        View Details
+      </a>
+    </mat-card-actions>
   </mat-card>
 }

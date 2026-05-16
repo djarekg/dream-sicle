@@ -9,8 +9,8 @@ public static class CustomerContactSeed
       return;
     }
 
-    var faker = new Faker();
-    var stateIds = await context.States.Select(s => s.Id).ToListAsync();
+    var faker = new Faker("en_US");
+    var states = await context.States.Select(s => new { s.Id, s.Code }).ToListAsync();
     var customerContacts = new List<CustomerContact>();
     var customers = await context.Customers.ToListAsync();
 
@@ -18,6 +18,8 @@ public static class CustomerContactSeed
     {
       for (int i = 0; i < 10; i++)
       {
+        var state = faker.PickRandom(states);
+
         customerContacts.Add(new CustomerContact
         {
           Id = Guid.NewGuid().ToString(),
@@ -27,8 +29,8 @@ public static class CustomerContactSeed
           Email = faker.Internet.Email(),
           StreetAddress = faker.Address.StreetAddress(),
           StreetAddress2 = faker.Address.SecondaryAddress(),
-          City = faker.Address.City(),
-          StateId = faker.PickRandom(stateIds),
+          City = UsCitySeed.GetRandomCity(faker, state.Code),
+          StateId = state.Id,
           Zip = faker.Address.ZipCode("#####"),
           Phone = faker.Phone.PhoneNumber("+1 (###) ###-####"),
           ImageId = faker.Random.Int(1, 99),

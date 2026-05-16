@@ -9,9 +9,10 @@ public static class UserSeed
       return;
     }
 
-    var faker = new Faker();
-    var stateIds = await context.States.Select(s => s.Id).ToListAsync();
+    var faker = new Faker("en_US");
+    var states = await context.States.Select(s => new { s.Id, s.Code }).ToListAsync();
     var users = new List<User>();
+    var adminState = states.FirstOrDefault(s => s.Code == "FL") ?? faker.PickRandom(states);
 
     // Create admin user
     users.Add(new User
@@ -23,7 +24,7 @@ public static class UserSeed
       Email = "admin@fu.com",
       StreetAddress = "123 Admin St",
       City = "St. Augustine",
-      StateId = faker.PickRandom(stateIds),
+      StateId = adminState.Id,
       Zip = "32084",
       Phone = "123-456-7890",
       JobTitle = "Administrator",
@@ -34,6 +35,8 @@ public static class UserSeed
     // Create regular users
     for (int i = 0; i < 10; i++)
     {
+      var state = faker.PickRandom(states);
+
       users.Add(new User
       {
         Id = Guid.NewGuid().ToString(),
@@ -43,8 +46,8 @@ public static class UserSeed
         Email = faker.Internet.Email(),
         StreetAddress = faker.Address.StreetAddress(),
         StreetAddress2 = faker.Address.SecondaryAddress(),
-        City = faker.Address.City(),
-        StateId = faker.PickRandom(stateIds),
+        City = UsCitySeed.GetRandomCity(faker, state.Code),
+        StateId = state.Id,
         Zip = faker.Address.ZipCode("#####"),
         Phone = faker.Phone.PhoneNumber("+1 (###) ###-####"),
         JobTitle = faker.Name.JobTitle(),
@@ -56,6 +59,8 @@ public static class UserSeed
     // Create sales users
     for (int i = 0; i < 10; i++)
     {
+      var state = faker.PickRandom(states);
+
       users.Add(new User
       {
         Id = Guid.NewGuid().ToString(),
@@ -65,8 +70,8 @@ public static class UserSeed
         Email = faker.Internet.Email(),
         StreetAddress = faker.Address.StreetAddress(),
         StreetAddress2 = faker.Address.SecondaryAddress(),
-        City = faker.Address.City(),
-        StateId = faker.PickRandom(stateIds),
+        City = UsCitySeed.GetRandomCity(faker, state.Code),
+        StateId = state.Id,
         Zip = faker.Address.ZipCode("#####"),
         Phone = faker.Phone.PhoneNumber("+1 (###) ###-####"),
         JobTitle = faker.Name.JobTitle(),
@@ -78,6 +83,8 @@ public static class UserSeed
     // Create accounting users
     for (int i = 0; i < 5; i++)
     {
+      var state = faker.PickRandom(states);
+
       users.Add(new User
       {
         Id = Guid.NewGuid().ToString(),
@@ -87,8 +94,8 @@ public static class UserSeed
         Email = faker.Internet.Email(),
         StreetAddress = faker.Address.StreetAddress(),
         StreetAddress2 = faker.Address.SecondaryAddress(),
-        City = faker.Address.City(),
-        StateId = faker.PickRandom(stateIds),
+        City = UsCitySeed.GetRandomCity(faker, state.Code),
+        StateId = state.Id,
         Zip = faker.Address.ZipCode("#####"),
         Phone = faker.Phone.PhoneNumber("+1 (###) ###-####"),
         JobTitle = faker.Name.JobTitle(),

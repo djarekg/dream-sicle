@@ -7,4 +7,8 @@ export class StateService {
   readonly #api = inject(ApiService);
 
   getStates = () => this.#api.get<StateDto[]>('/states');
+  getStatesAsMap = async () => {
+    const states = await this.getStates();
+    return new Map(states.map(state => [state.id, state.name]));
+  };
 }
