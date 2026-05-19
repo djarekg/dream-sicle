@@ -27,7 +27,7 @@ const ALT_SEARCH_TRIGGER_KEY = '/';
 })
 export class Search {
   readonly #searchService = injectAsync(
-    () => import('@/core/api/search.service').then(({ SearchService }) => SearchService),
+    () => import('@/core/services/search.service').then(({ SearchService }) => SearchService),
     { prefetch: onIdle },
   );
 

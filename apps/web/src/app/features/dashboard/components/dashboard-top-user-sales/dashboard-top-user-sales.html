@@ -1,0 +1,10 @@
+<header>
+  <app-year-select [(value)]="year" />
+  <app-simple-select
+    [data]="sizes"
+    [(value)]="take" />
+</header>
+
+<app-dashboard-total-list
+  label="Top sales"
+  [data]="resource.value()" />

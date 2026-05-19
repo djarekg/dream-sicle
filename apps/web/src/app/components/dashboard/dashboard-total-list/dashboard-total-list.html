@@ -1,0 +1,9 @@
+<header>
+  <h2>{{ label() }}</h2>
+</header>
+@for (item of data(); track item.label) {
+  <div>
+    <span>{{ item.label }}</span>
+    <span>{{ item.value | currency }}</span>
+  </div>
+}

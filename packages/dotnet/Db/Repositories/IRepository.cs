@@ -2,7 +2,7 @@ namespace DreamSicle.Db.Repositories;
 
 public interface IRepository<T> where T : class
 {
-  Task<T?> GetByIdAsync(string id);
+  Task<T?> GetByEmailAsync(string email);
   Task<IEnumerable<T>> GetAllAsync();
   Task<T> AddAsync(T entity);
   Task<T> UpdateAsync(T entity);

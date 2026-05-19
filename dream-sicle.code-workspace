@@ -82,6 +82,9 @@
     "[xml]": {
       "editor.defaultFormatter": "redhat.vscode-xml",
     },
+    "[csharp]": {
+      "editor.defaultFormatter": "ms-dotnettools.csharp",
+    },
 
     "js/ts.preferences.importModuleSpecifier": "non-relative",
     "js/ts.preferences.importModuleSpecifierEnding": "minimal",
@@ -141,6 +144,7 @@
       "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
       "tsconfig.json": "tsconfig.*.json",
       "package.json": "bun.lock",
+      "*.cs": "I${capture}.cs",
     },
 
     "cSpell.words": [
@@ -151,6 +155,7 @@
       "dbaeumer",
       "describedby",
       "dotenv",
+      "dotnettools",
       "esbenp",
       "esbuild",
       "evenodd",
@@ -165,6 +170,7 @@
       "packagr",
       "PERFERNOTTOSAY",
       "PREFERNOTTOSAY",
+      "Registerables",
       "sicle",
       "titlecase",
       "typescale",
@@ -173,9 +179,6 @@
       "voidzero",
       "wght",
     ],
-    "[csharp]": {
-      "editor.defaultFormatter": "ms-dotnettools.csharp",
-    },
   },
   "extensions": {
     "recommendations": [

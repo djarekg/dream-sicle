@@ -1,3 +1,7 @@
+import { apiInterceptor } from '@/core/api/api.interceptor';
+import { authInterceptor } from '@/core/auth/auth.interceptor';
+import { AuthService } from '@/core/auth/auth.service';
+import { provideOptionDefaults } from '@/core/options/defaults';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import {
   ApplicationConfig,
@@ -7,12 +11,8 @@ import {
   provideBrowserGlobalErrorListeners,
 } from '@angular/core';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-
-import { apiInterceptor } from '@/core/api/api.interceptor';
-import { authInterceptor } from '@/core/auth/auth.interceptor';
-import { AuthService } from '@/core/auth/auth.service';
-import { provideOptionDefaults } from '@/core/options/defaults';
-
+import { BarController, Colors } from 'chart.js';
+import { provideCharts } from 'ng2-charts';
 import { provideRouting } from './core/providers/router';
 
 const hydrationProviders = isDevMode() ? [] : [provideClientHydration(withEventReplay())];
@@ -31,5 +31,6 @@ export const appConfig: ApplicationConfig = {
       const service = inject(AuthService);
       return service.refresh();
     }),
+    provideCharts({ registerables: [BarController, Colors] }),
   ],
 };

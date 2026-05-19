@@ -12,9 +12,9 @@ public class UserService(IUnitOfWork uow)
     return users.Select(ToResponse);
   }
 
-  public async Task<UserResponseModel?> GetByIdAsync(string id)
+  public async Task<UserResponseModel?> GetByEmailAsync(string email)
   {
-    var user = await uow.Users.GetByIdAsync(id);
+    var user = await uow.Users.GetByEmailAsync(email);
     return user is null ? null : ToResponse(user);
   }
 
@@ -43,7 +43,7 @@ public class UserService(IUnitOfWork uow)
 
   public async Task<UserResponseModel?> UpdateAsync(string id, UserUpdateModel model)
   {
-    var existingUser = await uow.Users.GetByIdAsync(id);
+    var existingUser = await uow.Users.GetByEmailAsync(id);
     if (existingUser is null)
     {
       return null;
@@ -70,7 +70,7 @@ public class UserService(IUnitOfWork uow)
 
   public async Task<bool> DeleteAsync(string id)
   {
-    var existingUser = await uow.Users.GetByIdAsync(id);
+    var existingUser = await uow.Users.GetByEmailAsync(id);
     if (existingUser is null)
     {
       return false;

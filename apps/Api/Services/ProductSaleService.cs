@@ -14,7 +14,7 @@ public class ProductSaleService(IUnitOfWork uow)
 
   public async Task<ProductSaleResponseModel?> GetByIdAsync(string id)
   {
-    var sale = await uow.ProductSales.GetByIdAsync(id);
+    var sale = await uow.ProductSales.GetByEmailAsync(id);
     return sale is null ? null : ToResponse(sale);
   }
 
@@ -35,7 +35,7 @@ public class ProductSaleService(IUnitOfWork uow)
 
   public async Task<ProductSaleResponseModel?> UpdateAsync(string id, ProductSaleUpdateModel model)
   {
-    var sale = await uow.ProductSales.GetByIdAsync(id);
+    var sale = await uow.ProductSales.GetByEmailAsync(id);
     if (sale is null)
     {
       return null;

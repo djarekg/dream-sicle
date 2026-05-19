@@ -1,25 +1,5 @@
 namespace DreamSicle.Db.Repositories;
 
-public interface IUnitOfWork : IDisposable
-{
-  IUserRepository Users { get; }
-  IProductRepository Products { get; }
-  ICustomerRepository Customers { get; }
-  IStateRepository States { get; }
-  IUserCredentialRepository UserCredentials { get; }
-  ICustomerContactRepository CustomerContacts { get; }
-  IProductColorRepository ProductColors { get; }
-  IProductInventoryRepository ProductInventories { get; }
-  IProductSaleRepository ProductSales { get; }
-  ITokenRevocationRepository TokenRevocations { get; }
-  ISearchRepository Search { get; }
-
-  Task<int> SaveChangesAsync();
-  Task BeginTransactionAsync();
-  Task CommitTransactionAsync();
-  Task RollbackTransactionAsync();
-}
-
 public class UnitOfWork(LuckyDayDbContext context) : IUnitOfWork
 {
   private readonly LuckyDayDbContext _context = context;
@@ -34,6 +14,8 @@ public class UnitOfWork(LuckyDayDbContext context) : IUnitOfWork
   private IProductSaleRepository? _productSaleRepository;
   private ITokenRevocationRepository? _tokenRevocationRepository;
   private ISearchRepository? _searchRepository;
+  private IDashboardWidgetRepository? _dashboardWidgetRepository;
+  private IUserDashboardRepository? _userDashboardRepository;
 
   public IUserRepository Users => _userRepository ??= new UserRepository(_context);
   public IProductRepository Products => _productRepository ??= new ProductRepository(_context);
@@ -46,6 +28,8 @@ public class UnitOfWork(LuckyDayDbContext context) : IUnitOfWork
   public IProductSaleRepository ProductSales => _productSaleRepository ??= new ProductSaleRepository(_context);
   public ITokenRevocationRepository TokenRevocations => _tokenRevocationRepository ??= new TokenRevocationRepository(_context);
   public ISearchRepository Search => _searchRepository ??= new SearchRepository(_context);
+  public IDashboardWidgetRepository DashboardWidgets => _dashboardWidgetRepository ??= new DashboardWidgetRepository(_context);
+  public IUserDashboardRepository UserDashboards => _userDashboardRepository ??= new UserDashboardRepository(_context);
 
   public async Task<int> SaveChangesAsync()
   {

@@ -1,4 +1,4 @@
-using DreamSicle.Db.Models;
+using DreamSicle.Db.Enums;
 
 namespace DreamSicle.Api.Models;
 

@@ -36,7 +36,7 @@ public class ProductService(IUnitOfWork uow)
 
   public async Task<ProductResponseModel?> UpdateAsync(string id, ProductUpdateModel model)
   {
-    var product = await uow.Products.GetByIdAsync(id);
+    var product = await uow.Products.GetByEmailAsync(id);
     if (product is null)
     {
       return null;

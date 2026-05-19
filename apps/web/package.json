@@ -25,7 +25,9 @@
     "@angular/router": "catalog:",
     "@angular/ssr": "catalog:",
     "@dream-sicle/utils": "workspace:*",
+    "chart.js": "catalog:",
     "express": "catalog:",
+    "ng2-charts": "catalog:",
     "ngx-cookie-service-ssr": "catalog:",
     "rxjs": "catalog:",
     "tslib": "catalog:"

@@ -14,6 +14,7 @@ import {
 } from '@angular/router';
 
 import { authGuard } from '@/core/auth/auth.guard';
+import { userResolver } from '@/core/resolvers';
 
 // const transitionCreated = new Subject<void>();
 
@@ -24,6 +25,9 @@ export const provideRouting = () =>
       {
         path: '',
         canActivateChild: [authGuard],
+        resolve: {
+          user: userResolver,
+        },
         loadComponent: () => import('@/features/layout/protected-layout/protected-layout'),
         loadChildren: () => import('@/routes'),
       },

@@ -14,7 +14,7 @@ public class ProductColorService(IUnitOfWork uow)
 
   public async Task<ProductColorResponseModel?> GetByIdAsync(string id)
   {
-    var productColor = await uow.ProductColors.GetByIdAsync(id);
+    var productColor = await uow.ProductColors.GetByEmailAsync(id);
     return productColor is null ? null : ToResponse(productColor);
   }
 
@@ -32,7 +32,7 @@ public class ProductColorService(IUnitOfWork uow)
 
   public async Task<ProductColorResponseModel?> UpdateAsync(string id, ProductColorUpdateModel model)
   {
-    var productColor = await uow.ProductColors.GetByIdAsync(id);
+    var productColor = await uow.ProductColors.GetByEmailAsync(id);
     if (productColor is null)
     {
       return null;

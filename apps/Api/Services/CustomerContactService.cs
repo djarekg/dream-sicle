@@ -14,7 +14,7 @@ public class CustomerContactService(IUnitOfWork uow)
 
   public async Task<CustomerContactResponseModel?> GetByIdAsync(string id)
   {
-    var contact = await uow.CustomerContacts.GetByIdAsync(id);
+    var contact = await uow.CustomerContacts.GetByEmailAsync(id);
     return contact is null ? null : ToResponse(contact);
   }
 
@@ -42,7 +42,7 @@ public class CustomerContactService(IUnitOfWork uow)
 
   public async Task<CustomerContactResponseModel?> UpdateAsync(string id, CustomerContactUpdateModel model)
   {
-    var contact = await uow.CustomerContacts.GetByIdAsync(id);
+    var contact = await uow.CustomerContacts.GetByEmailAsync(id);
     if (contact is null)
     {
       return null;

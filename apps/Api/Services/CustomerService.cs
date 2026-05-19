@@ -38,7 +38,7 @@ public class CustomerService(IUnitOfWork uow)
 
   public async Task<CustomerResponseModel?> UpdateAsync(string id, CustomerUpdateModel model)
   {
-    var customer = await uow.Customers.GetByIdAsync(id);
+    var customer = await uow.Customers.GetByEmailAsync(id);
     if (customer is null)
     {
       return null;

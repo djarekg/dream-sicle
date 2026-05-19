@@ -1,4 +1,5 @@
 using DreamSicle.Db.Data;
+using DreamSicle.Db.Enums;
 using DreamSicle.Db.Models;
 using DreamSicle.Db.Repositories;
 using DreamSicle.Db.Tests.TestInfrastructure;
@@ -42,7 +43,7 @@ public class RepositoryCrudTests
     user.LastName = "Updated";
     await repository.UpdateAsync(user);
 
-    var updated = await repository.GetByIdAsync(user.Id);
+    var updated = await repository.GetByEmailAsync(user.Id);
     Assert.NotNull(updated);
     Assert.Equal("Updated", updated.LastName);
 

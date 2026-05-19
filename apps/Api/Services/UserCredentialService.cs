@@ -14,7 +14,7 @@ public class UserCredentialService(IUnitOfWork uow)
 
   public async Task<UserCredentialResponseModel?> GetByIdAsync(string id)
   {
-    var credential = await uow.UserCredentials.GetByIdAsync(id);
+    var credential = await uow.UserCredentials.GetByEmailAsync(id);
     return credential is null ? null : ToResponse(credential);
   }
 
@@ -33,7 +33,7 @@ public class UserCredentialService(IUnitOfWork uow)
 
   public async Task<UserCredentialResponseModel?> UpdateAsync(string id, UserCredentialUpdateModel model)
   {
-    var credential = await uow.UserCredentials.GetByIdAsync(id);
+    var credential = await uow.UserCredentials.GetByEmailAsync(id);
     if (credential is null)
     {
       return null;

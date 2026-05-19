@@ -32,6 +32,7 @@ builder.Services.AddScoped<UserCredentialService>();
 builder.Services.AddScoped<ProductColorService>();
 builder.Services.AddScoped<ProductInventoryService>();
 builder.Services.AddScoped<ProductSaleService>();
+builder.Services.AddScoped<DashboardService>();
 builder.Services.AddScoped<SearchService>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

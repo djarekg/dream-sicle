@@ -14,7 +14,7 @@ public class StateService(IUnitOfWork uow)
 
   public async Task<StateResponseModel?> GetByIdAsync(string id)
   {
-    var state = await uow.States.GetByIdAsync(id);
+    var state = await uow.States.GetByEmailAsync(id);
     return state is null ? null : ToResponse(state);
   }
 
@@ -32,7 +32,7 @@ public class StateService(IUnitOfWork uow)
 
   public async Task<StateResponseModel?> UpdateAsync(string id, StateUpdateModel model)
   {
-    var state = await uow.States.GetByIdAsync(id);
+    var state = await uow.States.GetByEmailAsync(id);
     if (state is null)
     {
       return null;

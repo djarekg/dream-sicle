@@ -1,0 +1,14 @@
+<mat-form-field>
+  @if (label()) {
+    <mat-label>{{ label() }}</mat-label>
+  }
+  <mat-select
+    [disabled]="disabled()"
+    [multiple]="multiple()"
+    [value]="value()"
+    (valueChange)="onChange($event)">
+    @for (item of data(); track item) {
+      <mat-option [value]="item">{{ item }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>

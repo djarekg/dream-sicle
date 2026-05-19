@@ -15,11 +15,6 @@ public static class SearchResultType
 
 public record SearchResultRecord(int Type, double Rank, string Json);
 
-public interface ISearchRepository
-{
-  Task<IReadOnlyList<SearchResultRecord>> SearchAsync(string query, string highlightStartTag, string highlightEndTag);
-}
-
 public class SearchRepository(LuckyDayDbContext context) : ISearchRepository
 {
   private readonly LuckyDayDbContext _context = context;

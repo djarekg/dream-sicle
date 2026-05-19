@@ -23,3 +23,5 @@ public record ProductSaleResponseModel(
   decimal Price,
   DateTime DateCreated,
   DateTime? DateUpdated);
+
+

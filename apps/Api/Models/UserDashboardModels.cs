@@ -1,0 +1,16 @@
+namespace DreamSicle.Api.Models;
+
+public record UserDashboardResponseModel(
+  string Id,
+  string UserId,
+  string DashboardWidgetId,
+  int Position);
+
+public record UserDashboardCreateModel(
+  string UserId,
+  string DashboardWidgetId,
+  int Position);
+
+public record UserDashboardUpdateModel(
+  string Id,
+  int Position);

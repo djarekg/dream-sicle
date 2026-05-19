@@ -14,7 +14,7 @@ public class ProductInventoryService(IUnitOfWork uow)
 
   public async Task<ProductInventoryResponseModel?> GetByIdAsync(string id)
   {
-    var inventory = await uow.ProductInventories.GetByIdAsync(id);
+    var inventory = await uow.ProductInventories.GetByEmailAsync(id);
     return inventory is null ? null : ToResponse(inventory);
   }
 
@@ -33,7 +33,7 @@ public class ProductInventoryService(IUnitOfWork uow)
 
   public async Task<ProductInventoryResponseModel?> UpdateAsync(string id, ProductInventoryUpdateModel model)
   {
-    var inventory = await uow.ProductInventories.GetByIdAsync(id);
+    var inventory = await uow.ProductInventories.GetByEmailAsync(id);
     if (inventory is null)
     {
       return null;
