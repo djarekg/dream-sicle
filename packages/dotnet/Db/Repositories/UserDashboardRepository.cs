@@ -6,6 +6,7 @@ public class UserDashboardRepository(LuckyDayDbContext context)
   public async Task<IEnumerable<UserDashboard>> GetByUserIdAsync(string userId)
   {
     return await _dbSet
+      .Include(x => x.DashboardWidget)
       .Where(x => x.UserId == userId)
       .OrderBy(x => x.Position)
       .ToListAsync();

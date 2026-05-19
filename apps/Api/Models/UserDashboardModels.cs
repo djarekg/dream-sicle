@@ -4,7 +4,8 @@ public record UserDashboardResponseModel(
   string Id,
   string UserId,
   string DashboardWidgetId,
-  int Position);
+  int Position,
+  DashboardWidgetResponseModel Widget);
 
 public record UserDashboardCreateModel(
   string UserId,

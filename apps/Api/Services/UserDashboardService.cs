@@ -46,10 +46,17 @@ public class UserDashboardService(IUnitOfWork uow)
 
   private static UserDashboardResponseModel ToResponse(UserDashboard dashboard)
   {
+    var widget = new DashboardWidgetResponseModel(
+      dashboard.DashboardWidget.Id,
+      dashboard.DashboardWidget.Name,
+      dashboard.DashboardWidget.Category,
+      dashboard.DashboardWidget.Type);
+
     return new UserDashboardResponseModel(
       dashboard.Id,
       dashboard.UserId,
       dashboard.DashboardWidgetId,
-      dashboard.Position);
+      dashboard.Position,
+      widget);
   }
 }

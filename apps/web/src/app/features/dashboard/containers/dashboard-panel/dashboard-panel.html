@@ -1,3 +1,7 @@
 <div>
-  @for (widget of resource.value(); track widget.id) {}
+  @for (entry of widgets(); track entry.widget.id) {
+    @if (entry.component) {
+      <ng-container [ngComponentOutlet]="entry.component" />
+    }
+  }
 </div>
