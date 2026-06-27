@@ -1,0 +1,13 @@
+<Project>
+
+  <ItemGroup>
+    <!--
+      SQLitePCLRaw.lib.e_sqlite3 2.1.11 (transitive via Microsoft.EntityFrameworkCore.Sqlite)
+      is flagged by GHSA-2m69-gcr7-jv3q. 2.1.11 is the latest published version, so there is
+      no patched package to upgrade to yet. Suppress this single advisory so NuGet audit +
+      TreatWarningsAsErrors stay active for everything else. Remove once a fixed version ships.
+    -->
+    <NuGetAuditSuppress Include="https://github.com/advisories/GHSA-2m69-gcr7-jv3q" />
+  </ItemGroup>
+
+</Project>
