@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="../apps/Api/Api.csproj" />
+  <Project Path="../apps/dotnet/Api/Api.csproj" />
   <Project Path="../packages/dotnet/Db/Db.csproj" />
   <Project Path="../packages/dotnet/Db.Tests/Db.Tests.csproj" />
 </Solution>

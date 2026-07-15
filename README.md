@@ -8,8 +8,8 @@ The workspace is organized so UI, API, database, and shared packages can evolve 
 
 ### Applications
 
-- [demo](apps/web/README.md) - Angular demo application with SSR support, authentication flows, users pages, and shared layout infrastructure.
-- [api](apps/api/README.md) - Internal Node-based API serving auth, users, and search endpoints.
+- [demo](apps/ui/web/README.md) - Angular demo application with SSR support, authentication flows, users pages, and shared layout infrastructure.
+- [api](apps/dotnet/Api/README.md) - Internal Node-based API serving auth, users, and search endpoints.
 
 ### Shared Packages
 

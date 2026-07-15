@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../packages/dotnet/Db/Db.csproj" />
+    <ProjectReference Include="../../../packages/dotnet/Db/Db.csproj" />
   </ItemGroup>
 
 </Project>

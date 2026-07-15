@@ -46,5 +46,5 @@ Run from the workspace root:
 ## Related Projects
 
 - [workspace](../../README.md)
-- [demo](../../apps/web/README.md)
+- [demo](../../../apps/ui/web/README.md)
 - [core](../core/README.md)

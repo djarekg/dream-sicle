@@ -6,7 +6,7 @@
       "label": "dotnet: build",
       "command": "dotnet",
       "type": "shell",
-      "args": ["build", "apps/Api/Api.csproj"],
+      "args": ["build", "apps/dotnet/Api/Api.csproj"],
       "options": {
         "cwd": "${workspaceFolder}"
       },
@@ -24,7 +24,7 @@
       "label": "bun: start",
       "type": "shell",
       "options": {
-        "cwd": "${workspaceFolder}/apps/web"
+        "cwd": "${workspaceFolder}/apps/ui/web"
       },
       "command": "bun run start",
       "isBackground": true,
@@ -46,7 +46,7 @@
       "label": "bun: test",
       "type": "shell",
       "options": {
-        "cwd": "${workspaceFolder}/apps/web"
+        "cwd": "${workspaceFolder}/apps/ui/web"
       },
       "command": "bun run test",
       "isBackground": true,
